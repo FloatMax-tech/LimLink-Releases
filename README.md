@@ -2,6 +2,8 @@
 
 ![LimLink](assets/banner.svg)
 
+[简体中文](README.md) · [繁體中文](docs/README.zh-Hant.md) · [English](docs/README.en.md) · [日本語](docs/README.ja.md) · [한국어](docs/README.ko.md) · [Français](docs/README.fr.md) · [Deutsch](docs/README.de.md) · [Español](docs/README.es.md) · [Italiano](docs/README.it.md)
+
 **设备之间，直接传递。**  
 局域网文件传输 · Android & Windows
 
@@ -43,7 +45,3 @@
 [隐私政策](https://limlink.floatmax-tech.com/privacy.html) · [用户协议](https://limlink.floatmax-tech.com/terms.html)  
 支持邮箱：**limlink@floatmax-tech.com**  
 运营主体：**杭州浮点极限科技有限公司**
-
----
-
-**English** — Official Android and Windows releases of LimLink. Transfer files directly over your local network. Installers will appear in Releases after verification. Check for updates manually in the app; downloads open in your browser. Finish transfers before upgrading, and keep the existing app installed to preserve its data.
