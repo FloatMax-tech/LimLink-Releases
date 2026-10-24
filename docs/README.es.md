@@ -4,33 +4,35 @@
 
 [简体中文](../README.md) · [繁體中文](README.zh-Hant.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md)
 
-**Tus archivos, directamente.**  
-Transferencia de archivos por red local · Android & Windows
+**Tus archivos, directamente.**
+Transferencia de archivos por red local · Android · Windows · Apple
 
 [Sitio web](https://limlink.floatmax-tech.com) · [Versiones](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Soporte](mailto:limlink@floatmax-tech.com)
 
+
+
+**App Store · Próximamente**
+
 </div>
 
-## Descargas
+## Descargas y actualizaciones
 
-Estamos preparando los instaladores oficiales. Los paquetes verificados aparecerán en Releases.
+Los instaladores están en preparación. Termine las transferencias y actualice con una firma compatible para conservar sus datos.
 
-- [Android · APK](https://github.com/FloatMax-tech/LimLink-Releases/releases)
-- [Windows · EXE](https://github.com/FloatMax-tech/LimLink-Releases/releases)
+| | Android | Windows |
+| :--- | :--- | :--- |
+| China: CN | [Android CN](https://limlink.floatmax-tech.com/download/android-cn) | [Windows CN](https://limlink.floatmax-tech.com/download/windows-cn) |
+| Internacional: WD | [Android WD](https://limlink.floatmax-tech.com/download/android) | [Windows WD](https://limlink.floatmax-tech.com/download/windows) |
 
-Elige archivos → selecciona un dispositivo cercano → el destinatario acepta. Los dispositivos vinculados reciben automáticamente según los ajustes.
+CN no busca actualizaciones dentro de la aplicación. El botón abre la página oficial en el navegador.
 
-Hasta 5 GB por archivo. Los dispositivos deben poder comunicarse por la red local y permitir el acceso. No necesitas cuenta de LimLink.
+WD lee version.json del sitio oficial solo al comprobar manualmente y abre las descargas en el navegador.
 
-## Actualizaciones
+Transferencia directa en una red local accesible, hasta 5 GB por archivo. Sin cuenta.
 
-Busca actualizaciones en Ajustes, revisa las notas y confirma la descarga en el navegador. Termina las transferencias antes de actualizar con un instalador oficial de firma compatible. No desinstales primero para conservar tus datos.
-
-## Privacidad y soporte
-
-La búsqueda y descarga conectan con GitHub, que puede tratar la dirección IP y los datos habituales de la solicitud. No se envían archivos, nombres de dispositivos ni vinculaciones. Este repositorio contiene instaladores y documentación, no el código fuente.
+WD envía la dirección IP y datos habituales de la solicitud, no archivos, nombres de dispositivos ni vinculaciones. En CN, el navegador gestiona el acceso al sitio. Este repositorio solo contiene materiales de distribución; el código fuente sigue siendo privado.
 
 [Privacidad](https://limlink.floatmax-tech.com/privacy.es.html) · [Condiciones](https://limlink.floatmax-tech.com/terms.es.html)
 
-**limlink@floatmax-tech.com**  
+**limlink@floatmax-tech.com**
 **杭州浮点极限科技有限公司**
