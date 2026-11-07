@@ -9,7 +9,9 @@
 
 [官网](https://limlink.floatmax-tech.com) · [发布版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [联系支持](mailto:limlink@floatmax-tech.com) · [源码](https://github.com/floatmax-tech-001/LimLink-Source)
 
-**下载：** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows) · [App Store](https://apps.apple.com/jp/app/limlink/id6826498808)
+**下载：** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
+
+<a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
 
 </div>
 
