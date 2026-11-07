@@ -9,8 +9,6 @@
 
 [官网](https://limlink.floatmax-tech.com) · [发布版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [联系支持](mailto:limlink@floatmax-tech.com)
 
-
-
 <a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
 
 </div>
@@ -40,8 +38,6 @@ CN 不在 App 内检查更新；点击“检查更新”只通过浏览器打开
 WD 仅在手动检查时读取官网 version.json，再通过浏览器前往下载页。
 
 设备在可互通的局域网直接传输，单文件最大 5 GB。无需账号。
-
-WD 查询官网会发送 IP 地址及常规请求信息，不发送文件、设备名称或绑定记录。CN 的官网访问由浏览器处理。本仓库仅存放发布资料，源码不公开。
 
 [隐私政策](https://limlink.floatmax-tech.com/privacy.html) · [用户协议](https://limlink.floatmax-tech.com/terms.html)
 

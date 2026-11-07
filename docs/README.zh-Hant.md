@@ -9,8 +9,6 @@
 
 [官網](https://limlink.floatmax-tech.com) · [發佈版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [聯絡支援](mailto:limlink@floatmax-tech.com)
 
-
-
 **[App Store](https://apps.apple.com/jp/app/limlink/id6826498808)**
 
 </div>
@@ -33,8 +31,6 @@ CN 不在 App 內檢查更新；點擊「檢查更新」僅由瀏覽器開啟官
 WD 僅在手動檢查時讀取官網 version.json，再由瀏覽器前往下載頁。
 
 裝置在可互通的區域網路直接傳輸，單檔最大 5 GB。無需帳號。
-
-WD 查詢官網會傳送 IP 位址及一般請求資訊，不傳送檔案、裝置名稱或綁定記錄。CN 的官網存取由瀏覽器處理。本倉庫僅存放發布資料，原始碼不公開。
 
 [隱私政策](https://limlink.floatmax-tech.com/privacy.zh-Hant.html) · [使用者協議](https://limlink.floatmax-tech.com/terms.zh-Hant.html)
 

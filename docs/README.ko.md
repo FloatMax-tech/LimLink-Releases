@@ -9,8 +9,6 @@
 
 [공식 웹사이트](https://limlink.floatmax-tech.com) · [릴리스](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [지원](mailto:limlink@floatmax-tech.com)
 
-
-
 **[App Store](https://apps.apple.com/jp/app/limlink/id6826498808)**
 
 </div>
@@ -33,8 +31,6 @@ CN은 앱에서 업데이트를 조회하지 않고 버튼을 누르면 브라�
 WD는 수동 확인 시에만 공식 사이트의 version.json을 읽고 브라우저에서 다운로드 페이지를 엽니다.
 
 연결 가능한 로컬 네트워크에서 직접 전송합니다. 파일당 최대 5 GB이며 계정이 필요 없습니다.
-
-WD는 IP 주소와 일반 요청 정보만 보내며 파일, 기기 이름, 연결 정보는 보내지 않습니다. CN의 사이트 접속은 브라우저가 처리합니다. 이 저장소에는 배포 자료만 있으며 소스 코드는 비공개입니다.
 
 [개인정보 처리방침](https://limlink.floatmax-tech.com/privacy.ko.html) · [이용약관](https://limlink.floatmax-tech.com/terms.ko.html)
 

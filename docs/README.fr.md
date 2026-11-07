@@ -9,8 +9,6 @@ Transfert de fichiers sur réseau local · iPhone · iPad · Mac · Android · W
 
 [Site officiel](https://limlink.floatmax-tech.com) · [Versions](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Assistance](mailto:limlink@floatmax-tech.com)
 
-
-
 **[App Store](https://apps.apple.com/jp/app/limlink/id6826498808)**
 
 </div>
@@ -33,8 +31,6 @@ CN ne recherche pas de mises à jour dans l’application. Le bouton ouvre la pa
 WD consulte version.json sur le site officiel uniquement sur demande, puis ouvre les téléchargements dans le navigateur.
 
 Transfert direct sur un réseau local accessible, jusqu’à 5 GB par fichier. Aucun compte requis.
-
-WD transmet l’adresse IP et les données habituelles de requête, sans fichiers, noms des appareils ni associations. Pour CN, le navigateur gère l’accès au site. Ce dépôt contient uniquement des éléments de distribution ; le code source reste privé.
 
 [Confidentialité](https://limlink.floatmax-tech.com/privacy.fr.html) · [Conditions](https://limlink.floatmax-tech.com/terms.fr.html)
 
