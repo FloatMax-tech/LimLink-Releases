@@ -9,7 +9,8 @@
 
 [官網](https://limlink.floatmax-tech.com) · [發佈版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [聯絡支援](mailto:limlink@floatmax-tech.com) · [原始碼](https://github.com/floatmax-tech-001/LimLink-Source)
 
-<p align="center"><strong>下載：</strong>
+<p align="center"><strong>下載：</strong></p>
+<p align="center">
 <a href="https://limlink.floatmax-tech.com/download/macos"><img src="../assets/download-mac.svg" alt="Download for Mac" height="40"></a>
 <a href="https://limlink.floatmax-tech.com/download/android"><img src="../assets/download-android.svg" alt="Download for Android" height="40"></a>
 <a href="https://limlink.floatmax-tech.com/download/windows"><img src="../assets/download-windows.svg" alt="Download for Windows" height="40"></a>
