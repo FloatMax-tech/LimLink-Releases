@@ -9,6 +9,8 @@ Local-network file transfer · iPhone · iPad · Mac · Android · Windows
 
 [Website](https://limlink.floatmax-tech.com) · [Releases](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Support](mailto:limlink@floatmax-tech.com)
 
+**Download:** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
+
 <a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
 
 </div>
