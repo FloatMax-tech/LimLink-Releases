@@ -5,24 +5,28 @@
 [简体中文](../README.md) · [繁體中文](README.zh-Hant.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md)
 
 **デバイス間で、直接届ける。**
-ローカルネットワークのファイル転送 · Android · Windows · Apple
+ローカルネットワークのファイル転送 · iPhone · iPad · Mac · Android · Windows
 
 [公式サイト](https://limlink.floatmax-tech.com) · [リリース](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [サポート](mailto:limlink@floatmax-tech.com)
 
 
 
-**App Store · 近日公開**
+**[App Store](https://apps.apple.com/jp/app/limlink/id6826498808)**
 
 </div>
 
 ## ダウンロードと更新
 
-インストーラーは準備中です。転送を完了してから、互換性のある署名の新版で上書きしてください。
+インストーラーは公式サイトから入手できます。GitHub Releases はリリースノート用です。更新前に転送を完了し、互換性のある署名のインストーラーで上書きしてデータを保持してください。
 
-| | Android | Windows |
+| プラットフォーム | ダウンロード | 動作環境 |
 | :--- | :--- | :--- |
-| 中国向け：CN | [Android CN](https://limlink.floatmax-tech.com/download/android-cn) | [Windows CN](https://limlink.floatmax-tech.com/download/windows-cn) |
-| 海外向け：WD | [Android WD](https://limlink.floatmax-tech.com/download/android) | [Windows WD](https://limlink.floatmax-tech.com/download/windows) |
+| iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
+| Mac | [公式ダウンロード](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple シリコン / Intel |
+| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10 以降 |
+| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+
+**Mac App Store、Google Play、Microsoft Store 版は近日公開予定です。**
 
 CN はアプリ内で更新を確認せず、更新ボタンからブラウザで公式ダウンロードページを開きます。
 

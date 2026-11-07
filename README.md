@@ -5,24 +5,35 @@
 [简体中文](README.md) · [繁體中文](docs/README.zh-Hant.md) · [English](docs/README.en.md) · [日本語](docs/README.ja.md) · [한국어](docs/README.ko.md) · [Français](docs/README.fr.md) · [Deutsch](docs/README.de.md) · [Español](docs/README.es.md) · [Italiano](docs/README.it.md)
 
 **设备之间，直接传递。**
-局域网文件传输 · Android · Windows · Apple
+局域网文件传输 · iPhone · iPad · Mac · Android · Windows
 
 [官网](https://limlink.floatmax-tech.com) · [发布版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [联系支持](mailto:limlink@floatmax-tech.com)
 
 
 
-**App Store · 即将上线**
+<a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
 
 </div>
 
+## 截图
+
+<p align="center">
+  <img src="assets/screenshot-zh-1.jpg" width="250" alt="选择文件">
+  <img src="assets/screenshot-zh-2.jpg" width="250" alt="选择附近设备">
+</p>
+
 ## 下载与更新
 
-安装包准备中。正式发布前请勿把示例版本当作可下载版本。安装新版前完成传输，使用兼容签名覆盖安装以保留数据。
+安装包以官网为准；GitHub Releases 用于发布说明。升级前请完成传输，并使用兼容签名的安装包覆盖安装以保留数据。
 
-| | Android | Windows |
+| 平台 | 下载 | 系统要求 |
 | :--- | :--- | :--- |
-| 国内版：CN | [Android CN](https://limlink.floatmax-tech.com/download/android-cn) | [Windows CN](https://limlink.floatmax-tech.com/download/windows-cn) |
-| 海外版：WD | [Android WD](https://limlink.floatmax-tech.com/download/android) | [Windows WD](https://limlink.floatmax-tech.com/download/windows) |
+| iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
+| Mac | [官网下载](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple 芯片 / Intel |
+| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+
+**Mac App Store、Google Play 和 Microsoft Store 版本即将上架。**
 
 CN 不在 App 内检查更新；点击“检查更新”只通过浏览器打开官网下载页。
 

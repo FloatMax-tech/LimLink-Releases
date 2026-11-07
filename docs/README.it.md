@@ -5,24 +5,28 @@
 [简体中文](../README.md) · [繁體中文](README.zh-Hant.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md)
 
 **I tuoi file, direttamente.**
-Trasferimento file sulla rete locale · Android · Windows · Apple
+Trasferimento file sulla rete locale · iPhone · iPad · Mac · Android · Windows
 
 [Sito web](https://limlink.floatmax-tech.com) · [Versioni](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Assistenza](mailto:limlink@floatmax-tech.com)
 
 
 
-**App Store · In arrivo**
+**[App Store](https://apps.apple.com/jp/app/limlink/id6826498808)**
 
 </div>
 
 ## Download e aggiornamenti
 
-Gli installer sono in preparazione. Termina i trasferimenti e usa una firma compatibile per mantenere i dati durante l’aggiornamento.
+Gli installer sono disponibili sul sito ufficiale; GitHub Releases serve per le note di versione. Termina i trasferimenti prima di aggiornare e usa una firma compatibile per conservare i dati.
 
-| | Android | Windows |
+| Piattaforma | Download | Requisiti |
 | :--- | :--- | :--- |
-| Cina: CN | [Android CN](https://limlink.floatmax-tech.com/download/android-cn) | [Windows CN](https://limlink.floatmax-tech.com/download/windows-cn) |
-| Internazionale: WD | [Android WD](https://limlink.floatmax-tech.com/download/android) | [Windows WD](https://limlink.floatmax-tech.com/download/windows) |
+| iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
+| Mac | [Download ufficiale](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple silicon / Intel |
+| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+
+**Le versioni Mac App Store, Google Play e Microsoft Store arriveranno presto.**
 
 CN non cerca aggiornamenti nell’app. Il pulsante apre la pagina ufficiale nel browser.
 

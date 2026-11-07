@@ -5,24 +5,28 @@
 [简体中文](../README.md) · [繁體中文](README.zh-Hant.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md)
 
 **Dateien direkt verbinden.**
-Dateiübertragung im lokalen Netzwerk · Android · Windows · Apple
+Dateiübertragung im lokalen Netzwerk · iPhone · iPad · Mac · Android · Windows
 
 [Website](https://limlink.floatmax-tech.com) · [Versionen](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Support](mailto:limlink@floatmax-tech.com)
 
 
 
-**App Store · Demnächst verfügbar**
+**[App Store](https://apps.apple.com/jp/app/limlink/id6826498808)**
 
 </div>
 
 ## Downloads und Updates
 
-Installationspakete werden vorbereitet. Beenden Sie Übertragungen vor dem Update und verwenden Sie eine kompatible Signatur, um Daten zu erhalten.
+Installationspakete sind auf der offiziellen Website verfügbar; GitHub Releases dient den Versionshinweisen. Beenden Sie Übertragungen vor dem Update und verwenden Sie eine kompatible Signatur, um Ihre Daten zu erhalten.
 
-| | Android | Windows |
+| Plattform | Download | Voraussetzungen |
 | :--- | :--- | :--- |
-| China: CN | [Android CN](https://limlink.floatmax-tech.com/download/android-cn) | [Windows CN](https://limlink.floatmax-tech.com/download/windows-cn) |
-| International: WD | [Android WD](https://limlink.floatmax-tech.com/download/android) | [Windows WD](https://limlink.floatmax-tech.com/download/windows) |
+| iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
+| Mac | [Offizieller Download](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple Silicon / Intel |
+| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+
+**Versionen für Mac App Store, Google Play und Microsoft Store folgen in Kürze.**
 
 CN sucht nicht in der App nach Updates. Die Schaltfläche öffnet die offizielle Downloadseite im Browser.
 

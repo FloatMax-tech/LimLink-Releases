@@ -5,24 +5,35 @@
 [简体中文](../README.md) · [繁體中文](README.zh-Hant.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md)
 
 **Your files. Directly connected.**
-Local-network file transfer · Android · Windows · Apple
+Local-network file transfer · iPhone · iPad · Mac · Android · Windows
 
 [Website](https://limlink.floatmax-tech.com) · [Releases](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Support](mailto:limlink@floatmax-tech.com)
 
 
 
-**App Store · Coming soon**
+<a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
 
 </div>
 
+## Screenshots
+
+<p align="center">
+  <img src="../assets/screenshot-en-1.jpg" width="250" alt="Choose a file">
+  <img src="../assets/screenshot-en-2.jpg" width="250" alt="Choose a nearby device">
+</p>
+
 ## Downloads & updates
 
-Installers are being prepared. Finish transfers before upgrading; use a compatibly signed installer to preserve data.
+Installers are available from the official website; GitHub Releases is used for release notes. Finish transfers before upgrading, and use a compatibly signed installer to preserve your data.
 
-| | Android | Windows |
+| Platform | Download | Requirements |
 | :--- | :--- | :--- |
-| China: CN | [Android CN](https://limlink.floatmax-tech.com/download/android-cn) | [Windows CN](https://limlink.floatmax-tech.com/download/windows-cn) |
-| Worldwide: WD | [Android WD](https://limlink.floatmax-tech.com/download/android) | [Windows WD](https://limlink.floatmax-tech.com/download/windows) |
+| iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
+| Mac | [Official download](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple silicon / Intel |
+| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+
+**Mac App Store, Google Play and Microsoft Store versions are coming soon.**
 
 CN does not check for updates in the app. Check for updates opens the official download page in your browser.
 
