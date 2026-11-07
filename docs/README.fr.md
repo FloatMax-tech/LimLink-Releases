@@ -35,6 +35,16 @@ Les programmes d’installation se téléchargent directement depuis le site off
 
 Transfert direct sur un réseau local accessible, jusqu’à 5 GB par fichier. Aucun compte requis.
 
+## Code source
+
+Le code source de LimLink 1.0.1 est maintenu dans un dépôt séparé :
+
+<https://github.com/floatmax-tech-001/LimLink-Source>
+
+Il est publié sous **PolyForm Noncommercial 1.0.0** pour un usage personnel, de recherche, éducatif, caritatif et autre usage non commercial. Toute utilisation commerciale nécessite une licence écrite séparée. Le nom, le logo, les icônes, les captures d’écran et les ressources de boutique LimLink ne sont pas couverts par la licence du code.
+
+Ce dépôt (LimLink-Releases) contient uniquement les notes de version et les installateurs, pas le code source complet.
+
 [Confidentialité](https://limlink.floatmax-tech.com/privacy.fr.html) · [Conditions](https://limlink.floatmax-tech.com/terms.fr.html)
 
 **limlink@floatmax-tech.com**

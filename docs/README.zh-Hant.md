@@ -35,6 +35,16 @@
 
 裝置在可互通的區域網路直接傳輸，單檔最大 5 GB。無需帳號。
 
+## 原始碼
+
+LimLink 1.0.1 的原始碼維護在獨立倉庫：
+
+<https://github.com/floatmax-tech-001/LimLink-Source>
+
+原始碼採用 **PolyForm Noncommercial 1.0.0**，允許個人、研究、教育、慈善等非商業用途；商業使用需要另行取得書面授權。LimLink 名稱、Logo、圖示、截圖與商店素材不隨原始碼授權。
+
+本倉庫（LimLink-Releases）僅存放發佈說明與安裝包，不包含完整原始碼。
+
 [隱私政策](https://limlink.floatmax-tech.com/privacy.zh-Hant.html) · [使用者協議](https://limlink.floatmax-tech.com/terms.zh-Hant.html)
 
 **limlink@floatmax-tech.com**

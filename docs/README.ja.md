@@ -35,6 +35,16 @@
 
 同じ到達可能なローカルネットワークで直接転送。1 ファイル最大 5 GB。アカウント不要。
 
+## ソースコード
+
+LimLink 1.0.1 のソースコードは別リポジトリで公開しています：
+
+<https://github.com/floatmax-tech-001/LimLink-Source>
+
+ソースコードは **PolyForm Noncommercial 1.0.0** で公開されています。個人、研究、教育、慈善などの非商業利用が可能で、商業利用には別途書面による許諾が必要です。LimLink の名称、ロゴ、アイコン、スクリーンショット、ストア素材はソースコードのライセンスに含まれません。
+
+このリポジトリ（LimLink-Releases）はリリースノートとインストーラーのみを置き、完全なソースコードは含みません。
+
 [プライバシーポリシー](https://limlink.floatmax-tech.com/privacy.ja.html) · [利用規約](https://limlink.floatmax-tech.com/terms.ja.html)
 
 **limlink@floatmax-tech.com**

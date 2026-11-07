@@ -35,6 +35,16 @@
 
 연결 가능한 로컬 네트워크에서 직접 전송합니다. 파일당 최대 5 GB이며 계정이 필요 없습니다.
 
+## 소스 코드
+
+LimLink 1.0.1 소스 코드는 별도 저장소에서 관리합니다:
+
+<https://github.com/floatmax-tech-001/LimLink-Source>
+
+소스 코드는 **PolyForm Noncommercial 1.0.0**으로 공개됩니다. 개인, 연구, 교육, 자선 등 비상업적 용도로 사용할 수 있으며, 상업적 사용에는 별도의 서면 허가가 필요합니다. LimLink 이름, 로고, 아이콘, 스크린샷, 스토어 자료는 소스 코드 라이선스에 포함되지 않습니다.
+
+이 저장소(LimLink-Releases)에는 릴리스 노트와 설치 파일만 있으며 전체 소스 코드는 포함되지 않습니다.
+
 [개인정보 처리방침](https://limlink.floatmax-tech.com/privacy.ko.html) · [이용약관](https://limlink.floatmax-tech.com/terms.ko.html)
 
 **limlink@floatmax-tech.com**

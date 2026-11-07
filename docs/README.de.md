@@ -35,6 +35,16 @@ Installationspakete werden direkt von der offiziellen Website heruntergeladen. G
 
 Direkte Übertragung in einem erreichbaren lokalen Netzwerk, bis zu 5 GB pro Datei. Kein Konto nötig.
 
+## Quellcode
+
+Der LimLink 1.0.1-Quellcode wird in einem separaten Repository gepflegt:
+
+<https://github.com/floatmax-tech-001/LimLink-Source>
+
+Er ist unter **PolyForm Noncommercial 1.0.0** für private, Forschungs-, Bildungs-, gemeinnützige und andere nichtkommerzielle Zwecke veröffentlicht. Kommerzielle Nutzung erfordert eine separate schriftliche Lizenz. Name, Logo, Symbole, Screenshots und Store-Materialien von LimLink sind nicht Bestandteil der Quellcode-Lizenz.
+
+Dieses Repository (LimLink-Releases) enthält nur Versionshinweise und Installationsprogramme, nicht den vollständigen Quellcode.
+
 [Datenschutz](https://limlink.floatmax-tech.com/privacy.de.html) · [Nutzungsbedingungen](https://limlink.floatmax-tech.com/terms.de.html)
 
 **limlink@floatmax-tech.com**

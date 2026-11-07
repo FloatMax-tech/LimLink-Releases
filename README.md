@@ -42,6 +42,16 @@
 
 设备在可互通的局域网直接传输，单文件最大 5 GB。无需账号。
 
+## 源代码
+
+LimLink 1.0.1 的源代码维护在独立仓库：
+
+<https://github.com/floatmax-tech-001/LimLink-Source>
+
+源码采用 **PolyForm Noncommercial 1.0.0**，允许个人、研究、教育、慈善等非商业用途；商业使用需要另行取得书面授权。LimLink 名称、Logo、图标、截图和商店素材不随源码授权。
+
+本仓库（LimLink-Releases）只存放发布说明和安装包，不包含完整源码。
+
 [隐私政策](https://limlink.floatmax-tech.com/privacy.html) · [用户协议](https://limlink.floatmax-tech.com/terms.html)
 
 **limlink@floatmax-tech.com**

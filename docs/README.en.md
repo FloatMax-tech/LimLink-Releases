@@ -42,6 +42,16 @@ Installers download directly from the official website; GitHub Releases is used 
 
 Direct transfer on a reachable local network, up to 5 GB per file. No account needed.
 
+## Source code
+
+The LimLink 1.0.1 source code is maintained in a separate repository:
+
+<https://github.com/floatmax-tech-001/LimLink-Source>
+
+It is published under the **PolyForm Noncommercial 1.0.0** license for personal, research, educational, charitable and other noncommercial use. Commercial use requires a separate written license. The LimLink name, logo, icons, screenshots and store assets are not licensed with the source code.
+
+This repository (LimLink-Releases) contains release notes and installers only, not the full source code.
+
 [Privacy policy](https://limlink.floatmax-tech.com/privacy.en.html) · [Terms](https://limlink.floatmax-tech.com/terms.en.html)
 
 **limlink@floatmax-tech.com**
