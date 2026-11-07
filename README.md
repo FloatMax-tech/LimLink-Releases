@@ -22,20 +22,16 @@
 
 ## 下载与更新
 
-安装包以官网为准；GitHub Releases 用于发布说明。升级前请完成传输，并使用兼容签名的安装包覆盖安装以保留数据。
+安装包由官网直接下载；GitHub Releases 用于发布说明。升级前请完成传输，并使用兼容签名的安装包覆盖安装以保留数据。
 
 | 平台 | 下载 | 系统要求 |
 | :--- | :--- | :--- |
 | iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
-| Mac | [官网下载](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple 芯片 / Intel |
-| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
-| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+| Mac | [直接下载](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple 芯片 / Intel |
+| Android | [直接下载](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [直接下载](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
 
 **Mac App Store、Google Play 和 Microsoft Store 版本即将上架。**
-
-CN 不在 App 内检查更新；点击“检查更新”只通过浏览器打开官网下载页。
-
-WD 仅在手动检查时读取官网 version.json，再通过浏览器前往下载页。
 
 设备在可互通的局域网直接传输，单文件最大 5 GB。无需账号。
 

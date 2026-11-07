@@ -15,20 +15,16 @@ Trasferimento file sulla rete locale · iPhone · iPad · Mac · Android · Wind
 
 ## Download e aggiornamenti
 
-Gli installer sono disponibili sul sito ufficiale; GitHub Releases serve per le note di versione. Termina i trasferimenti prima di aggiornare e usa una firma compatibile per conservare i dati.
+Gli installer si scaricano direttamente dal sito ufficiale. GitHub Releases serve per le note di versione. Termina i trasferimenti prima di aggiornare e usa una firma compatibile per conservare i dati.
 
 | Piattaforma | Download | Requisiti |
 | :--- | :--- | :--- |
 | iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
-| Mac | [Download ufficiale](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple silicon / Intel |
-| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
-| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+| Mac | [Download diretto](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple silicon / Intel |
+| Android | [Download diretto](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [Download diretto](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
 
 **Le versioni Mac App Store, Google Play e Microsoft Store arriveranno presto.**
-
-CN non cerca aggiornamenti nell’app. Il pulsante apre la pagina ufficiale nel browser.
-
-WD legge version.json dal sito ufficiale solo durante la verifica manuale, poi apre i download nel browser.
 
 Trasferimento diretto su una rete locale raggiungibile, fino a 5 GB per file. Nessun account richiesto.
 

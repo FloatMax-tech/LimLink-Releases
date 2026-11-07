@@ -15,20 +15,16 @@ Dateiübertragung im lokalen Netzwerk · iPhone · iPad · Mac · Android · Win
 
 ## Downloads und Updates
 
-Installationspakete sind auf der offiziellen Website verfügbar; GitHub Releases dient den Versionshinweisen. Beenden Sie Übertragungen vor dem Update und verwenden Sie eine kompatible Signatur, um Ihre Daten zu erhalten.
+Installationspakete werden direkt von der offiziellen Website heruntergeladen. GitHub Releases dient den Versionshinweisen. Beenden Sie Übertragungen vor dem Update und verwenden Sie eine kompatible Signatur, um Ihre Daten zu erhalten.
 
 | Plattform | Download | Voraussetzungen |
 | :--- | :--- | :--- |
 | iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
-| Mac | [Offizieller Download](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple Silicon / Intel |
-| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
-| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+| Mac | [Direkter Download](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple Silicon / Intel |
+| Android | [Direkter Download](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [Direkter Download](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
 
 **Versionen für Mac App Store, Google Play und Microsoft Store folgen in Kürze.**
-
-CN sucht nicht in der App nach Updates. Die Schaltfläche öffnet die offizielle Downloadseite im Browser.
-
-WD liest version.json auf der offiziellen Website nur bei manueller Prüfung und öffnet Downloads im Browser.
 
 Direkte Übertragung in einem erreichbaren lokalen Netzwerk, bis zu 5 GB pro Datei. Kein Konto nötig.
 

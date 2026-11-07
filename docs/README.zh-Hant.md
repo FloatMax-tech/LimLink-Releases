@@ -15,20 +15,16 @@
 
 ## 下載與更新
 
-安裝包以官網為準；GitHub Releases 用於發佈說明。升級前請完成傳輸，並使用相容簽章的安裝包覆蓋安裝以保留資料。
+安裝包由官網直接下載；GitHub Releases 用於發佈說明。升級前請完成傳輸，並使用相容簽章的安裝包覆蓋安裝以保留資料。
 
 | 平台 | 下載 | 系統需求 |
 | :--- | :--- | :--- |
 | iPhone / iPad | [App Store](https://apps.apple.com/jp/app/limlink/id6826498808) | iOS / iPadOS 17+ |
 | Mac | [官網下載](https://limlink.floatmax-tech.com/download/macos) | macOS 14+ · Apple 晶片 / Intel |
-| Android | [CN](https://limlink.floatmax-tech.com/download/android-cn) · [WD](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
-| Windows | [CN](https://limlink.floatmax-tech.com/download/windows-cn) · [WD](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
+| Android | [直接下載](https://limlink.floatmax-tech.com/download/android) | Android 10+ |
+| Windows | [直接下載](https://limlink.floatmax-tech.com/download/windows) | x86_64 / ARM64 |
 
 **Mac App Store、Google Play 與 Microsoft Store 版本即將上架。**
-
-CN 不在 App 內檢查更新；點擊「檢查更新」僅由瀏覽器開啟官網下載頁。
-
-WD 僅在手動檢查時讀取官網 version.json，再由瀏覽器前往下載頁。
 
 裝置在可互通的區域網路直接傳輸，單檔最大 5 GB。無需帳號。
 
