@@ -9,9 +9,7 @@
 
 [公式サイト](https://limlink.floatmax-tech.com) · [リリース](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [サポート](mailto:limlink@floatmax-tech.com) · [ソース](https://github.com/floatmax-tech-001/LimLink-Source)
 
-**ダウンロード：** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
-
-<a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
+**ダウンロード：** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows) · [App Store](https://apps.apple.com/jp/app/limlink/id6826498808)
 
 </div>
 
