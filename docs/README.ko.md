@@ -9,7 +9,11 @@
 
 [공식 웹사이트](https://limlink.floatmax-tech.com) · [릴리스](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [지원](mailto:limlink@floatmax-tech.com) · [소스](https://github.com/floatmax-tech-001/LimLink-Source)
 
-**다운로드:** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
+<p align="center"><strong>다운로드:</strong>
+<a href="https://limlink.floatmax-tech.com/download/macos"><img src="../assets/download-mac.svg" alt="Download for Mac" height="40"></a>
+<a href="https://limlink.floatmax-tech.com/download/android"><img src="../assets/download-android.svg" alt="Download for Android" height="40"></a>
+<a href="https://limlink.floatmax-tech.com/download/windows"><img src="../assets/download-windows.svg" alt="Download for Windows" height="40"></a>
+</p>
 
 <a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
 

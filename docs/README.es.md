@@ -9,7 +9,11 @@ Transferencia de archivos por red local · iPhone · iPad · Mac · Android · W
 
 [Sitio web](https://limlink.floatmax-tech.com) · [Versiones](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Soporte](mailto:limlink@floatmax-tech.com) · [Código](https://github.com/floatmax-tech-001/LimLink-Source)
 
-**Descarga:** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
+<p align="center"><strong>Descarga:</strong>
+<a href="https://limlink.floatmax-tech.com/download/macos"><img src="../assets/download-mac.svg" alt="Download for Mac" height="40"></a>
+<a href="https://limlink.floatmax-tech.com/download/android"><img src="../assets/download-android.svg" alt="Download for Android" height="40"></a>
+<a href="https://limlink.floatmax-tech.com/download/windows"><img src="../assets/download-windows.svg" alt="Download for Windows" height="40"></a>
+</p>
 
 <a href="https://apps.apple.com/jp/app/limlink/id6826498808"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" height="48"></a>
 
