@@ -48,6 +48,6 @@ LimLink 1.0.1 소스 코드는 이 저장소의 `source/` 디렉터리에 있습
 [개인정보 처리방침](https://limlink.floatmax-tech.com/privacy.ko.html) · [이용약관](https://limlink.floatmax-tech.com/terms.ko.html)
 
 **limlink@floatmax-tech.com**
-**杭州浮点极限科技有限公司**
+**Hangzhou FloatMAX Technology Co., Ltd.**
 
-© 2026 杭州浮点极限科技有限公司 · 모든 권리 보유.
+© 2026 Hangzhou FloatMAX Technology Co., Ltd. · 모든 권리 보유.

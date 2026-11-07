@@ -1,6 +1,6 @@
 # LimLink 支持
 
-> 当前官网（2026-10-24）：[隐私政策](https://limlink.floatmax-tech.com/privacy.html) · [用户协议及支持](https://limlink.floatmax-tech.com/terms.html#section-7)。运营主体为杭州浮点极限科技有限公司，联系邮箱 limlink@floatmax-tech.com。原 Gist 已删除，不再提供公开评论支持。
+> 当前官网（2026-10-24）：[隐私政策](https://limlink.floatmax-tech.com/privacy.html) · [用户协议及支持](https://limlink.floatmax-tech.com/terms.html#section-7)。运营主体为杭州浮点极限科技有限公司（Hangzhou FloatMAX Technology Co., Ltd.），联系邮箱 limlink@floatmax-tech.com。原 Gist 已删除，不再提供公开评论支持。
 
 开发者：周甫俊。最后更新：2026 年 10 月 23 日。
 

@@ -2,7 +2,7 @@
 
 版本：1.0 · 更新日期：2026 年 10 月 24 日
 
-运营主体：杭州浮点极限科技有限公司（下称“我们”）
+运营主体：杭州浮点极限科技有限公司（Hangzhou FloatMAX Technology Co., Ltd.，下称“我们”）
 开发者署名：周甫俊
 隐私与支持联系：[limlink@floatmax-tech.com](mailto:limlink@floatmax-tech.com)
 
@@ -121,6 +121,6 @@ LimLink 不专门面向儿童提供服务。未成年人应在监护人指导下
 
 本政策会随实际功能和处理方式更新，并注明更新日期。涉及个人信息处理目的、方式、种类等重要变化时，我们会通过应用或其他适当渠道告知；依法需要重新取得同意的，会在相应处理前征得同意，不以你仅浏览本页面视为同意新增处理。
 
-运营主体：杭州浮点极限科技有限公司。开发者署名：周甫俊。隐私问题、权利请求、投诉及使用支持均可联系 [limlink@floatmax-tech.com](mailto:limlink@floatmax-tech.com)。
+运营主体：杭州浮点极限科技有限公司（Hangzhou FloatMAX Technology Co., Ltd.）。开发者署名：周甫俊。隐私问题、权利请求、投诉及使用支持均可联系 [limlink@floatmax-tech.com](mailto:limlink@floatmax-tech.com)。
 
 另请参阅：[LimLink 用户协议与使用说明](TERMS.md)。

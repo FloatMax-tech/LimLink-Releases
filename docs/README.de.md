@@ -48,6 +48,6 @@ Im Repository-Stamm liegen Versionshinweise und Installationsprogramme; der voll
 [Datenschutz](https://limlink.floatmax-tech.com/privacy.de.html) · [Nutzungsbedingungen](https://limlink.floatmax-tech.com/terms.de.html)
 
 **limlink@floatmax-tech.com**
-**杭州浮点极限科技有限公司**
+**Hangzhou FloatMAX Technology Co., Ltd.**
 
-© 2026 杭州浮点极限科技有限公司 · Alle Rechte vorbehalten.
+© 2026 Hangzhou FloatMAX Technology Co., Ltd. · Alle Rechte vorbehalten.

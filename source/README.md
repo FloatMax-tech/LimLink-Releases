@@ -132,4 +132,4 @@ docs/protocol/  设备绑定协议
 
 完整条款见 [LICENSE](LICENSE)，品牌与第三方说明见 [NOTICE](NOTICE)。
 
-Copyright © 2026 杭州浮点极限科技有限公司.
+Copyright © 2026 Hangzhou FloatMAX Technology Co., Ltd. (杭州浮点极限科技有限公司).

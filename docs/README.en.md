@@ -55,6 +55,6 @@ The repository root keeps release notes and installers; the complete source is u
 [Privacy policy](https://limlink.floatmax-tech.com/privacy.en.html) · [Terms](https://limlink.floatmax-tech.com/terms.en.html)
 
 **limlink@floatmax-tech.com**
-**杭州浮点极限科技有限公司**
+**Hangzhou FloatMAX Technology Co., Ltd.**
 
-© 2026 杭州浮点极限科技有限公司 · All rights reserved.
+© 2026 Hangzhou FloatMAX Technology Co., Ltd. · All rights reserved.

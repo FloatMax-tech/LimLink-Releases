@@ -48,6 +48,6 @@ La racine du dépôt contient les notes de version et les installateurs ; le cod
 [Confidentialité](https://limlink.floatmax-tech.com/privacy.fr.html) · [Conditions](https://limlink.floatmax-tech.com/terms.fr.html)
 
 **limlink@floatmax-tech.com**
-**杭州浮点极限科技有限公司**
+**Hangzhou FloatMAX Technology Co., Ltd.**
 
-© 2026 杭州浮点极限科技有限公司 · Tous droits réservés.
+© 2026 Hangzhou FloatMAX Technology Co., Ltd. · Tous droits réservés.

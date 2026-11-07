@@ -48,6 +48,6 @@ La radice del repository contiene note di rilascio e installer; il codice sorgen
 [Privacy](https://limlink.floatmax-tech.com/privacy.it.html) · [Condizioni](https://limlink.floatmax-tech.com/terms.it.html)
 
 **limlink@floatmax-tech.com**
-**杭州浮点极限科技有限公司**
+**Hangzhou FloatMAX Technology Co., Ltd.**
 
-© 2026 杭州浮点极限科技有限公司 · Tutti i diritti riservati.
+© 2026 Hangzhou FloatMAX Technology Co., Ltd. · Tutti i diritti riservati.

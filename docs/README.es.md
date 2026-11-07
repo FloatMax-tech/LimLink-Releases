@@ -48,6 +48,6 @@ La raíz del repositorio contiene las notas de versión y los instaladores; el c
 [Privacidad](https://limlink.floatmax-tech.com/privacy.es.html) · [Condiciones](https://limlink.floatmax-tech.com/terms.es.html)
 
 **limlink@floatmax-tech.com**
-**杭州浮点极限科技有限公司**
+**Hangzhou FloatMAX Technology Co., Ltd.**
 
-© 2026 杭州浮点极限科技有限公司 · Todos los derechos reservados.
+© 2026 Hangzhou FloatMAX Technology Co., Ltd. · Todos los derechos reservados.

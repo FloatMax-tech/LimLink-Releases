@@ -48,6 +48,6 @@ LimLink 1.0.1 のソースコードはこのリポジトリの `source/` ディ�
 [プライバシーポリシー](https://limlink.floatmax-tech.com/privacy.ja.html) · [利用規約](https://limlink.floatmax-tech.com/terms.ja.html)
 
 **limlink@floatmax-tech.com**
-**杭州浮点极限科技有限公司**
+**Hangzhou FloatMAX Technology Co., Ltd.**
 
-© 2026 杭州浮点极限科技有限公司 · All rights reserved.
+© 2026 Hangzhou FloatMAX Technology Co., Ltd. · All rights reserved.
