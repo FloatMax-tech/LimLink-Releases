@@ -1,13 +1,54 @@
 # Release checklist
 
-This repository is the public release hub for LimLink. Never copy private source history, signing keys, or internal build logs into this repository.
+This repository is the public release hub for LimLink. Source code lives in
+[`source/`](source/). Never commit signing keys, certificates, credentials,
+private build logs, or personal machine paths.
 
-1. Build both CN and WD from the same approved source revision. Android assets end in -CN.apk / -WD.apk; Windows installers end in -CN.exe / -WD.exe. Keep application identity stable and use the existing signing identity. Verify in-place upgrade without uninstalling.
-2. Host the CN packages on /download/android-cn and /download/windows-cn; WD on /download/android and /download/windows, under https://limlink.floatmax-tech.com.
-3. CN only opens its download page in the system browser. WD manually reads https://limlink.floatmax-tech.com/version.json. Neither channel reads GitHub metadata. GitHub may be used as artifact storage only when publication is authorized.
-4. Deploy version.json to the WEBSITE root after installer verification. This repository copy is not the live endpoint. Empty channels means no official package yet. Do not publish placeholder releases.
-5. Schema: schemaVersion=1; channels.android requires version (3 numeric components), versionCode (positive monotonically increasing integer), notes; channels.windows requires version (4 numeric components matching AssemblyVersion), notes. Notes are plain text, max 8000 characters; JSON max 128 KiB. No url field is needed; clients use fixed official download pages. Preserve the other platform when updating one.
-6. Verify CN opens only the browser, WD newer/current/missing/offline handling, all nine languages, actual package signatures and installation.
-7. The verified App Store link (`https://apps.apple.com/jp/app/limlink/id6826498808`) is live in all nine READMEs. Keep the nine language pages in sync; do not invent or use a search-result URL.
+## Before making the repository public
 
-Update the website privacy information to describe the WD request (IP address and standard request data only, no files, device names or bindings) and CN browser-only access.
+- The owner confirms that two-factor authentication is enabled on the company
+  GitHub account.
+- The owner confirms that `source/` is intended for public release under the
+  PolyForm Noncommercial 1.0.0 license.
+- Check the complete commit history for personal email addresses, local machine
+  paths, private URLs and secrets. Use the company support address or a GitHub
+  noreply address for commits.
+- Immediately after the repository becomes public, protect `main`:
+  - require a pull request before merging
+  - require at least one approval
+  - require status checks to pass
+  - require conversation resolution and linear history
+  - block force pushes and branch deletion
+  - include administrators
+
+Free private repositories cannot enable branch protection; enable it right
+after changing visibility.
+
+## Release procedure
+
+1. Build from one approved source revision. Use one unified package per
+   platform; the former CN/WD split is no longer part of the release process.
+2. Keep the application identity and signing identity stable. Verify an in-place
+   upgrade without uninstalling. Keep all signing material on the build machine.
+3. Upload the verified installers to the official website:
+   `/download/macos`, `/download/android`, `/download/windows`. The iOS version
+   is distributed through the App Store.
+4. Create or update the GitHub Release using the exact files downloaded from
+   the official site. Attach `SHA256SUMS-*.txt`; never publish placeholder
+   packages or fabricated checksums.
+5. Update the website `version.json` only after the installers and signatures
+   are verified. The copy in this repository is not the live endpoint.
+6. Verify all nine language READMEs, download links, App Store link, checksums
+   and copyright/legal notices.
+7. Confirm that `source/` matches the release version. Update
+   `source/TECHNICAL.md` and `source/README.md` when behavior changes.
+
+## Source synchronization
+
+- `source/` is a clean public snapshot, not the private development history.
+- Do not copy branches, reflogs, build artifacts, signing files or internal
+  review notes into this repository.
+- Run a secret scan before each source update.
+- Keep `source/LICENSE` and `source/NOTICE` in sync with the root copies.
+- Source is source-available under PolyForm Noncommercial 1.0.0; commercial use
+  requires a separate written license.
