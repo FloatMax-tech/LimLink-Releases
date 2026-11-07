@@ -7,7 +7,7 @@
 **裝置之間，直接傳遞。**
 區域網路檔案傳輸 · iPhone · iPad · Mac · Android · Windows
 
-[官網](https://limlink.floatmax-tech.com) · [發佈版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [聯絡支援](mailto:limlink@floatmax-tech.com)
+[官網](https://limlink.floatmax-tech.com) · [發佈版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [聯絡支援](mailto:limlink@floatmax-tech.com) · [原始碼](https://github.com/floatmax-tech-001/LimLink-Source)
 
 **下載：** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
 

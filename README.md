@@ -7,7 +7,7 @@
 **设备之间，直接传递。**
 局域网文件传输 · iPhone · iPad · Mac · Android · Windows
 
-[官网](https://limlink.floatmax-tech.com) · [发布版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [联系支持](mailto:limlink@floatmax-tech.com)
+[官网](https://limlink.floatmax-tech.com) · [发布版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [联系支持](mailto:limlink@floatmax-tech.com) · [源码](https://github.com/floatmax-tech-001/LimLink-Source)
 
 **下载：** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
 

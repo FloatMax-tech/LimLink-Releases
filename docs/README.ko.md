@@ -7,7 +7,7 @@
 **기기 사이로, 바로 전달하세요.**
 로컬 네트워크 파일 전송 · iPhone · iPad · Mac · Android · Windows
 
-[공식 웹사이트](https://limlink.floatmax-tech.com) · [릴리스](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [지원](mailto:limlink@floatmax-tech.com)
+[공식 웹사이트](https://limlink.floatmax-tech.com) · [릴리스](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [지원](mailto:limlink@floatmax-tech.com) · [소스](https://github.com/floatmax-tech-001/LimLink-Source)
 
 **다운로드:** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
 

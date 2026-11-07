@@ -7,7 +7,7 @@
 **I tuoi file, direttamente.**
 Trasferimento file sulla rete locale · iPhone · iPad · Mac · Android · Windows
 
-[Sito web](https://limlink.floatmax-tech.com) · [Versioni](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Assistenza](mailto:limlink@floatmax-tech.com)
+[Sito web](https://limlink.floatmax-tech.com) · [Versioni](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Assistenza](mailto:limlink@floatmax-tech.com) · [Codice](https://github.com/floatmax-tech-001/LimLink-Source)
 
 **Download:** [Mac](https://limlink.floatmax-tech.com/download/macos) · [Android](https://limlink.floatmax-tech.com/download/android) · [Windows](https://limlink.floatmax-tech.com/download/windows)
 
