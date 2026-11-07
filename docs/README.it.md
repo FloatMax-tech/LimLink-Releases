@@ -33,7 +33,7 @@ Gli installer si scaricano direttamente dal sito ufficiale. GitHub Releases serv
 
 **Le versioni Mac App Store, Google Play e Microsoft Store arriveranno presto.**
 
-Trasferimento diretto su una rete locale raggiungibile, fino a 5 GB per file. Nessun account richiesto.
+Trasferimento diretto su una rete locale raggiungibile; per stabilità, i file sono attualmente limitati a 5 GB ciascuno. Nessun account richiesto.
 
 ## Codice sorgente
 

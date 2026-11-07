@@ -33,7 +33,7 @@ Los instaladores se descargan directamente del sitio oficial. GitHub Releases se
 
 **Las versiones de Mac App Store, Google Play y Microsoft Store llegarán pronto.**
 
-Transferencia directa en una red local accesible, hasta 5 GB por archivo. Sin cuenta.
+Transferencia directa en una red local accesible; por estabilidad, los archivos están limitados actualmente a 5 GB cada uno. Sin cuenta.
 
 ## Código fuente
 

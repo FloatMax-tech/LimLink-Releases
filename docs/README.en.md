@@ -40,7 +40,7 @@ Installers download directly from the official website; GitHub Releases is used 
 
 **Mac App Store, Google Play and Microsoft Store versions are coming soon.**
 
-Direct transfer on a reachable local network, up to 5 GB per file. No account needed.
+Direct transfer on a reachable local network; for stability, files are currently limited to 5 GB each. No account needed.
 
 ## Source code
 

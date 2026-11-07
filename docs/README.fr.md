@@ -33,7 +33,7 @@ Les programmes d’installation se téléchargent directement depuis le site off
 
 **Les versions Mac App Store, Google Play et Microsoft Store arrivent bientôt.**
 
-Transfert direct sur un réseau local accessible, jusqu’à 5 GB par fichier. Aucun compte requis.
+Transfert direct sur un réseau local accessible ; pour des raisons de stabilité, les fichiers sont actuellement limités à 5 GB chacun. Aucun compte requis.
 
 ## Code source
 

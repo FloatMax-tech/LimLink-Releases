@@ -3,7 +3,7 @@
 > LimLink is a local-network file transfer app for iPhone, iPad, Mac, Windows and Android.  
 > This repository contains the source code, published under the **PolyForm Noncommercial 1.0.0** license.
 
-LimLink 让同一局域网里的设备直接互传文件。文件不经过开发者服务器，不需要账号，支持最大 **5 GB** 的单文件传输，并在接收端完成 SHA-256 校验后保存。
+LimLink 让同一局域网里的设备直接互传文件。文件不经过开发者服务器，不需要账号，出于稳定性考虑，目前单文件上限为 **5 GB**，并在接收端完成 SHA-256 校验后保存。
 
 - 官网：<https://limlink.floatmax-tech.com>
 - iPhone / iPad：<https://apps.apple.com/jp/app/limlink/id6826498808>
@@ -17,7 +17,7 @@ LimLink 让同一局域网里的设备直接互传文件。文件不经过开发
 - iPhone、iPad、Mac、Windows、Android 五端互传
 - 同一局域网内自动发现设备，文件点对点传输
 - 未绑定设备逐文件确认；绑定设备可自动接收，随时可解绑
-- 单文件最大 5 GB，按 1 MiB 分块，增量 SHA-256
+- 单文件当前上限 5 GB（出于稳定性考虑），按 1 MiB 分块，增量 SHA-256
 - 接收端确认、校验并保存成功后才报告完成；同名文件不覆盖
 - 无账号、无广告、无分析追踪、无云端文件中转
 

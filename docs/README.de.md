@@ -33,7 +33,7 @@ Installationspakete werden direkt von der offiziellen Website heruntergeladen. G
 
 **Versionen für Mac App Store, Google Play und Microsoft Store folgen in Kürze.**
 
-Direkte Übertragung in einem erreichbaren lokalen Netzwerk, bis zu 5 GB pro Datei. Kein Konto nötig.
+Direkte Übertragung in einem erreichbaren lokalen Netzwerk; aus Stabilitätsgründen sind Dateien derzeit auf 5 GB pro Datei begrenzt. Kein Konto nötig.
 
 ## Quellcode
 
