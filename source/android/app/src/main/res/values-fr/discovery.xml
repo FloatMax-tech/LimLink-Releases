@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_footer">Les appareils Ethernet et Wi-Fi du même réseau local sont pris en charge. En cas d’échec, vérifiez les accès réseau, le pare-feu et l’isolation du routeur.</string>
+    <string name="privacy_lan">LimLink transfère les fichiers directement sur le même réseau local. Le PC peut utiliser Ethernet et le téléphone le Wi-Fi ou un point d’accès. Les fichiers ne passent pas par un serveur.</string>
+    <string name="home_discovery_hint">Ouvrez LimLink sur le même réseau local. Le PC peut utiliser Ethernet et le téléphone le Wi-Fi. En cas d’échec, vérifiez les accès réseau, le pare-feu et l’isolation du routeur.</string>
+</resources>

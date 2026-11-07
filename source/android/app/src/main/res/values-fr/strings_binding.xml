@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">Appareils associés</string>
+    <string name="binding_explanation">Choisissez un appareil connu. Son propriétaire peut changer son nom. La réception nécessite que cette app soit ouverte.</string>
+    <string name="binding_add">Associer un appareil</string>
+    <string name="binding_unbind">Dissocier</string>
+    <string name="binding_empty">Aucun appareil associé</string>
+    <string name="binding_waiting">En attente de %1$s…</string>
+    <string name="binding_completed">Associé à %1$s</string>
+    <string name="binding_failed">Association échouée ou expirée. Réessayez pour demander un nouvel accord.</string>
+    <string name="binding_cancelled">Association annulée</string>
+    <string name="binding_unbound">Dissocié localement. L’autre appareil peut être hors ligne.</string>
+    <string name="binding_no_devices">Aucun appareil à proximité</string>
+    <string name="binding_bind_device">Associer %1$s</string>
+    <string name="binding_grant">Les deux appareils recevront automatiquement leurs fichiers respectifs. Associez uniquement un appareil connu.</string>
+    <string name="binding_request">Demande d’association de %1$s</string>
+    <string name="binding_accept">Accepter l’association</string>
+    <string name="binding_reject">Refuser</string>
+    <string name="privacy_binding">Les données de liaison restent dans le stockage privé de cet appareil : empreintes des deux clés, identifiant de liaison, nom, type et date de liaison. Elles ne sont ni téléversées ni incluses dans les sauvegardes Android. Une liaison terminée permet la réception automatique lorsque l’application est ouverte. Chaque fichier provenant d’un appareil non lié nécessite une autorisation. Vous pouvez dissocier les appareils dans les réglages.</string>
+    <string name="privacy_contact">Développeur : 周甫俊. Contact : limlink@floatmax-tech.com</string>
+</resources>

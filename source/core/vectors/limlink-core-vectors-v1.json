@@ -1,0 +1,842 @@
+{
+  "version": 1,
+  "file": "limlink-core-vectors-v1",
+  "cpaceDraft": "draft-irtf-cfrg-cpace-21",
+  "cpaceDraftSection": "B.3",
+  "pakeryCpace": "0.6.0",
+  "suite": "CPACE-RISTR255-SHA512",
+  "notes": [
+    "SAS and file-hash rows are the spec 4.3 / 5.5 vectors.",
+    "cpaceDraftB3 is draft-irtf-cfrg-cpace-21 appendix B.3, checked with libsodium.",
+    "LimLink rows are cross-checked by this Python reference and the Rust core.",
+    "Invite codes use 4-byte big-endian rejection sampling below 4294000000.",
+    "CPace ephemeral scalars in rng scripts are 64 bytes, matching pakery-cpace 0.6.0.",
+    "stateMachine replays the invite state machine with the nowMs on each step.",
+    "fileHash one-mib-pattern is generated, then hashed in chunkSize slices. Raw bytes are not stored.",
+    "verify_ticket stays on the receiver attempt after the invite is succeeded and after the confirm timer."
+  ],
+  "sas": {
+    "label": "limlink-sas-v1",
+    "fpA": "0101010101010101010101010101010101010101010101010101010101010101",
+    "fpB": "0202020202020202020202020202020202020202020202020202020202020202",
+    "nA": "0303030303030303030303030303030303030303030303030303030303030303",
+    "nB": "0404040404040404040404040404040404040404040404040404040404040404",
+    "commit": "648aa5c579fb30f38af744d97d6ec840c7a91277a499a0d780f3e7314eca090b",
+    "commitB64Url": "ZIqlxXn7MPOK90TZfW7IQMepEnekmaDXgPPnMU7KCQs",
+    "sha256": "50cde9ddb28a54e2ca71689387ea9c3ddf31971dcefce8f92a5d3097a5f76ec7",
+    "valueBe": 1355672029,
+    "sas": "672029"
+  },
+  "fileHash": [
+    {
+      "name": "empty",
+      "contentHex": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "abc",
+      "contentUtf8": "abc",
+      "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+    },
+    {
+      "name": "one-mib-pattern",
+      "length": 1048576,
+      "chunkSize": 4096,
+      "generatorMul": 131,
+      "generatorAdd": 17,
+      "generator": "byte i is (i * generatorMul + generatorAdd) mod 256, i from 0 inclusive to length exclusive. Hash by updating SHA-256 on successive chunkSize slices. The raw bytes are not stored in this file.",
+      "sha256": "ea53eb498f9b7dc054aae73924bf25c569604d2c20aa9016f0b8714a1c180c7b"
+    }
+  ],
+  "cpaceDraftB3": {
+    "prs": "50617373776f7264",
+    "ci": "0b415f696e69746961746f720b425f726573706f6e646572",
+    "sid": "7e4b4791d6a8ef019b936c79fb7f2c57",
+    "ada": "414461",
+    "adb": "414462",
+    "generatorString": "11435061636552697374726574746f3235350850617373776f72646400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000180b415f696e69746961746f720b425f726573706f6e646572107e4b4791d6a8ef019b936c79fb7f2c57",
+    "hash": "da6d3ddc8802fca9058755ffd3ebde08a9c2c74945901a258482a288b6663af06bf645c93cd1c51512307199c80e84908916d983b34af77205f90851a657ee27",
+    "generator": "222b6b195fe84b1652badb6f6a3ae3d24341e7306967f0b8115b40d5698c7e56",
+    "yaScalar": "da3d23700a9e5699258aef94dc060dfda5ebb61f02a5ea77fad53f4ff0976d08",
+    "ybScalar": "d2316b454718c35362d83d69df6320f38578ed5984651435e2949762d900b80d",
+    "yaWide": "da3d23700a9e5699258aef94dc060dfda5ebb61f02a5ea77fad53f4ff0976d080000000000000000000000000000000000000000000000000000000000000000",
+    "ybWide": "d2316b454718c35362d83d69df6320f38578ed5984651435e2949762d900b80d0000000000000000000000000000000000000000000000000000000000000000",
+    "ya": "d6bac480f2c386c394efc7c47adb9925dcd2630b64f240c50f8d0eec482b9157",
+    "yb": "3ea7e0b19560d7c0b0f5734f63b955286dfa8232b5ebe63324e2d9e7433f7258",
+    "k": "80b69a8a76457ab6a4d7f887a4bf6b55a2f80ac19c333f917a05fc9887c8b40f",
+    "iskIr": "b69effbf61b51d56401c0f65601abe428de8206feaaf0e32198896dcae7b35cd2b38950a39dfd5d4a79164614c2984f7daa460b588c1e80c3fa2068af7900447",
+    "iskSy": "544199d71f62f8d9a1fee55727e24fe4a45844593c2b6013c4fa3969d0e5debb2244675c0b43397cbb68d342b01fc0f98fc961469a25134de9f0f813c1a57476",
+    "sidOutputIr": "bb1c449b35f0ea79a65c209f329a693d475e0ce2387bed9fe4b78f60b2a27c219813fb2cfe175ef40d2222d9261e66da7d78f7c55a303b1b8611dcdfab880c47",
+    "sidOutputOc": "10d5941d4933497fe31b9188d690b84465e2a2d158332a7267284a071a8d0876fc5c8c329dc735d59a9f8ef6623ee23924704a2f929dd631ca981227ee82fff2",
+    "scalarMult": {
+      "s": "7cd0e075fa7955ba52c02759a6c90dbbfc10e6d40aea8d283e407d88cf538a05",
+      "x": "2c3c6b8c4f3800e7aef6864025b4ed79bd599117e427c41bd47d93d654b4a51c",
+      "out": "7c13645fe790a468f62c39beb7388e541d8405d1ade69d1778c5fe3e7f6b600e"
+    },
+    "invalidYi1": "2b3c6b8c4f3800e7aef6864025b4ed79bd599117e427c41bd47d93d654b4a51c",
+    "invalidYi2": "0000000000000000000000000000000000000000000000000000000000000000",
+    "note": "yaWide/ybWide are the 32-byte draft scalars padded with 32 zero bytes. pakery-cpace 0.6.0 reduces 64 bytes mod L; that padding reproduces the draft scalars."
+  },
+  "limlink": [
+    {
+      "name": "happy-path",
+      "description": "码对，指纹对，套件列表对。发送方脚本先出码 482915，再 nonceS、session id、64 字节标量。",
+      "nowMs": 1700000000000,
+      "rngScriptSender": "00075e63101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2fd2316b454718c35362d83d69df6320f38578ed5984651435e2949762d900b80d0000000000000000000000000000000000000000000000000000000000000000",
+      "rngScriptReceiver": "000102030405060708090a0b0c0d0e0fda3d23700a9e5699258aef94dc060dfda5ebb61f02a5ea77fad53f4ff0976d080000000000000000000000000000000000000000000000000000000000000000",
+      "code": "482915",
+      "receiverCode": "482915",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "receiverFpPeer": "2222222222222222222222222222222222222222222222222222222222222222",
+      "peerSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "receiverSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "selectedSuite": "CPACE-RISTR255-SHA512",
+      "nonceR": "000102030405060708090a0b0c0d0e0f",
+      "nonceS": "101112131415161718191a1b1c1d1e1f",
+      "sessionIdRaw": "202122232425262728292a2b2c2d2e2f",
+      "sessionId": "ICEiIyQlJicoKSorLC0uLw",
+      "ci": "116c696d6c696e6b2d696e766974652d7631201111111111111111111111111111111111111111111111111111111111111111202222222222222222222222222222222222222222222222222222222222222222",
+      "ada": "096c696d6c696e6b2f3104726563761543504143452d52495354523235352d534841353132",
+      "adb": "096c696d6c696e6b2f310473656e641543504143452d52495354523235352d534841353132",
+      "sid": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "ya": "a29050fe0ad469919616d2a5815dd5653daf007ec295b3a98a77b10bd79a1d5f",
+      "yb": "ac20bb90ccdf3d5f4e86af1e5362de64f6b1673ab0363df3c8213899ab46cd20",
+      "ta": "94d3002a2441bdb61dc51418598d5427e9bed1775432730dfeefffc5a23910e9d3c95f5ca3feea981b5ac588f9869257ecb6ca5f1ca267414611953fc9884ff2",
+      "tb": "16e7e47c847d39e9526af7ea30c89a72556a54d4937e2422462469211017dc1e583e89aac48a1d007940208384ee19ce1f8e3458d271a8459c8caba53f5b845a",
+      "ticket": "2aa6c7c18f9f6dc10d8de8ba9f09b497049af5086bf732714dc6678ee7e12335",
+      "receiverExpectTb": "16e7e47c847d39e9526af7ea30c89a72556a54d4937e2422462469211017dc1e583e89aac48a1d007940208384ee19ce1f8e3458d271a8459c8caba53f5b845a",
+      "result": "ok"
+    },
+    {
+      "name": "code-rejection",
+      "description": "第一个 u32 是 0xFFFFFFFF，被拒绝采样丢掉；第二个 u32 是 42，码为 000042。",
+      "nowMs": 1700000000000,
+      "rngScriptSender": "ffffffff0000002a101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2fd2316b454718c35362d83d69df6320f38578ed5984651435e2949762d900b80d0000000000000000000000000000000000000000000000000000000000000000",
+      "rngScriptReceiver": "a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a05a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a0000000000000000000000000000000000000000000000000000000000000000",
+      "code": "000042",
+      "receiverCode": "000042",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "receiverFpPeer": "2222222222222222222222222222222222222222222222222222222222222222",
+      "peerSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "receiverSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "selectedSuite": "CPACE-RISTR255-SHA512",
+      "nonceR": "a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0",
+      "nonceS": "101112131415161718191a1b1c1d1e1f",
+      "sessionIdRaw": "202122232425262728292a2b2c2d2e2f",
+      "sessionId": "ICEiIyQlJicoKSorLC0uLw",
+      "ci": "116c696d6c696e6b2d696e766974652d7631201111111111111111111111111111111111111111111111111111111111111111202222222222222222222222222222222222222222222222222222222222222222",
+      "ada": "096c696d6c696e6b2f3104726563761543504143452d52495354523235352d534841353132",
+      "adb": "096c696d6c696e6b2f310473656e641543504143452d52495354523235352d534841353132",
+      "sid": "a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0101112131415161718191a1b1c1d1e1f",
+      "ya": "829681dc19c625f193054566615d32e4dd2c27d1787cf7c99f3940d7e637900d",
+      "yb": "3ef4ab9d141666c2befacdf74ccee663241dfed87391eccc04afe7ef87eb9710",
+      "ta": "57eb3b2bf9f4c0111c6b142bc7971a8f07dadd4bdd3dae1017e47ef590a88335a3803ff0ab67f5dacb0c49f7bae018ba753823dbcf9455f8e4c188b3bb9aa7ca",
+      "tb": "68dd7770bf968b80c62cb5a1df05543bdf2216be8b89b62494b2258fba5594fc0137be426f034592b36587af834eb572d0fb0e69f4906619101f2105c63e19df",
+      "ticket": "7c75b18eb735ec5ba50c93972ddc6f1bc59204241196078337daf2a27a66da53",
+      "receiverExpectTb": "68dd7770bf968b80c62cb5a1df05543bdf2216be8b89b62494b2258fba5594fc0137be426f034592b36587af834eb572d0fb0e69f4906619101f2105c63e19df",
+      "result": "ok"
+    },
+    {
+      "name": "wrong-code",
+      "description": "接收方输入的码和发送方生成的码差 1。Tb 对不上。",
+      "nowMs": 1700000000000,
+      "rngScriptSender": "00075e63101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2fd2316b454718c35362d83d69df6320f38578ed5984651435e2949762d900b80d0000000000000000000000000000000000000000000000000000000000000000",
+      "rngScriptReceiver": "b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0da3d23700a9e5699258aef94dc060dfda5ebb61f02a5ea77fad53f4ff0976d080000000000000000000000000000000000000000000000000000000000000000",
+      "code": "482915",
+      "receiverCode": "482916",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "receiverFpPeer": "2222222222222222222222222222222222222222222222222222222222222222",
+      "peerSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "receiverSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "selectedSuite": "CPACE-RISTR255-SHA512",
+      "nonceR": "b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0",
+      "nonceS": "101112131415161718191a1b1c1d1e1f",
+      "sessionIdRaw": "202122232425262728292a2b2c2d2e2f",
+      "sessionId": "ICEiIyQlJicoKSorLC0uLw",
+      "ci": "116c696d6c696e6b2d696e766974652d7631201111111111111111111111111111111111111111111111111111111111111111202222222222222222222222222222222222222222222222222222222222222222",
+      "ada": "096c696d6c696e6b2f3104726563761543504143452d52495354523235352d534841353132",
+      "adb": "096c696d6c696e6b2f310473656e641543504143452d52495354523235352d534841353132",
+      "sid": "b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0101112131415161718191a1b1c1d1e1f",
+      "ya": "f80fdb187866d5154ba99688ae59c7c3a16699a276768d96da0cf644a826bc6a",
+      "yb": "4c5fc1983abc601c5a03142def05232ca544ea3ea0acbb3767aef9ba86a4486a",
+      "ta": "3233dbda1eeeaa592a695dca50eb0ceaaf3f53205e6ddc9a15cf1a145fc7950161e1dac0f38d541e24247fe8c6fc0a1d93327b54c1160fd9a7d7387a93598736",
+      "tb": "82810e743cf7928ae12dba6c78446a4cc788cd35f75e4b181cc80dfb940b13cc081dd87dccff5e1ff09bfb09b886c9e6c9ad0161dd989eaa02bf5adf9a77f0ca",
+      "ticket": "4c358227f94b21d2361452e017910a7a06d312a6ee6c976904e569da32215b66",
+      "receiverExpectTb": "65673771d2401d55f662d1f72b158a6cb60b0ed38aa078181e200ef0d75a9b46f490497f749f91c6944edf09c91ff453ad95ecc216495f067b47c3864c683ec0",
+      "result": "tagMismatch"
+    },
+    {
+      "name": "fingerprint-mismatch",
+      "description": "接收方 start 用了另一个发送方指纹，CI 对不上。",
+      "nowMs": 1700000000000,
+      "rngScriptSender": "00075e633131313131313131313131313131313132323232323232323232323232323232d2316b454718c35362d83d69df6320f38578ed5984651435e2949762d900b80d0000000000000000000000000000000000000000000000000000000000000000",
+      "rngScriptReceiver": "33333333333333333333333333333333da3d23700a9e5699258aef94dc060dfda5ebb61f02a5ea77fad53f4ff0976d080000000000000000000000000000000000000000000000000000000000000000",
+      "code": "482915",
+      "receiverCode": "482915",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "receiverFpPeer": "4444444444444444444444444444444444444444444444444444444444444444",
+      "peerSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "receiverSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "selectedSuite": "CPACE-RISTR255-SHA512",
+      "nonceR": "33333333333333333333333333333333",
+      "nonceS": "31313131313131313131313131313131",
+      "sessionIdRaw": "32323232323232323232323232323232",
+      "sessionId": "MjIyMjIyMjIyMjIyMjIyMg",
+      "ci": "116c696d6c696e6b2d696e766974652d7631201111111111111111111111111111111111111111111111111111111111111111202222222222222222222222222222222222222222222222222222222222222222",
+      "ada": "096c696d6c696e6b2f3104726563761543504143452d52495354523235352d534841353132",
+      "adb": "096c696d6c696e6b2f310473656e641543504143452d52495354523235352d534841353132",
+      "sid": "3333333333333333333333333333333331313131313131313131313131313131",
+      "ya": "c00ec6a0398118f8ddd2f4bc9a1fe83f1a90c739ad2fed198bc9d8df8613ff4e",
+      "yb": "1ad586c37a001a2f96a2f9594c19c8b1ad4c6cbfeaafd6138981aa1d8eb49c7e",
+      "ta": "ab933be45404004e3385806d75e6292d39d94a593dc0d8176b0dfaed36b75f60b5aca1d1259fc6b9b172d6eaa0dc9bbc89124afb9126fcb8fdf9fed1ddc51dc0",
+      "tb": "4832ba9ecf14125be7dd81a5a9d03894a86ebc16b21e5ce1c72368fd76bf0988de163652ad027fd5c78142a8e509e4580f397ed0fafc0ccfcaf541743e2498df",
+      "ticket": "54498275a71649d5e0053d67b4adeb8541c322c38047c5869b940a1b8c6994de",
+      "receiverExpectTb": "e90c669314a550799e8244d2b0d57a4cac62e4e68522f737d02901c4058d2cf864847f672c13d675176898c88e2c6fe34c88e2aa0132ae0e1425cc13bafc85df",
+      "result": "tagMismatch"
+    },
+    {
+      "name": "suite-list-mismatch",
+      "description": "发送方把套件列表多写了一项，ADa 变了，模拟降级。",
+      "nowMs": 1700000000000,
+      "rngScriptSender": "00075e635151515151515151515151515151515152525252525252525252525252525252d2316b454718c35362d83d69df6320f38578ed5984651435e2949762d900b80d0000000000000000000000000000000000000000000000000000000000000000",
+      "rngScriptReceiver": "53535353535353535353535353535353da3d23700a9e5699258aef94dc060dfda5ebb61f02a5ea77fad53f4ff0976d080000000000000000000000000000000000000000000000000000000000000000",
+      "code": "482915",
+      "receiverCode": "482915",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "receiverFpPeer": "2222222222222222222222222222222222222222222222222222222222222222",
+      "peerSuites": [
+        "CPACE-RISTR255-SHA512",
+        "CPACE-FUTURE"
+      ],
+      "receiverSuites": [
+        "CPACE-RISTR255-SHA512"
+      ],
+      "selectedSuite": "CPACE-RISTR255-SHA512",
+      "nonceR": "53535353535353535353535353535353",
+      "nonceS": "51515151515151515151515151515151",
+      "sessionIdRaw": "52525252525252525252525252525252",
+      "sessionId": "UlJSUlJSUlJSUlJSUlJSUg",
+      "ci": "116c696d6c696e6b2d696e766974652d7631201111111111111111111111111111111111111111111111111111111111111111202222222222222222222222222222222222222222222222222222222222222222",
+      "ada": "096c696d6c696e6b2f3104726563762243504143452d52495354523235352d5348413531322c43504143452d465554555245",
+      "adb": "096c696d6c696e6b2f310473656e641543504143452d52495354523235352d534841353132",
+      "sid": "5353535353535353535353535353535351515151515151515151515151515151",
+      "ya": "3c7b6ec243ccb7457502ce38502bcd114a34dbfc033d8309f186289d4df88524",
+      "yb": "1084e3a55a7d261c930bf9f6378c2b7a0b2c4f42595169135f8e2e0a8a4f9a31",
+      "ta": "c32e246466a746cf3e42c78287a8a88cc19caa23591466042e158d272c4a1194bf18dce2cf5d303cea7f5fd9cf00d538efc1a3259439e1625952ebe74b4f79a8",
+      "tb": "00dec6dbac14673c79c9e5fcba706afe6c0950560fb798b74e8bac97ca06254ff20b0ee56d462f9ead36567f5f72a2446305cafc5f16804b8a2a681dbbb93287",
+      "ticket": "084851f149173c20cae0de69d2ff59bf176272437ccbfc900d8fac2c8dc34170",
+      "receiverExpectTb": "ac63ebf07a47a607b8724aca617fcad49682c13d8a7f14635f621da69e6904ba83f7f53a260f8f9d0ab2b5d9e00a5768dd204cb728a3323aad984b0288adc5cc",
+      "result": "tagMismatch"
+    }
+  ],
+  "stateMachine": [
+    {
+      "name": "expiry",
+      "description": "nowMs 到达 600000 时过期；之后的 accept_hello 返回 expired。",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "rngScriptSender": "00000007",
+      "steps": [
+        {
+          "op": "senderNew",
+          "nowMs": 0,
+          "result": "ok"
+        },
+        {
+          "op": "code",
+          "result": "ok",
+          "code": "000007"
+        },
+        {
+          "op": "status",
+          "nowMs": 599999,
+          "result": "ok",
+          "state": "waiting",
+          "failures": 0,
+          "attemptsLeft": 3,
+          "expiresInMs": 1
+        },
+        {
+          "op": "status",
+          "nowMs": 600000,
+          "result": "ok",
+          "state": "expired",
+          "failures": 0,
+          "attemptsLeft": 3,
+          "expiresInMs": 0
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 600000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "result": "expired"
+        },
+        {
+          "op": "code",
+          "result": "ok",
+          "code": ""
+        }
+      ]
+    },
+    {
+      "name": "three-confirm-mismatches",
+      "description": "三次确认失败后码耗尽。第三次返回的仍是 confirmMismatch，状态变成 exhausted。",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "rngScriptSender": "00000007101010101010101010101010101010104040404040404040404040404040404080808080808080808080808080808080808080808080808080808080808080800000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111111114141414141414141414141414141414181818181818181818181818181818181818181818181818181818181818181810000000000000000000000000000000000000000000000000000000000000000121212121212121212121212121212124242424242424242424242424242424282828282828282828282828282828282828282828282828282828282828282820000000000000000000000000000000000000000000000000000000000000000",
+      "steps": [
+        {
+          "op": "senderNew",
+          "nowMs": 5000,
+          "result": "ok"
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a00000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 5000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0",
+          "result": "ok",
+          "sessionId": "QEBAQEBAQEBAQEBAQEBAQA",
+          "nonceS": "10101010101010101010101010101010",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "start",
+          "result": "ok",
+          "ya": "9638b99a5d331092bab3a1c55263a50f25702a03e37364993b14d692bb556f3a"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 5000,
+          "result": "ok",
+          "yb": "bc02820fdd776b21c18e30cd59d7f0db140809810eba9c39b519dd974e764b77",
+          "tb": "6870635232777bd4f9f6ab9fd09c95f72eba737b17f7cc2e1a053e3e6c88ac0535bfde34047943e99ac23321e1c4e9154ce4fa86cc294c6e0c0fcabdae6c1b58"
+        },
+        {
+          "op": "finish",
+          "result": "ok",
+          "ta": "60970f3c4c1f5a43c7c5e9f82ed8bf3222c1aa7eb73b23caa85a149f46d4482b1e66e58dee1d3437e06f214d3d291bbe7e6110170a5ff01c8403fdd8e16dc0ea"
+        },
+        {
+          "op": "verifyConfirm",
+          "nowMs": 5000,
+          "result": "confirmMismatch"
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a10000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 5000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+          "result": "ok",
+          "sessionId": "QUFBQUFBQUFBQUFBQUFBQQ",
+          "nonceS": "11111111111111111111111111111111",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "start",
+          "result": "ok",
+          "ya": "740d42ae2deb7197eb7dc4e536e73fe3a500c511718edc1327a38ced8cfe6a5e"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 5000,
+          "result": "ok",
+          "yb": "6c80dc00781621796efb318698fec7b09bac85850f7427df596629bee4feb260",
+          "tb": "2705e1022dabb5db280264d6afc0bf2c715f8864395369331380ef38d32b83294532faf73d009dd3c08d466e9ae28a2e50fb8a61641ec45f935c61bbaa0d1761"
+        },
+        {
+          "op": "finish",
+          "result": "ok",
+          "ta": "18d535cbce1a417614e70e296edaff4a7e986e0b86e6edf8daec2bae15b9264f0a6c9486576d711b51613a22f27b73f695efe25176606c3b5a4857326432a82a"
+        },
+        {
+          "op": "verifyConfirm",
+          "nowMs": 5000,
+          "result": "confirmMismatch"
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a20000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 5000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
+          "result": "ok",
+          "sessionId": "QkJCQkJCQkJCQkJCQkJCQg",
+          "nonceS": "12121212121212121212121212121212",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "start",
+          "result": "ok",
+          "ya": "3262112efa862a0b5b18cfa858c91fa8467c44e7c9b358499a8a2799f4045026"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 5000,
+          "result": "ok",
+          "yb": "14e153fa29cabcf5cfc525356b80e801f5088ce97cc05f5149177eb0bd992e24",
+          "tb": "f4cf55bde2f120b48026ee311dfe0d8344f718a4458e374310fe8e24c7bb463bf8613bc2fbf232e6a3535481feb032332d2eab36f4b6e00012e68da9e1cbff31"
+        },
+        {
+          "op": "finish",
+          "result": "ok",
+          "ta": "9a09134135700752becd32a869470a5f6d7d89c3e37b2e7ba0c4d4fcc0d1155d34aea2b9f91bf234eaaa4adcc645bd3fd3c81506737f59d71f49f2cb97df231d"
+        },
+        {
+          "op": "verifyConfirm",
+          "nowMs": 5000,
+          "result": "confirmMismatch"
+        },
+        {
+          "op": "status",
+          "nowMs": 5000,
+          "result": "ok",
+          "state": "exhausted",
+          "failures": 3,
+          "attemptsLeft": 0,
+          "expiresInMs": 0
+        },
+        {
+          "op": "code",
+          "result": "ok",
+          "code": ""
+        }
+      ]
+    },
+    {
+      "name": "busy",
+      "description": "已经有一次 pake 在进行时，再 respond_pake 返回 busy，不扣次。",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "rngScriptSender": "000000071010101010101010101010101010101040404040404040404040404040404040808080808080808080808080808080808080808080808080808080808080808000000000000000000000000000000000000000000000000000000000000000005151515151515151515151515151515152525252525252525252525252525252",
+      "steps": [
+        {
+          "op": "senderNew",
+          "nowMs": 8000,
+          "result": "ok"
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b10000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 8000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1",
+          "result": "ok",
+          "sessionId": "QEBAQEBAQEBAQEBAQEBAQA",
+          "nonceS": "10101010101010101010101010101010",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "start",
+          "result": "ok",
+          "ya": "ca2d3b4bdb065fa7a8e04f1b95d01c8b1baf0dfd722e4065fed157e849300c5a"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 8000,
+          "result": "ok",
+          "yb": "94dc1d7a6ea4140d4748ac85dd66231e9bd8afe991311b3dc7b7cdc09b444c45",
+          "tb": "84045b3c163714ab30823b7731c94ffdaaf3755e101817773ef8280bf234ecb04f66c0355a49af124038c4de716240dd582638800a035c3f8b966cccfd280f47"
+        },
+        {
+          "op": "finish",
+          "result": "ok",
+          "ta": "6782830207fd456548462e6e3b7fb4c01b1830869dff28aacbf4e3cfc52654d9f93b9730e9269755b77101bf01a2ceb7b100d07c86c92be222fabbeec8462444"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 8000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2",
+          "result": "ok",
+          "sessionId": "UlJSUlJSUlJSUlJSUlJSUg",
+          "nonceS": "51515151515151515151515151515151",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 8000,
+          "result": "busy"
+        },
+        {
+          "op": "status",
+          "nowMs": 8000,
+          "result": "ok",
+          "state": "in_progress",
+          "failures": 0,
+          "attemptsLeft": 2,
+          "expiresInMs": 600000
+        }
+      ]
+    },
+    {
+      "name": "cancel-attempt",
+      "description": "取消还没进入 pake 的 hello 不计失败；取消进行中的 pake 计一次失败，扣次保留。",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "rngScriptSender": "000000071010101010101010101010101010101040404040404040404040404040404040111111111111111111111111111111114141414141414141414141414141414180808080808080808080808080808080808080808080808080808080808080800000000000000000000000000000000000000000000000000000000000000000",
+      "steps": [
+        {
+          "op": "senderNew",
+          "nowMs": 9000,
+          "result": "ok"
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c10000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 9000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1",
+          "result": "ok",
+          "sessionId": "QEBAQEBAQEBAQEBAQEBAQA",
+          "nonceS": "10101010101010101010101010101010",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "cancelAttempt",
+          "result": "ok"
+        },
+        {
+          "op": "status",
+          "nowMs": 9000,
+          "result": "ok",
+          "state": "waiting",
+          "failures": 0,
+          "attemptsLeft": 3,
+          "expiresInMs": 600000
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c20000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 9000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2",
+          "result": "ok",
+          "sessionId": "QUFBQUFBQUFBQUFBQUFBQQ",
+          "nonceS": "11111111111111111111111111111111",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "start",
+          "result": "ok",
+          "ya": "d0846a750d2acf82e762f0b71436e5d8bee3623db2ed887a904213f9d3d22e08"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 9000,
+          "result": "ok",
+          "yb": "a4e295c9953a322adf7a8bfecf275af17b6e237071f7930f72322fab92556256",
+          "tb": "90600c547dd06851d575724a409718d40222237315034733aa48d6ecabbf289f8f75dda823542e3c0bae467fedbb8d863def05b223f64e40bb139fdf8a25393a"
+        },
+        {
+          "op": "finish",
+          "result": "ok",
+          "ta": "e0eba856bc35dad1164b0d094a8bb695c61aa5f1e1d3eeaa0fd7b2aa3e3fc2c79b2c218fe5b4cecdc682cb1058af05aa5dccdc09b36fa71c310c2510754a355b"
+        },
+        {
+          "op": "cancelAttempt",
+          "result": "ok"
+        },
+        {
+          "op": "status",
+          "nowMs": 9000,
+          "result": "ok",
+          "state": "waiting",
+          "failures": 1,
+          "attemptsLeft": 2,
+          "expiresInMs": 600000
+        }
+      ]
+    },
+    {
+      "name": "cancel",
+      "description": "cancel 可以重复调用。终态是 cancelled，之后 accept_hello 返回 notActive。",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "rngScriptSender": "00000007",
+      "steps": [
+        {
+          "op": "senderNew",
+          "nowMs": 1,
+          "result": "ok"
+        },
+        {
+          "op": "cancel",
+          "result": "ok"
+        },
+        {
+          "op": "cancel",
+          "result": "ok"
+        },
+        {
+          "op": "code",
+          "result": "ok",
+          "code": ""
+        },
+        {
+          "op": "status",
+          "nowMs": 1,
+          "result": "ok",
+          "state": "cancelled",
+          "failures": 0,
+          "attemptsLeft": 3,
+          "expiresInMs": 0
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 1,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "result": "notActive"
+        }
+      ]
+    },
+    {
+      "name": "confirm-timeout",
+      "description": "respond_pake 之后满 30000ms，迟到的正确 Ta 被拒绝，返回 unknownAttempt。",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "rngScriptSender": "00000007101010101010101010101010101010104040404040404040404040404040404080808080808080808080808080808080808080808080808080808080808080800000000000000000000000000000000000000000000000000000000000000000",
+      "steps": [
+        {
+          "op": "senderNew",
+          "nowMs": 1000,
+          "result": "ok"
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d10000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 1000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+          "result": "ok",
+          "sessionId": "QEBAQEBAQEBAQEBAQEBAQA",
+          "nonceS": "10101010101010101010101010101010",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "start",
+          "result": "ok",
+          "ya": "8e85c9f89db62c3d52eb00dfe8ada8f409f3eaff69abaf090b678d1f8d94b52f"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 1000,
+          "result": "ok",
+          "yb": "6e90161860d848f41b89e62b7cc215104347249920447bfc74263e43ae688164",
+          "tb": "1383cbdfa6ba04f38b9d051c2ff6286b9231ae1deebcb32d60fb670dcf20e55c87930edb9f32098cfd7e1b7fd7d89f9937bb13c7b8b4daddcfd7f8d853d4236a"
+        },
+        {
+          "op": "finish",
+          "result": "ok",
+          "ta": "941de54192b8c3e92525278f495fa3f39fc93279599ce4265c8bdda480253ee9bd8d2f590fe80765b8c9cda69fa524bb9a470a054622f9218ed0f890d9520520"
+        },
+        {
+          "op": "verifyConfirm",
+          "nowMs": 31000,
+          "result": "unknownAttempt"
+        },
+        {
+          "op": "status",
+          "nowMs": 31000,
+          "result": "ok",
+          "state": "waiting",
+          "failures": 1,
+          "attemptsLeft": 2,
+          "expiresInMs": 570000
+        }
+      ]
+    },
+    {
+      "name": "ticket-single-use",
+      "description": "失败不消费。邀请已经 succeeded、确认窗口过了之后，同一票据和指纹仍是 ticketUsed；换指纹或换票据是 ticketMismatch。",
+      "fpReceiver": "1111111111111111111111111111111111111111111111111111111111111111",
+      "fpSender": "2222222222222222222222222222222222222222222222222222222222222222",
+      "rngScriptSender": "00000007101010101010101010101010101010104040404040404040404040404040404080808080808080808080808080808080808080808080808080808080808080800000000000000000000000000000000000000000000000000000000000000000",
+      "steps": [
+        {
+          "op": "senderNew",
+          "nowMs": 1700000000000,
+          "result": "ok"
+        },
+        {
+          "op": "receiverNew",
+          "rngScript": "e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e10000000000000000000000000000000000000000000000000000000000000000",
+          "result": "ok"
+        },
+        {
+          "op": "begin",
+          "result": "ok",
+          "nonceR": "e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1"
+        },
+        {
+          "op": "acceptHello",
+          "nowMs": 1700000000000,
+          "peerSuites": "CPACE-RISTR255-SHA512",
+          "nonceR": "e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1",
+          "result": "ok",
+          "sessionId": "QEBAQEBAQEBAQEBAQEBAQA",
+          "nonceS": "10101010101010101010101010101010",
+          "suite": "CPACE-RISTR255-SHA512"
+        },
+        {
+          "op": "start",
+          "result": "ok",
+          "ya": "2a4afe657039df6eec424813ec3e48a156e24054a0083f68bf4a54b9efb7e72d"
+        },
+        {
+          "op": "respondPake",
+          "nowMs": 1700000000000,
+          "result": "ok",
+          "yb": "64bfda010b619ba763071f141cc1886a3b3249ebe7f9771fdcd8a2a1a316bd2c",
+          "tb": "7bcff0fd2d1c6ee53027fe7edef89bb019b02de02d5bbb5e45606d984846b541fb53b236c63c48621513735ecc22bf58a00a09012c09cda93e8d44c259497c4e"
+        },
+        {
+          "op": "finish",
+          "result": "ok",
+          "ta": "a2d0cf3f45a8ad76082e5784ac52feefb29536379f240212f95a57afed9593ce9b7ffd7e698ffd46dfdda94158332ffc5ac92429e2d5a353cb7ccb6aca0da663"
+        },
+        {
+          "op": "verifyConfirm",
+          "nowMs": 1700000000000,
+          "result": "ok",
+          "ticket": "d9688ed1808e4a899b1485e22ba7f0691905413d86f73b8c9ae86cd36c81821b",
+          "peerFp": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        {
+          "op": "status",
+          "nowMs": 1700000000000,
+          "result": "ok",
+          "state": "succeeded",
+          "failures": 0,
+          "attemptsLeft": 2,
+          "expiresInMs": 0
+        },
+        {
+          "op": "status",
+          "nowMs": 1700000030000,
+          "result": "ok",
+          "state": "succeeded",
+          "failures": 0,
+          "attemptsLeft": 2,
+          "expiresInMs": 0
+        },
+        {
+          "op": "verifyTicket",
+          "result": "ticketMismatch",
+          "ticket": "d9688ed1808e4a899b1485e22ba7f0691905413d86f73b8c9ae86cd36c81821b",
+          "fp": "3333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "op": "verifyTicket",
+          "result": "ok",
+          "ticket": "d9688ed1808e4a899b1485e22ba7f0691905413d86f73b8c9ae86cd36c81821b",
+          "fp": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "op": "verifyTicket",
+          "result": "ticketUsed",
+          "ticket": "d9688ed1808e4a899b1485e22ba7f0691905413d86f73b8c9ae86cd36c81821b",
+          "fp": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "op": "verifyTicket",
+          "result": "ticketMismatch",
+          "ticket": "d9688ed1808e4a899b1485e22ba7f0691905413d86f73b8c9ae86cd36c81821b",
+          "fp": "3333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "op": "verifyTicket",
+          "result": "ticketMismatch",
+          "ticket": "26688ed1808e4a899b1485e22ba7f0691905413d86f73b8c9ae86cd36c81821b",
+          "fp": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ]
+    }
+  ]
+}

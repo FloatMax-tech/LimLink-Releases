@@ -1,0 +1,124 @@
+{
+  "sourceLanguage": "zh-Hans",
+  "strings": {
+    "NSLocalNetworkUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查找同一局域网上通过 Wi-Fi 或网线连接的附近设备，并与它们直接传输文件。文件不经过互联网。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find nearby devices on the same local network over Wi-Fi or Ethernet and transfer files directly. Transfers do not pass through the internet."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "尋找同一區域網路中透過 Wi-Fi 或網路線連線的附近裝置，並直接傳輸檔案。傳輸不經過網際網路。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi-Fiまたは有線LANで同じローカルネットワークに接続した近くのデバイスを見つけ、直接ファイルを転送します。転送はインターネットを経由しません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi-Fi 또는 이더넷으로 같은 로컬 네트워크에 연결된 근처 기기를 찾아 파일을 직접 전송합니다. 전송은 인터넷을 거치지 않습니다."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher les appareils à proximité du même réseau local via Wi-Fi ou Ethernet et transférer directement les fichiers, sans passer par Internet."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geräte in der Nähe im selben lokalen Netzwerk über WLAN oder Ethernet finden und Dateien direkt übertragen. Die Übertragung erfolgt nicht über das Internet."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar dispositivos cercanos en la misma red local por Wi-Fi o Ethernet y transferir archivos directamente, sin pasar por internet."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trova i dispositivi vicini sulla stessa rete locale tramite Wi-Fi o Ethernet e trasferisci i file direttamente, senza passare da Internet."
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryAddUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将收到的图片保存到系统相册。你可以在本机身份中关闭自动保存。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save received images to Photos. You can turn off automatic saving in device settings."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "將收到的圖片儲存到系統相簿。你可以在本機身分中關閉自動儲存。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "受信した画像を写真に保存します。本機情報で自動保存をオフにできます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "받은 이미지를 갤러리에 저장합니다. 기기 설정에서 자동 저장을 끌 수 있습니다."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrer les images reçues dans Photos. Vous pouvez désactiver l’enregistrement automatique dans les réglages de l’appareil."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empfangene Bilder in Fotos sichern. Automatisches Sichern lässt sich in den Geräteeinstellungen ausschalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar las imágenes recibidas en Fotos. Puedes desactivar el guardado automático en los ajustes del dispositivo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salva le immagini ricevute in Foto. Puoi disattivare il salvataggio automatico nelle impostazioni del dispositivo."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

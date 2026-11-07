@@ -1,0 +1,671 @@
+﻿<Window x:Class="LimLink.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:LimLink.Desktop"
+        xmlns:loc="clr-namespace:LimLink.Desktop"
+        Title="LimLink" Width="1060" Height="720" MinWidth="720" MinHeight="540"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="{StaticResource UiFont}" FontSize="13" Foreground="{DynamicResource Ink}"
+        Background="{DynamicResource WindowFallback}"
+        AllowDrop="True" UseLayoutRounding="True" SnapsToDevicePixels="True">
+  <Window.TaskbarItemInfo>
+    <TaskbarItemInfo ProgressState="{Binding TaskbarState}" ProgressValue="{Binding TaskbarValue}" />
+  </Window.TaskbarItemInfo>
+
+  <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Focusable="False">
+      <Grid Margin="24,10,24,24" MaxWidth="1200">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Margin="0,0,0,14" local:Motion.Appear="Rise">
+          <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+          <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+          <StackPanel x:Name="HeaderActions" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Style="{StaticResource WinButton}" Command="{Binding OpenSettingsCommand}" ToolTip="{loc:Loc tooltip_edit_name}">
+              <StackPanel Orientation="Horizontal">
+                <Ellipse Width="7" Height="7" Margin="0,0,8,0" VerticalAlignment="Center">
+                  <Ellipse.Style>
+                    <Style TargetType="Ellipse">
+                      <Setter Property="Fill" Value="{DynamicResource Signal}" />
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding Startup}" Value="Starting"><Setter Property="Fill" Value="#FFFF9F0A" /></DataTrigger>
+                        <DataTrigger Binding="{Binding Startup}" Value="Failed"><Setter Property="Fill" Value="{DynamicResource Danger}" /></DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </Ellipse.Style>
+                </Ellipse>
+                <TextBlock Text="{Binding DeviceName}" MaxWidth="220" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource Icon}" Text="&#xE70F;" FontSize="12" Foreground="{DynamicResource Sub}" Margin="8,0,0,0" />
+              </StackPanel>
+            </Button>
+            <Button Style="{StaticResource WinButton}" Margin="8,0,0,0" Content="{loc:Loc legal_binding_title}" Command="{Binding OpenBindingPickerCommand}" />
+            <Button Style="{StaticResource WinButton}" Margin="8,0,0,0" Command="{Binding OpenSettingsCommand}">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource Icon}" Text="&#xE713;" FontSize="14" Margin="0,0,8,0" />
+                <TextBlock Text="{loc:Loc settings}" VerticalAlignment="Center" />
+              </StackPanel>
+            </Button>
+          </StackPanel>
+          <TextBlock Text="{loc:Loc nearby_transfer}" Style="{StaticResource Title}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="0,0,16,0" />
+        </Grid>
+
+        <!-- Notice -->
+        <Border Grid.Row="1" Margin="0,0,0,12" CornerRadius="6" Padding="14,6,6,6" Visibility="Collapsed" local:Motion.IsShown="{Binding HasNotice}" local:Motion.Appear="Drop">
+          <Border.Style>
+            <Style TargetType="Border">
+              <Setter Property="Background" Value="{DynamicResource SignalSoft}" />
+              <Style.Triggers>
+                <DataTrigger Binding="{Binding NoticeIsError}" Value="True"><Setter Property="Background" Value="{DynamicResource DangerSoft}" /></DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </Border.Style>
+          <DockPanel>
+            <Button DockPanel.Dock="Right" Style="{StaticResource IconButton}" Width="28" Height="28" Command="{Binding DismissNoticeCommand}" ToolTip="{loc:Loc close}">
+              <TextBlock Style="{StaticResource Icon}" Text="&#xE711;" FontSize="10" />
+            </Button>
+            <TextBlock Text="{Binding Notice}" TextWrapping="Wrap" VerticalAlignment="Center" />
+          </DockPanel>
+        </Border>
+
+        <Grid Grid.Row="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="LeftColumn" Width="410" />
+            <ColumnDefinition x:Name="GapColumn" Width="16" />
+            <ColumnDefinition x:Name="RightColumn" Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+
+          <!-- Left column -->
+          <StackPanel local:Motion.Appear="Rise" local:Motion.Delay="70">
+            <ItemsControl ItemsSource="{Binding Receives}" Focusable="False">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <Border Style="{StaticResource Card}" Margin="0,0,0,12" Padding="16,14" local:Motion.Appear="Rise">
+                    <DockPanel>
+                      <Grid Width="44" Height="44" DockPanel.Dock="Left" Margin="0,0,14,0">
+                        <local:RingProgress Value="{Binding Fraction}" Thickness="4" TrackBrush="{DynamicResource Track}" RingBrush="{DynamicResource Ink}">
+                          <local:RingProgress.Style><Style TargetType="local:RingProgress"><Style.Triggers><DataTrigger Binding="{Binding Completed}" Value="True"><Setter Property="Visibility" Value="Collapsed" /></DataTrigger></Style.Triggers></Style></local:RingProgress.Style>
+                        </local:RingProgress>
+                        <local:CompletionMark Brush="{DynamicResource Signal}" Visibility="{Binding Completed, Converter={StaticResource BoolVisible}}" />
+                      </Grid>
+                      <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Title}" FontSize="12" FontWeight="SemiBold" Foreground="{DynamicResource Signal}" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{Binding FileName}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Margin="0,2" Visibility="{Binding Completed, Converter={StaticResource BoolCollapsed}}" />
+                        <Button Style="{StaticResource GhostPill}" Visibility="{Binding Completed, Converter={StaticResource BoolVisible}}" HorizontalAlignment="Left" Margin="0,2" Content="{Binding FileName}"
+                                Command="{Binding DataContext.PreviewPathCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding SavedPath}" ToolTip="{loc:Loc preview}" />
+                        <TextBlock Text="{Binding Progress}" FontSize="12" Foreground="{DynamicResource Sub}" />
+                      </StackPanel>
+                    </DockPanel>
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Grid MinHeight="330">
+              <!-- Empty -->
+              <Grid Visibility="{Binding Composer, Converter={StaticResource StateVisible}, ConverterParameter=Empty}" local:Motion.Appear="Rise">
+                <Rectangle RadiusX="8" RadiusY="8" Fill="{DynamicResource Layer}" Stroke="{DynamicResource Dash}" StrokeThickness="1.5" StrokeDashArray="4 3" />
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="18,24">
+                  <Viewbox Width="120" Height="120">
+                    <Canvas Width="144" Height="144">
+                      <Ellipse Canvas.Left="8" Canvas.Top="8" Width="128" Height="128" Stroke="{DynamicResource Stroke}" StrokeThickness="1.5" />
+                      <Ellipse Canvas.Left="20" Canvas.Top="20" Width="104" Height="104" Stroke="{DynamicResource Dash}" StrokeThickness="1.5" StrokeDashArray="2 4" RenderTransformOrigin="0.5,0.5">
+                        <Ellipse.RenderTransform><RotateTransform x:Name="DashSpin" /></Ellipse.RenderTransform>
+                        <Ellipse.Triggers>
+                          <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <BeginStoryboard>
+                              <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="DashSpin" Storyboard.TargetProperty="Angle" From="0" To="360" Duration="0:0:40" RepeatBehavior="Forever" />
+                              </Storyboard>
+                            </BeginStoryboard>
+                          </EventTrigger>
+                        </Ellipse.Triggers>
+                      </Ellipse>
+                      <Path Data="M60,52 L74,52 84,62 84,90 60,90 Z M74,52 L74,62 84,62" Stroke="{DynamicResource Ink}" StrokeThickness="2.2" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                      <Ellipse Canvas.Left="73" Canvas.Top="77" Width="22" Height="22" Fill="{DynamicResource LayerSolid}" />
+                      <Ellipse Canvas.Left="75" Canvas.Top="79" Width="18" Height="18" Fill="{DynamicResource Ink}" />
+                      <Path Data="M84,84 L84,92 M80,88 L88,88" Stroke="{DynamicResource BtnFg}" StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                    </Canvas>
+                  </Viewbox>
+                  <TextBlock Text="{loc:Loc drop_hint}" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,14,0,2" />
+                  <TextBlock Text="{loc:Loc or}" Style="{StaticResource Caption}" HorizontalAlignment="Center" />
+                  <Button Style="{StaticResource Pill}" Content="{loc:Loc choose_file}" Height="36" Padding="24,0" Margin="0,12,0,0" HorizontalAlignment="Center" Command="{Binding ChooseFileCommand}" />
+                  <TextBlock Text="{loc:Loc file_limit}" Style="{StaticResource Caption}" Foreground="{DynamicResource Faint}" HorizontalAlignment="Center" Margin="0,12,0,0" />
+                </StackPanel>
+              </Grid>
+
+              <!-- Selected -->
+              <Border Style="{StaticResource Card}" Padding="18,24" Visibility="{Binding Composer, Converter={StaticResource StateVisible}, ConverterParameter=Selected}" local:Motion.Appear="Rise">
+                <StackPanel VerticalAlignment="Center">
+                  <Viewbox Width="120" Height="120">
+                    <Canvas Width="144" Height="144">
+                      <Ellipse Canvas.Left="8" Canvas.Top="8" Width="128" Height="128" Stroke="{DynamicResource Stroke}" StrokeThickness="1.5" />
+                      <local:RingProgress Canvas.Left="20" Canvas.Top="20" Width="104" Height="104" Value="1" Thickness="10" DrawIn="True" TrackBrush="{DynamicResource Track}" RingBrush="{DynamicResource Ink}" />
+                      <Canvas Width="144" Height="144" local:Motion.Appear="Pop" local:Motion.Delay="160">
+                        <Path Data="M58,50 L74,50 86,62 86,94 58,94 Z" Fill="{DynamicResource Fill}" Stroke="{DynamicResource Ink}" StrokeThickness="2.2" StrokeLineJoin="Round" />
+                        <Path Data="M74,50 L74,62 86,62 M64,72 L80,72 M64,79 L80,79 M64,86 L73,86" Stroke="{DynamicResource Ink}" StrokeThickness="2" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                      </Canvas>
+                    </Canvas>
+                  </Viewbox>
+                  <Button Style="{StaticResource GhostPill}" Command="{Binding PreviewSelectedCommand}" ToolTip="{loc:Loc preview}" HorizontalAlignment="Center" Margin="0,14,0,2">
+                    <TextBlock Text="{Binding FileName}" FontSize="16" FontWeight="SemiBold" TextAlignment="Center" TextWrapping="Wrap" MaxHeight="46" TextTrimming="CharacterEllipsis" />
+                  </Button>
+                  <TextBlock Text="{Binding FileSizeText}" Style="{StaticResource Caption}" HorizontalAlignment="Center" />
+                  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,14,0,0">
+                    <Button Style="{StaticResource GhostPill}" Height="28" FontSize="12" Padding="14,0" Content="{loc:Loc preview}" Command="{Binding PreviewSelectedCommand}" Margin="0,0,8,0" />
+                    <Button Style="{StaticResource GhostPill}" Height="28" FontSize="12" Padding="14,0" Content="{loc:Loc change_file}" Command="{Binding ChooseFileCommand}" />
+                    <Button Style="{StaticResource GhostPill}" Height="28" FontSize="12" Padding="14,0" Content="{loc:Loc remove}" Margin="8,0,0,0" Command="{Binding RemoveFileCommand}" />
+                  </StackPanel>
+                  <Button Style="{StaticResource GhostPill}" Content="{loc:Loc open_containing_folder}" Command="{Binding RevealSelectedCommand}" HorizontalAlignment="Center" Margin="0,10,0,0" />
+                  <TextBlock Text="{loc:Loc choose_device_hint}" Style="{StaticResource Caption}" Foreground="{DynamicResource Faint}" HorizontalAlignment="Center" Margin="0,14,0,0" />
+                </StackPanel>
+              </Border>
+
+              <!-- Sending -->
+              <Border Style="{StaticResource Card}" Padding="18,22" Visibility="{Binding Composer, Converter={StaticResource StateVisible}, ConverterParameter=Sending}" local:Motion.Appear="Rise">
+                <StackPanel VerticalAlignment="Center">
+                  <Grid Width="176" Height="176" HorizontalAlignment="Center">
+                    <local:RingProgress Value="{Binding SendFraction}" IsSpinning="{Binding SendSpinning}" Thickness="14" TrackBrush="{DynamicResource Track}" RingBrush="{DynamicResource Ink}" />
+                    <StackPanel VerticalAlignment="Center">
+                      <TextBlock Text="{Binding SendPercent}" FontFamily="{StaticResource DisplayFont}" FontSize="36" FontWeight="SemiBold" HorizontalAlignment="Center" Visibility="{Binding SendPercent, Converter={StaticResource TextVisible}}" />
+                      <TextBlock Text="{Binding SendBytes}" FontSize="12" Foreground="{DynamicResource Sub}" HorizontalAlignment="Center" />
+                    </StackPanel>
+                  </Grid>
+                  <TextBlock Text="{Binding FileName}" FontSize="15" FontWeight="SemiBold" TextAlignment="Center" TextTrimming="CharacterEllipsis" Margin="0,16,0,3" />
+                  <TextBlock Text="{Binding SendStatus}" FontSize="12.5" FontWeight="SemiBold" Foreground="{DynamicResource Signal}" TextAlignment="Center" TextWrapping="Wrap" />
+                  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0" Visibility="{Binding ShowStats, Converter={StaticResource BoolVisible}}">
+                    <StackPanel Margin="0,0,36,0">
+                      <TextBlock Text="{Binding SpeedText}" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                      <TextBlock Text="{loc:Loc speed}" Style="{StaticResource Caption}" HorizontalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel>
+                      <TextBlock Text="{Binding RemainingText}" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                      <TextBlock Text="{loc:Loc remaining}" Style="{StaticResource Caption}" HorizontalAlignment="Center" />
+                    </StackPanel>
+                  </StackPanel>
+                  <ItemsControl ItemsSource="{Binding Steps}" HorizontalAlignment="Center" Margin="0,16,0,0" Focusable="False">
+                    <ItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                      <DataTemplate>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                          <Grid Width="16" Height="16" Margin="0,0,5,0">
+                            <Ellipse x:Name="StepHalo" Stroke="{DynamicResource Signal}" StrokeThickness="1.5" RenderTransformOrigin="0.5,0.5">
+                              <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </Style>
+                              </Ellipse.Style>
+                              <Ellipse.RenderTransform><ScaleTransform x:Name="HaloScale" /></Ellipse.RenderTransform>
+                              <Ellipse.Triggers>
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                  <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                      <DoubleAnimation Storyboard.TargetName="HaloScale" Storyboard.TargetProperty="ScaleX" From="1" To="1.9" Duration="0:0:1.4">
+                                        <DoubleAnimation.EasingFunction><QuadraticEase EasingMode="EaseOut" /></DoubleAnimation.EasingFunction>
+                                      </DoubleAnimation>
+                                      <DoubleAnimation Storyboard.TargetName="HaloScale" Storyboard.TargetProperty="ScaleY" From="1" To="1.9" Duration="0:0:1.4">
+                                        <DoubleAnimation.EasingFunction><QuadraticEase EasingMode="EaseOut" /></DoubleAnimation.EasingFunction>
+                                      </DoubleAnimation>
+                                      <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.7" To="0" Duration="0:0:1.4" />
+                                    </Storyboard>
+                                  </BeginStoryboard>
+                                </EventTrigger>
+                              </Ellipse.Triggers>
+                            </Ellipse>
+                            <Ellipse x:Name="StepRing">
+                              <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                  <Setter Property="Stroke" Value="{DynamicResource Faint}" />
+                                  <Setter Property="StrokeThickness" Value="1.5" />
+                                </Style>
+                              </Ellipse.Style>
+                            </Ellipse>
+                            <Ellipse x:Name="StepDot" Width="6" Height="6">
+                              <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                  <Setter Property="Fill" Value="{DynamicResource Signal}" />
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </Style>
+                              </Ellipse.Style>
+                            </Ellipse>
+                            <TextBlock x:Name="StepCheck" Text="&#xE73E;">
+                              <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource Icon}">
+                                  <Setter Property="FontSize" Value="9" />
+                                  <Setter Property="Foreground" Value="{DynamicResource BtnFg}" />
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </Style>
+                              </TextBlock.Style>
+                            </TextBlock>
+                          </Grid>
+                          <TextBlock x:Name="StepLabel" Text="{Binding Label}" FontSize="12" VerticalAlignment="Center">
+                            <TextBlock.Style>
+                              <Style TargetType="TextBlock">
+                                <Setter Property="Foreground" Value="{DynamicResource Sub}" />
+                              </Style>
+                            </TextBlock.Style>
+                          </TextBlock>
+                          <Rectangle x:Name="StepLine" Width="14" Height="1" Margin="7,0" VerticalAlignment="Center" Fill="{DynamicResource Faint}" />
+                        </StackPanel>
+                        <DataTemplate.Triggers>
+                          <DataTrigger Binding="{Binding State}" Value="Done">
+                            <Setter TargetName="StepRing" Property="Fill" Value="{DynamicResource Ink}" />
+                            <Setter TargetName="StepRing" Property="Stroke" Value="{DynamicResource Ink}" />
+                            <Setter TargetName="StepCheck" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="StepLabel" Property="Foreground" Value="{DynamicResource Ink}" />
+                          </DataTrigger>
+                          <DataTrigger Binding="{Binding State}" Value="Now">
+                            <Setter TargetName="StepRing" Property="Stroke" Value="{DynamicResource Signal}" />
+                            <Setter TargetName="StepDot" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="StepHalo" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="StepLabel" Property="Foreground" Value="{DynamicResource Signal}" />
+                            <Setter TargetName="StepLabel" Property="FontWeight" Value="SemiBold" />
+                          </DataTrigger>
+                          <DataTrigger Binding="{Binding IsLast}" Value="True">
+                            <Setter TargetName="StepLine" Property="Visibility" Value="Collapsed" />
+                          </DataTrigger>
+                        </DataTemplate.Triggers>
+                      </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                  </ItemsControl>
+                  <Button Style="{StaticResource WinButton}" Foreground="{DynamicResource Danger}" Margin="0,18,0,0" HorizontalAlignment="Center" Command="{Binding CancelSendCommand}">
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock Style="{StaticResource Icon}" Text="&#xE71A;" FontSize="12" Margin="0,0,8,0" />
+                      <TextBlock Text="{loc:Loc cancel_send}" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </Button>
+                </StackPanel>
+              </Border>
+
+              <!-- Done -->
+              <Border Style="{StaticResource Card}" Padding="18,24" Visibility="{Binding Composer, Converter={StaticResource StateVisible}, ConverterParameter=Done}" local:Motion.Appear="Fade">
+                <StackPanel VerticalAlignment="Center">
+                  <local:CompletionMark Width="140" Height="140" Brush="{DynamicResource Signal}" HorizontalAlignment="Center" />
+                  <TextBlock Text="{Binding ResultTitle}" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,16,0,4" local:Motion.Appear="Rise" local:Motion.Delay="200" />
+                  <TextBlock Text="{Binding ResultDetail}" Style="{StaticResource Caption}" FontSize="13" TextAlignment="Center" local:Motion.Appear="Rise" local:Motion.Delay="260" />
+                  <Button Style="{StaticResource Pill}" Content="{loc:Loc send_another}" Height="36" Padding="24,0" Margin="0,18,0,0" HorizontalAlignment="Center" Command="{Binding DoneCommand}" local:Motion.Appear="Rise" local:Motion.Delay="320" />
+                  <TextBlock Text="{loc:Loc done_more_hint}" Style="{StaticResource Caption}" Foreground="{DynamicResource Faint}" HorizontalAlignment="Center" Margin="0,12,0,0" local:Motion.Appear="Rise" local:Motion.Delay="380" />
+                </StackPanel>
+              </Border>
+
+              <!-- Failed -->
+              <Border Style="{StaticResource Card}" Padding="18,24" Visibility="{Binding Composer, Converter={StaticResource StateVisible}, ConverterParameter=Failed}" local:Motion.Appear="Rise">
+                <StackPanel VerticalAlignment="Center">
+                  <Grid Width="140" Height="140" HorizontalAlignment="Center">
+                    <local:RingProgress Value="{Binding SendFraction}" Thickness="12" DrawIn="True" TrackBrush="{DynamicResource Track}" RingBrush="{DynamicResource Danger}" />
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xE7BA;" FontSize="38" Foreground="{DynamicResource Danger}" local:Motion.Appear="Shake" local:Motion.Delay="300" />
+                  </Grid>
+                  <TextBlock Text="{Binding ResultTitle}" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,16,0,4" />
+                  <TextBlock Text="{Binding ResultDetail}" Style="{StaticResource Caption}" FontSize="13" TextAlignment="Center" />
+                  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,18,0,0">
+                    <Button Style="{StaticResource GhostPill}" Content="{loc:Loc back}" Height="36" Padding="22,0" Command="{Binding BackCommand}" />
+                    <Button Style="{StaticResource Pill}" Content="{loc:Loc retry}" Height="36" Padding="22,0" Margin="8,0,0,0" Command="{Binding RetryCommand}" />
+                  </StackPanel>
+                </StackPanel>
+              </Border>
+            </Grid>
+
+            <!-- Receive location -->
+            <Border Style="{StaticResource Card}" Margin="0,12,0,0" Padding="16,12">
+              <StackPanel>
+                <TextBlock Text="{loc:Loc receive_location}" Style="{StaticResource Caption}" Margin="0,0,0,6" />
+                <DockPanel>
+                  <Button DockPanel.Dock="Right" Style="{StaticResource WinButton}" Content="{loc:Loc change}" Margin="8,0,0,0" Command="{Binding ChangeReceiveFolderCommand}" />
+                  <Button DockPanel.Dock="Right" Style="{StaticResource WinButton}" Content="{loc:Loc open}" Command="{Binding OpenReceiveFolderCommand}" />
+                  <TextBlock DockPanel.Dock="Left" Style="{StaticResource Icon}" Text="&#xE838;" Margin="0,0,10,0" />
+                  <TextBlock Text="{Binding ReceiveDirectory}" ToolTip="{Binding ReceiveDirectory}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="0,0,8,0" />
+                </DockPanel>
+              </StackPanel>
+            </Border>
+
+            <!-- Recent -->
+            <Border Style="{StaticResource Card}" Margin="0,12,0,0" Padding="16,12" Visibility="{Binding HasRecent, Converter={StaticResource BoolVisible}}">
+              <StackPanel>
+                <TextBlock Text="{loc:Loc recent}" Style="{StaticResource Caption}" Margin="0,0,0,2" />
+                <ItemsControl ItemsSource="{Binding Recent}" Focusable="False">
+                  <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                      <DockPanel Margin="0,6" local:Motion.Appear="Rise" Background="Transparent"
+                                 Tag="{Binding DataContext, RelativeSource={RelativeSource AncestorType=Window}}">
+                        <DockPanel.ContextMenu>
+                          <ContextMenu>
+                            <MenuItem Header="{loc:Loc preview}" Command="{Binding PlacementTarget.Tag.OpenRecentCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}" CommandParameter="{Binding}"
+                                      Visibility="{Binding CanReveal, Converter={StaticResource BoolVisible}}" />
+                            <MenuItem Header="{loc:Loc menu_reveal}" Command="{Binding PlacementTarget.Tag.RevealCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}" CommandParameter="{Binding}"
+                                      Visibility="{Binding CanReveal, Converter={StaticResource BoolVisible}}" />
+                            <Separator Visibility="{Binding CanReveal, Converter={StaticResource BoolVisible}}" />
+                            <MenuItem Header="{loc:Loc menu_delete}" Foreground="{DynamicResource Danger}" Command="{Binding PlacementTarget.Tag.DeleteRecentCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}" CommandParameter="{Binding}"
+                                      Visibility="{Binding CanDelete, Converter={StaticResource BoolVisible}}" />
+                            <MenuItem Header="{loc:Loc retry_photo_save}" Command="{Binding PlacementTarget.Tag.RetryPhotoCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}" CommandParameter="{Binding}"
+                                      Visibility="{Binding CanRetryPhoto, Converter={StaticResource BoolVisible}}" />
+                            <MenuItem Header="{loc:Loc menu_remove}" Command="{Binding PlacementTarget.Tag.RemoveRecentCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}" CommandParameter="{Binding}" />
+                          </ContextMenu>
+                        </DockPanel.ContextMenu>
+                        <Border DockPanel.Dock="Left" Style="{StaticResource FileBox}" Margin="0,0,12,0">
+                          <TextBlock Style="{StaticResource Icon}" Text="{Binding Glyph}" />
+                        </Border>
+                        <Button DockPanel.Dock="Right" Style="{StaticResource WinButton}" Content="{Binding LocationLabel}" Margin="8,0,0,0"
+                                Command="{Binding DataContext.OpenLocationCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"
+                                Visibility="{Binding CanOpenLocation, Converter={StaticResource BoolVisible}}" />
+                        <StackPanel VerticalAlignment="Center">
+                          <Button Style="{StaticResource GhostPill}" HorizontalAlignment="Left" Content="{Binding Name}" ToolTip="{loc:Loc preview}"
+                                  Command="{Binding DataContext.OpenRecentCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"
+                                  IsEnabled="{Binding CanPreview}" />
+                          <TextBlock Text="{Binding Detail}" FontSize="12" Foreground="{DynamicResource Sub}" TextTrimming="CharacterEllipsis" Margin="0,2,0,0" />
+                          <TextBlock Text="{Binding PhotoStatus}" FontSize="12" Foreground="{DynamicResource Sub}" TextWrapping="Wrap" Visibility="{Binding PhotoStatus, Converter={StaticResource TextVisible}}" />
+                        </StackPanel>
+                      </DockPanel>
+                    </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+                </ItemsControl>
+              </StackPanel>
+            </Border>
+          </StackPanel>
+
+          <!-- Nearby devices -->
+          <Border x:Name="PeersCard" Grid.Column="2" Style="{StaticResource Card}" Padding="10,14" local:Motion.Appear="Rise" local:Motion.Delay="140">
+            <DockPanel>
+              <DockPanel DockPanel.Dock="Top" Margin="12,0,12,8">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                  <TextBlock Text="{Binding PeerCount}" Style="{StaticResource Caption}" VerticalAlignment="Center" Margin="0,0,12,0" />
+                  <CheckBox Style="{StaticResource Switch}" Content="{loc:Loc multi_select}" FontSize="12" VerticalAlignment="Center"
+                            IsChecked="{Binding MultiSelectEnabled}" ToolTip="{loc:Loc multi_select_tip}" />
+                </StackPanel>
+                <TextBlock Text="{loc:Loc nearby_devices}" Style="{StaticResource SectionTitle}" VerticalAlignment="Center" />
+              </DockPanel>
+              <Button DockPanel.Dock="Bottom" Style="{StaticResource Pill}" Margin="12,4,12,10" Height="34"
+                      Content="{Binding BatchButtonText}" IsEnabled="{Binding BatchCanSend}"
+                      Command="{Binding SendSelectedCommand}" Visibility="{Binding MultiSelectEnabled, Converter={StaticResource BoolVisible}}" />
+              <DockPanel DockPanel.Dock="Bottom" Margin="12,12,12,2">
+                <TextBlock DockPanel.Dock="Left" Style="{StaticResource Icon}" Text="&#xE946;" FontSize="13" Foreground="{DynamicResource Sub}" VerticalAlignment="Top" Margin="0,1,8,0" />
+                <TextBlock Style="{StaticResource Caption}" Text="{loc:Loc firewall_hint}" />
+              </DockPanel>
+              <Grid>
+                <StackPanel VerticalAlignment="Center" Margin="24" Visibility="{Binding Startup, Converter={StaticResource StateVisible}, ConverterParameter=Failed}" local:Motion.Appear="Rise">
+                  <TextBlock Style="{StaticResource Icon}" Text="&#xE7BA;" FontSize="28" Foreground="{DynamicResource Danger}" />
+                  <TextBlock Text="{loc:Loc lan_failed_title}" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,12,0,4" />
+                  <TextBlock Text="{Binding StartupError}" Style="{StaticResource Caption}" TextAlignment="Center" />
+                  <Button Style="{StaticResource Pill}" Content="{loc:Loc retry}" Margin="0,14,0,0" HorizontalAlignment="Center" Command="{Binding RetryStartCommand}" />
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Center" Margin="24,32" Visibility="{Binding ShowRadar, Converter={StaticResource BoolVisible}}" local:Motion.Appear="Fade">
+                  <Grid Width="150" Height="150" HorizontalAlignment="Center">
+                    <Ellipse Width="104" Height="104" Stroke="{DynamicResource Stroke}" />
+                    <Ellipse Width="148" Height="148" Stroke="{DynamicResource Stroke}" />
+                    <Ellipse x:Name="Pulse1" Width="148" Height="148" Stroke="{DynamicResource Signal}" StrokeThickness="1.5" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                      <Ellipse.RenderTransform><ScaleTransform ScaleX="0.4" ScaleY="0.4" /></Ellipse.RenderTransform>
+                    </Ellipse>
+                    <Ellipse x:Name="Pulse2" Width="148" Height="148" Stroke="{DynamicResource Signal}" StrokeThickness="1.5" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                      <Ellipse.RenderTransform><ScaleTransform ScaleX="0.4" ScaleY="0.4" /></Ellipse.RenderTransform>
+                    </Ellipse>
+                    <Border Width="58" Height="58" CornerRadius="29" Background="{DynamicResource LayerSolid}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1">
+                      <Control Template="{StaticResource Logo}" Width="28" Height="28" Focusable="False" />
+                    </Border>
+                    <Grid.Triggers>
+                      <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Pulse1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" From="0.4" To="1" Duration="0:0:3" RepeatBehavior="Forever" />
+                            <DoubleAnimation Storyboard.TargetName="Pulse1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" From="0.4" To="1" Duration="0:0:3" RepeatBehavior="Forever" />
+                            <DoubleAnimation Storyboard.TargetName="Pulse1" Storyboard.TargetProperty="Opacity" From="0.7" To="0" Duration="0:0:3" RepeatBehavior="Forever" />
+                            <DoubleAnimation Storyboard.TargetName="Pulse2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" From="0.4" To="1" Duration="0:0:3" BeginTime="0:0:1.5" RepeatBehavior="Forever" />
+                            <DoubleAnimation Storyboard.TargetName="Pulse2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" From="0.4" To="1" Duration="0:0:3" BeginTime="0:0:1.5" RepeatBehavior="Forever" />
+                            <DoubleAnimation Storyboard.TargetName="Pulse2" Storyboard.TargetProperty="Opacity" From="0.7" To="0" Duration="0:0:3" BeginTime="0:0:1.5" RepeatBehavior="Forever" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </EventTrigger>
+                    </Grid.Triggers>
+                  </Grid>
+                  <TextBlock Text="{Binding RadarText}" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,16,0,4" />
+                  <TextBlock Text="{loc:Loc radar_hint}" Style="{StaticResource Caption}" TextAlignment="Center" />
+                </StackPanel>
+
+                <ItemsControl ItemsSource="{Binding Peers}" VerticalAlignment="Top" Focusable="False">
+                  <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                      <Grid x:Name="Row" Background="Transparent" local:Motion.Appear="Rise" MouseLeftButtonUp="OnPeerRowClick">
+                        <Border x:Name="RowHover" CornerRadius="6" Background="{DynamicResource Fill}" Opacity="0" />
+                        <DockPanel Margin="12,10">
+                          <Grid Width="44" Height="44" DockPanel.Dock="Left" Margin="0,0,14,0">
+                            <Grid Visibility="{Binding IsLive, Converter={StaticResource BoolVisible}}" local:Motion.Appear="Pop">
+                              <local:RingProgress Value="{Binding Fraction}" IsSpinning="{Binding Spinning}" Thickness="3.5" TrackBrush="{DynamicResource Track}" RingBrush="{DynamicResource Ink}" />
+                            </Grid>
+                            <TextBlock x:Name="Glyph" Text="{Binding Glyph}">
+                              <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource Icon}">
+                                  <Setter Property="FontSize" Value="22" />
+                                </Style>
+                              </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock x:Name="Check" Text="&#xE73E;" local:Motion.Appear="Pop">
+                              <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource Icon}">
+                                  <Setter Property="FontSize" Value="20" />
+                                  <Setter Property="Foreground" Value="{DynamicResource Signal}" />
+                                  <Setter Property="Visibility" Value="Collapsed" />
+                                </Style>
+                              </TextBlock.Style>
+                            </TextBlock>
+                          </Grid>
+                          <CheckBox DockPanel.Dock="Right" Style="{StaticResource Switch}" Margin="12,0,4,0" IsChecked="{Binding Selected}" IsHitTestVisible="False"
+                                    Visibility="{Binding DataContext.MultiSelectEnabled, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolVisible}}" />
+                          <Button DockPanel.Dock="Right" Content="{loc:Loc send}" Margin="12,0,0,0" IsEnabled="{Binding CanSend}"
+                                  Command="{Binding DataContext.SendCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}">
+                            <Button.Style>
+                              <Style TargetType="Button" BasedOn="{StaticResource Pill}">
+                                <Setter Property="Visibility" Value="Visible" />
+                                <Style.Triggers>
+                                  <DataTrigger Binding="{Binding IsLive}" Value="True"><Setter Property="Visibility" Value="Collapsed" /></DataTrigger>
+                                  <DataTrigger Binding="{Binding DataContext.MultiSelectEnabled, RelativeSource={RelativeSource AncestorType=Window}}" Value="True"><Setter Property="Visibility" Value="Collapsed" /></DataTrigger>
+                                </Style.Triggers>
+                              </Style>
+                            </Button.Style>
+                          </Button>
+                          <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="{Binding DisplayName}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                            <TextBlock x:Name="Sub" Text="{Binding Subtitle}" FontSize="12" TextTrimming="CharacterEllipsis" Margin="0,2,0,0">
+                              <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                  <Setter Property="Foreground" Value="{DynamicResource Sub}" />
+                                </Style>
+                              </TextBlock.Style>
+                            </TextBlock>
+                          </StackPanel>
+                        </DockPanel>
+                      </Grid>
+                      <DataTemplate.Triggers>
+                        <Trigger SourceName="Row" Property="IsMouseOver" Value="True">
+                          <Trigger.EnterActions>
+                            <BeginStoryboard>
+                              <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="RowHover" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.15" />
+                              </Storyboard>
+                            </BeginStoryboard>
+                          </Trigger.EnterActions>
+                          <Trigger.ExitActions>
+                            <BeginStoryboard>
+                              <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="RowHover" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.3" />
+                              </Storyboard>
+                            </BeginStoryboard>
+                          </Trigger.ExitActions>
+                        </Trigger>
+                        <DataTrigger Binding="{Binding IsLive}" Value="True">
+                          <Setter TargetName="Sub" Property="Foreground" Value="{DynamicResource Signal}" />
+                          <Setter TargetName="Sub" Property="FontWeight" Value="SemiBold" />
+                          <Setter TargetName="Glyph" Property="FontSize" Value="18" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding State}" Value="Delivered">
+                          <Setter TargetName="Glyph" Property="Visibility" Value="Collapsed" />
+                          <Setter TargetName="Check" Property="Visibility" Value="Visible" />
+                          <Setter TargetName="Sub" Property="Foreground" Value="{DynamicResource Signal}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Dimmed}" Value="True">
+                          <Setter TargetName="Row" Property="Opacity" Value="0.45" />
+                        </DataTrigger>
+                      </DataTemplate.Triggers>
+                    </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+                </ItemsControl>
+              </Grid>
+            </DockPanel>
+          </Border>
+        </Grid>
+      </Grid>
+    </ScrollViewer>
+
+    <!-- Drop target -->
+    <Grid IsHitTestVisible="False" Visibility="Collapsed" local:Motion.IsShown="{Binding IsDragOver}" local:Motion.Appear="Fade">
+      <Rectangle x:Name="DropBorder" Margin="12" RadiusX="12" RadiusY="12" Fill="{DynamicResource SignalSoft}" Stroke="{DynamicResource Signal}" StrokeThickness="2" StrokeDashArray="6 4">
+        <Rectangle.Triggers>
+          <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard>
+              <Storyboard>
+                <DoubleAnimation Storyboard.TargetProperty="StrokeDashOffset" From="0" To="-20" Duration="0:0:0.8" RepeatBehavior="Forever" />
+              </Storyboard>
+            </BeginStoryboard>
+          </EventTrigger>
+        </Rectangle.Triggers>
+      </Rectangle>
+      <Border Background="{DynamicResource LayerSolid}" CornerRadius="8" Padding="20,12" HorizontalAlignment="Center" VerticalAlignment="Center" local:Motion.Appear="Pop">
+        <TextBlock Text="{loc:Loc drop_release}" FontSize="15" FontWeight="SemiBold" />
+      </Border>
+    </Grid>
+
+    <!-- Incoming file consent -->
+    <Grid Background="{DynamicResource Scrim}" Visibility="Collapsed" local:Motion.IsShown="{Binding HasOffer}" local:Motion.Appear="Fade">
+      <Border DataContext="{Binding CurrentOffer}" Background="{DynamicResource LayerSolid}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1" CornerRadius="12" Width="400" Padding="24" HorizontalAlignment="Center" VerticalAlignment="Center" local:Motion.Appear="Pop" local:Motion.Delay="40">
+        <StackPanel>
+          <Grid Width="60" Height="60" HorizontalAlignment="Center">
+            <local:RingProgress IsSpinning="True" Thickness="5" TrackBrush="{DynamicResource Track}" RingBrush="{DynamicResource Ink}" />
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE896;" FontSize="20" />
+          </Grid>
+          <TextBlock Text="{Binding Title}" FontSize="18" FontWeight="SemiBold" TextWrapping="Wrap" TextAlignment="Center" Margin="0,14,0,16" />
+          <Border Background="{DynamicResource Fill}" CornerRadius="10" Padding="14">
+            <DockPanel>
+              <Border DockPanel.Dock="Left" Style="{StaticResource FileBox}" Background="{DynamicResource LayerSolid}" Margin="0,0,12,0">
+                <TextBlock Style="{StaticResource Icon}" Text="&#xE8A5;" FontSize="18" />
+              </Border>
+              <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="{Binding FileName}" FontSize="14" FontWeight="SemiBold" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding Detail}" Style="{StaticResource Caption}" Margin="0,3,0,0" />
+              </StackPanel>
+            </DockPanel>
+          </Border>
+          <TextBlock Text="{loc:Loc consent_note}" Style="{StaticResource Caption}" TextAlignment="Center" Margin="0,12,0,18" />
+          <UniformGrid Columns="2">
+            <Button Style="{StaticResource GhostPill}" Content="{loc:Loc decline}" Height="38" Margin="0,0,5,0" Command="{Binding DataContext.RejectCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
+            <Button Style="{StaticResource Pill}" Content="{loc:Loc accept}" Height="38" Margin="5,0,0,0" Command="{Binding DataContext.AcceptCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
+          </UniformGrid>
+          <TextBlock Text="{Binding Countdown}" Style="{StaticResource Caption}" Foreground="{DynamicResource Faint}" TextAlignment="Center" Margin="0,12,0,0" />
+          <TextBlock Text="{Binding DataContext.MoreOffers, RelativeSource={RelativeSource AncestorType=Window}}" Style="{StaticResource Caption}" TextAlignment="Center" Margin="0,4,0,0"
+                     Visibility="{Binding DataContext.MoreOffers, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource TextVisible}}" />
+        </StackPanel>
+      </Border>
+    </Grid>
+
+    <!-- Settings -->
+    <Grid Background="{DynamicResource Scrim}" Visibility="Collapsed" local:Motion.IsShown="{Binding SettingsOpen}" local:Motion.Appear="Fade">
+      <Border Background="{DynamicResource LayerSolid}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1" CornerRadius="12" Width="460" Padding="24" Margin="0,20" HorizontalAlignment="Center" VerticalAlignment="Center" local:Motion.Appear="Pop" local:Motion.Delay="40">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel>
+          <TextBlock Text="{loc:Loc settings}" FontFamily="{StaticResource DisplayFont}" FontSize="20" FontWeight="SemiBold" Margin="0,0,0,18" />
+          <TextBlock Text="{loc:Loc device_name}" FontWeight="SemiBold" Margin="0,0,0,6" />
+          <TextBox x:Name="NameBox" Style="{StaticResource Field}" Text="{Binding EditName, UpdateSourceTrigger=PropertyChanged}" MaxLength="60" />
+          <TextBlock Text="{loc:Loc device_name_hint}" Style="{StaticResource Caption}" Margin="0,6,0,18" />
+          <TextBlock Text="{loc:Loc receive_location}" FontWeight="SemiBold" Margin="0,0,0,6" />
+          <DockPanel>
+            <Button DockPanel.Dock="Right" Style="{StaticResource WinButton}" Content="{loc:Loc browse}" Margin="8,0,0,0" Command="{Binding BrowseSettingsFolderCommand}" />
+            <Border Background="{DynamicResource Fill}" CornerRadius="4" Padding="10,7">
+              <TextBlock Text="{Binding EditDirectory}" ToolTip="{Binding EditDirectory}" TextTrimming="CharacterEllipsis" />
+            </Border>
+          </DockPanel>
+          <TextBlock Text="{loc:Loc language}" FontWeight="SemiBold" Margin="0,20,0,6" />
+          <ComboBox Style="{StaticResource Picker}" ItemsSource="{Binding Languages}" DisplayMemberPath="Label"
+                    SelectedValuePath="Tag" SelectedValue="{Binding EditLanguage, Mode=TwoWay}" MinHeight="34" />
+          <CheckBox Style="{StaticResource Switch}" IsChecked="{Binding EditCloseToTray}" Margin="0,22,0,0">
+            <StackPanel>
+              <TextBlock Text="{loc:Loc close_to_tray}" FontWeight="SemiBold" />
+              <TextBlock Text="{loc:Loc close_to_tray_hint}" Style="{StaticResource Caption}" Margin="0,2,0,0" />
+            </StackPanel>
+          </CheckBox>
+          <CheckBox Style="{StaticResource Switch}" IsChecked="{Binding EditAutoSaveReceivedImages}" Margin="0,18,0,0">
+            <TextBlock Text="{loc:Loc auto_save_images}" TextWrapping="Wrap" MaxWidth="300" />
+          </CheckBox>
+          <TextBlock Text="{loc:Loc auto_save_images_hint}" Style="{StaticResource Caption}" TextWrapping="Wrap" Margin="0,6,0,0" />
+          <TextBlock Text="{loc:Loc binding_devices}" FontWeight="SemiBold" Margin="0,16,0,4" />
+          <ScrollViewer MaxHeight="110" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding BoundDevices}"><ItemsControl.ItemTemplate><DataTemplate>
+              <DockPanel Margin="0,4"><Button DockPanel.Dock="Right" Style="{StaticResource GhostPill}" Content="{loc:Loc binding_unbind}"
+                Command="{Binding DataContext.UnbindCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" />
+                <TextBlock Text="{Binding Alias}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" /></DockPanel>
+            </DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+          </ScrollViewer>
+          <TextBlock Text="{Binding SettingsError}" Foreground="{DynamicResource Danger}" TextWrapping="Wrap" Margin="0,16,0,0" Visibility="{Binding SettingsError, Converter={StaticResource TextVisible}}" />
+          <Button Command="{Binding CheckUpdatesCommand}" Margin="0,16,0,0">
+            <Button.Style><Style TargetType="Button" BasedOn="{StaticResource WinButton}">
+              <Setter Property="Content" Value="{loc:Loc updates_check}" />
+              <Style.Triggers><DataTrigger Binding="{Binding CheckingUpdates}" Value="True">
+                <Setter Property="IsEnabled" Value="False" /><Setter Property="Content" Value="{loc:Loc updates_checking}" />
+              </DataTrigger></Style.Triggers>
+            </Style></Button.Style>
+          </Button>
+          <TextBlock Text="{loc:Loc updates_disclosure}" Style="{StaticResource Caption}" TextWrapping="Wrap" Margin="0,6,0,0" />
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,22,0,0">
+            <Button Style="{StaticResource GhostPill}" Content="{loc:Loc cancel}" Height="34" Padding="20,0" Command="{Binding CloseSettingsCommand}" />
+            <Button Style="{StaticResource Pill}" Content="{loc:Loc save}" Height="34" Padding="20,0" Margin="8,0,0,0" Command="{Binding SaveSettingsCommand}" />
+          </StackPanel>
+          <StackPanel Margin="0,20,0,0">
+            <Border Height="1" Background="{DynamicResource Stroke}" Margin="0,0,0,8" />
+            <Button Style="{StaticResource WinButton}" HorizontalContentAlignment="Left" Command="{Binding OpenPrivacyPolicyCommand}">
+              <TextBlock Text="{loc:Loc privacy_policy}" TextWrapping="Wrap" />
+            </Button>
+            <Button Style="{StaticResource WinButton}" HorizontalContentAlignment="Left" Margin="0,6,0,0" Command="{Binding OpenUsageTermsCommand}">
+              <TextBlock Text="{loc:Loc usage_terms}" TextWrapping="Wrap" />
+            </Button>
+          </StackPanel>
+        </StackPanel>
+        </ScrollViewer>
+      </Border>
+    </Grid>
+    <Grid Background="{DynamicResource Scrim}" Visibility="{Binding BindingPickerOpen, Converter={StaticResource BoolVisible}}">
+      <Border Background="{DynamicResource LayerSolid}" CornerRadius="12" Padding="24" Width="420" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel><TextBlock Text="{loc:Loc nearby_devices}" FontSize="20" FontWeight="SemiBold" />
+          <ScrollViewer MaxHeight="280" VerticalScrollBarVisibility="Auto" Margin="0,12,0,0"><ItemsControl ItemsSource="{Binding Peers}"><ItemsControl.ItemTemplate><DataTemplate>
+            <DockPanel Margin="0,6"><Button DockPanel.Dock="Right" Content="{loc:Loc binding_bind}" Style="{StaticResource Pill}"
+              Command="{Binding DataContext.BindCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" />
+              <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" /></DockPanel>
+          </DataTemplate></ItemsControl.ItemTemplate></ItemsControl></ScrollViewer>
+          <Button Content="{loc:Loc cancel}" Style="{StaticResource GhostPill}" Command="{Binding CloseBindingPickerCommand}" Margin="0,12,0,0" />
+        </StackPanel>
+      </Border>
+    </Grid>
+    <Grid Background="{DynamicResource Scrim}" Visibility="{Binding BindingWaiting, Converter={StaticResource BoolVisible}}">
+      <Border Background="{DynamicResource LayerSolid}" CornerRadius="12" Padding="24" Width="420" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel><TextBlock Text="{loc:Loc binding_waiting}" FontSize="20" FontWeight="SemiBold" TextWrapping="Wrap" />
+          <TextBlock Text="{Binding BindingAlias}" Margin="0,12,0,0" /><TextBlock Text="{loc:Loc binding_explanation}" TextWrapping="Wrap" Margin="0,12" />
+          <Button Content="{loc:Loc cancel}" Style="{StaticResource GhostPill}" Command="{Binding CancelBindingCommand}" /></StackPanel>
+      </Border>
+    </Grid>
+    <Grid Background="{DynamicResource Scrim}" Visibility="{Binding BindingConsentOpen, Converter={StaticResource BoolVisible}}">
+      <Border Background="{DynamicResource LayerSolid}" CornerRadius="12" Padding="24" Width="420" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel><TextBlock Text="{loc:Loc binding_request}" FontSize="20" FontWeight="SemiBold" />
+          <TextBlock Text="{Binding BindingAlias}" Margin="0,12,0,0" /><TextBlock Text="{loc:Loc binding_explanation}" TextWrapping="Wrap" Margin="0,12" />
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="{loc:Loc decline}" Style="{StaticResource GhostPill}" Command="{Binding RejectBindingCommand}" />
+            <Button Content="{loc:Loc binding_accept}" Style="{StaticResource Pill}" Command="{Binding AcceptBindingCommand}" Margin="8,0,0,0" />
+          </StackPanel></StackPanel>
+      </Border>
+    </Grid>
+  </Grid>
+</Window>

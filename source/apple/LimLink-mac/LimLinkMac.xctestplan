@@ -1,0 +1,53 @@
+{
+  "configurations": [
+    {
+      "id": "25A7C565-F4DC-4D24-9A95-20D1A42B0AA7",
+      "name": "Default",
+      "options": {}
+    }
+  ],
+  "defaultOptions": {
+    "environmentVariableEntries": [
+      {
+        "key": "LIMLINK_ISOLATED_STOREKIT_HOST",
+        "value": "1"
+      }
+    ],
+    "storeKitConfiguration": {
+      "identifier": "../SupportTips.storekit"
+    },
+    "targetForVariableExpansion": {
+      "containerPath": "container:LimLinkMac.xcodeproj",
+      "identifier": "500876A42BA317FEFC1A6730",
+      "name": "LimLinkMac"
+    },
+    "testTimeoutsEnabled": true
+  },
+  "testTargets": [
+    {
+      "parallelizable": false,
+      "target": {
+        "containerPath": "container:LimLinkMac.xcodeproj",
+        "identifier": "F861727ED2BB76C499FEF0A6",
+        "name": "LimLinkMacTests"
+      }
+    },
+    {
+      "parallelizable": false,
+      "target": {
+        "containerPath": "container:LimLinkMac.xcodeproj",
+        "identifier": "69E876B20DF378F8119DCD87",
+        "name": "LimLinkMacStoreKitTests"
+      }
+    },
+    {
+      "parallelizable": false,
+      "target": {
+        "containerPath": "container:LimLinkMac.xcodeproj",
+        "identifier": "98574180A2C92AC42D3DC1F6",
+        "name": "LimLinkMacUITests"
+      }
+    }
+  ],
+  "version": 1
+}

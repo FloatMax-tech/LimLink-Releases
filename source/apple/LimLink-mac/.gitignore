@@ -1,0 +1,4 @@
+.derived/
+*.xcodeproj/
+xcuserdata/
+.DS_Store

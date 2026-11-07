@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">Dispositivos vinculados</string>
+    <string name="binding_explanation">Elige un dispositivo conocido. Su propietario puede cambiar el nombre. La recepción requiere que la app esté abierta.</string>
+    <string name="binding_add">Vincular dispositivo</string>
+    <string name="binding_unbind">Desvincular</string>
+    <string name="binding_empty">No hay dispositivos vinculados</string>
+    <string name="binding_waiting">Esperando la aceptación de %1$s…</string>
+    <string name="binding_completed">Vinculado a %1$s</string>
+    <string name="binding_failed">La vinculación falló o caducó. Reintenta para solicitar otra confirmación.</string>
+    <string name="binding_cancelled">Vinculación cancelada</string>
+    <string name="binding_unbound">Desvinculado localmente. El otro dispositivo puede estar desconectado.</string>
+    <string name="binding_no_devices">No hay dispositivos cercanos</string>
+    <string name="binding_bind_device">Vincular %1$s</string>
+    <string name="binding_grant">Ambos dispositivos recibirán automáticamente los archivos del otro. Vincula solo un dispositivo conocido.</string>
+    <string name="binding_request">Solicitud de vinculación de %1$s</string>
+    <string name="binding_accept">Aceptar vinculación</string>
+    <string name="binding_reject">Rechazar</string>
+    <string name="privacy_binding">Los registros de vinculación se guardan en el almacenamiento privado de este dispositivo: huellas de ambas claves, ID de vinculación, nombre, tipo y fecha. No se suben ni se incluyen en copias de seguridad de Android. Una vinculación completada permite recibir automáticamente mientras la aplicación está abierta. Los dispositivos no vinculados requieren aprobación para cada archivo. Puedes desvincularlos en Ajustes.</string>
+    <string name="privacy_contact">Desarrollador: 周甫俊. Contacto: limlink@floatmax-tech.com</string>
+</resources>

@@ -1,0 +1,936 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03461B392FAADF417AC6308E /* SharedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62858B0CB61A9911E16DFF5 /* SharedViews.swift */; };
+		0509D8F837D3804E2DCA47D3 /* ShareSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4977A39FAA6D9AF6F1E8634 /* ShareSender.swift */; };
+		1624EF223906B702428DDF22 /* LimLinkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 77F7A7B0F98C78619C5C8BB6 /* LimLinkKit */; };
+		1CF6EFFB2ED31D3FD0A73184 /* LimLinkDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464803F18383BF20366288E8 /* LimLinkDesign.swift */; };
+		2536F91E6D8160439E962736 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FDDFC8DE4D93FC3F6F336A1C /* Localizable.xcstrings */; };
+		27C787F8C5E0DCC261134597 /* LimLinkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 043A6C68C19FB4F14915C0F5 /* LimLinkKit */; };
+		2BA1432BB5F9116F8D347CB6 /* LimLinkIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198FDBD62A829CA517A8CE8 /* LimLinkIOSApp.swift */; };
+		397A40B6CC3ADDE9BB214EFE /* TransferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC261C21A1140BA1452A1567 /* TransferModel.swift */; };
+		39B5CFBAB3D38E5A09B5D6E5 /* TransferModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DC401EE6DD74C58BF7289 /* TransferModels.swift */; };
+		4FF60F2B6834D610823667DD /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F8409E60294A7B327D2B21AD /* InfoPlist.xcstrings */; };
+		50085EBEE8F92FBD38A35DFA /* FilePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853034409037A3BCB074921F /* FilePreviewView.swift */; };
+		536616050781CDC2E7ADA138 /* LimLinkTransferLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4853C5E149B87E9A6E07E1BC /* LimLinkTransferLabApp.swift */; };
+		53C89398C5167B6368A318D7 /* TransferFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FF303BEEDE3F03B28378BE /* TransferFlowUITests.swift */; };
+		58785137F4420DF5A8FE87D3 /* LimLinkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377BB4D0001EFDF016FBFF /* LimLinkKit */; };
+		588587DD40E26430E6002335 /* TransferProgressViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBFFC4C3E11250C3D916C4 /* TransferProgressViews.swift */; };
+		625BEF2384E537D7F03F9D87 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780EFEE308CB4D8A43C005C /* Notifications.swift */; };
+		66312DE0F86E88680AF9AC31 /* TransferPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1F58114E06ACA4D52254A4 /* TransferPresentation.swift */; };
+		6750D22EBECAD7EFB941F54E /* TransferCompletionBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CF0619E373E9FEE398E7A2 /* TransferCompletionBanner.swift */; };
+		7058BDF01D4AD949C8699B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 715F33DF443C99007AE4BF1D /* Assets.xcassets */; };
+		7618DCC819545052C7AFE1AC /* TransferLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06097808C3609EBE13FE4229 /* TransferLab.swift */; };
+		78D9A3970F2DF4F8AA886B6A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 47E9C7330194343BADAA7598 /* PrivacyInfo.xcprivacy */; };
+		85B3BEF17C9ACA490CF3C52D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = ED87E9C34A7BC85B00A58CA2 /* PrivacyInfo.xcprivacy */; };
+		8BAB86E14073DBF83CEC2F74 /* LimLinkAppSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FF085666DEBC5D97435F7E65 /* LimLinkAppSupport */; };
+		8CF8230F7531C490EC0B0C83 /* DeviceIdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8B2ED2FEF0FDDDEB313409 /* DeviceIdentityView.swift */; };
+		94FCAB038B4E65DBBD9AF2F7 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7D392BE92B0F1690E78CD575 /* InfoPlist.xcstrings */; };
+		ABE98F39A96515B316489B3F /* ReceivedPhotoSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF19978E52221D752860326 /* ReceivedPhotoSettings.swift */; };
+		AE39079211F7266C19D4A55F /* run_behavior_regressions.py in Resources */ = {isa = PBXBuildFile; fileRef = CC655378BFE60D17C45C79E8 /* run_behavior_regressions.py */; };
+		B67EC8BD147A50721D69FFE6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FDDFC8DE4D93FC3F6F336A1C /* Localizable.xcstrings */; };
+		B97FC7481F9853FF8698153E /* SupportTips.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 6706EA98BCDED9F4B9A2EFEA /* SupportTips.storekit */; };
+		BA993B936E29132C8D209273 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C944A09582247CCCDF32003 /* ShareViewController.swift */; };
+		BE850A85E9D22D41B6D548CE /* FolderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AEC969E616C99F50094E2 /* FolderPicker.swift */; };
+		C1A79A17ED808CE995506BC3 /* SupportScreenshotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E9DC6B1977171F7E6052E6 /* SupportScreenshotsUITests.swift */; };
+		C1CD5502522FCCD618C943B4 /* PhotoImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE99B47BF73094F6EFF886 /* PhotoImport.swift */; };
+		CA6E75DE15E0080DBEBBED1C /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A8CA1217AD78B5EDAB8CA /* PrivacyPolicyView.swift */; };
+		CE75FFD25419D7711E744D57 /* LimLinkAppSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 18CA7D0CF2014D5B74DE5CB3 /* LimLinkAppSupport */; };
+		D455649A6B0AE94BD3BD0C9D /* SupportLimLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0D8F0BD65A453E943C10D /* SupportLimLinkView.swift */; };
+		E1B6801941FE8E837EED8483 /* LimLinkShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 01472947331B58E910A09404 /* LimLinkShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E47450937B832AD7C3DBA7BF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912DD8B5AE7BBFBBC87E065 /* RootView.swift */; };
+		E4CD40453F1FAF9002137BF8 /* DeviceBindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F933DF85A2FAA79896B9060D /* DeviceBindingView.swift */; };
+		EC4F47ECC09D5165A1FCFC56 /* TransferSendViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C0FE1BA903BBA38341249B /* TransferSendViews.swift */; };
+		F0B14E174018719C54F72DA0 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 23397D4DE36F2A7A9D12B521 /* InfoPlist.xcstrings */; };
+		F19AA88387E18105D248384B /* TransferHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC04A22E40DC1B59993E8B4 /* TransferHomeView.swift */; };
+		F303432E7EDEAEF9F1788DF4 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDB1C90C81D2B10D731B651 /* LanguagePicker.swift */; };
+		FA1CD88DB4B9445B6B21AD5D /* UsageTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286DB44F068B0BDAB9109206 /* UsageTermsView.swift */; };
+		FB6D19EF158E309678C53AA7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 38250DC056A502C82CC67919 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CD5CE5CEBD94A2E74D81ABA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F6940D0D4279DE04FCF31C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EDDC6555DF56CD47BE55B97;
+			remoteInfo = LimLinkShare;
+		};
+		92C354AFD08F774D79533B42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F6940D0D4279DE04FCF31C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BF8ED286CD235AB52E38475;
+			remoteInfo = LimLinkIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CBF0882AAEAC1A161D126878 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E1B6801941FE8E837EED8483 /* LimLinkShare.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01472947331B58E910A09404 /* LimLinkShare.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = LimLinkShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		06097808C3609EBE13FE4229 /* TransferLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferLab.swift; sourceTree = "<group>"; };
+		0C3AEC969E616C99F50094E2 /* FolderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderPicker.swift; sourceTree = "<group>"; };
+		1198FDBD62A829CA517A8CE8 /* LimLinkIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimLinkIOSApp.swift; sourceTree = "<group>"; };
+		14FBFFC4C3E11250C3D916C4 /* TransferProgressViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferProgressViews.swift; sourceTree = "<group>"; };
+		23397D4DE36F2A7A9D12B521 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		286DB44F068B0BDAB9109206 /* UsageTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageTermsView.swift; sourceTree = "<group>"; };
+		31FF303BEEDE3F03B28378BE /* TransferFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFlowUITests.swift; sourceTree = "<group>"; };
+		38250DC056A502C82CC67919 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		3859D3B7C4A8DB4364C19B63 /* Support */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Support; path = Support; sourceTree = SOURCE_ROOT; };
+		3FAE99B47BF73094F6EFF886 /* PhotoImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImport.swift; sourceTree = "<group>"; };
+		41E9DC6B1977171F7E6052E6 /* SupportScreenshotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportScreenshotsUITests.swift; sourceTree = "<group>"; };
+		464803F18383BF20366288E8 /* LimLinkDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimLinkDesign.swift; sourceTree = "<group>"; };
+		47E9C7330194343BADAA7598 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4853C5E149B87E9A6E07E1BC /* LimLinkTransferLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimLinkTransferLabApp.swift; sourceTree = "<group>"; };
+		55A0D8F0BD65A453E943C10D /* SupportLimLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportLimLinkView.swift; sourceTree = "<group>"; };
+		5B92D9ED33817F0FD07BFC77 /* LimLinkKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LimLinkKit; path = ../LimLinkKit; sourceTree = SOURCE_ROOT; };
+		6706EA98BCDED9F4B9A2EFEA /* SupportTips.storekit */ = {isa = PBXFileReference; path = SupportTips.storekit; sourceTree = "<group>"; };
+		6AC04A22E40DC1B59993E8B4 /* TransferHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferHomeView.swift; sourceTree = "<group>"; };
+		6C944A09582247CCCDF32003 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		6E8B2ED2FEF0FDDDEB313409 /* DeviceIdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentityView.swift; sourceTree = "<group>"; };
+		715F33DF443C99007AE4BF1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7912DD8B5AE7BBFBBC87E065 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7B1F58114E06ACA4D52254A4 /* TransferPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPresentation.swift; sourceTree = "<group>"; };
+		7D392BE92B0F1690E78CD575 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		7F5A8CA1217AD78B5EDAB8CA /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		853034409037A3BCB074921F /* FilePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreviewView.swift; sourceTree = "<group>"; };
+		8AE82EA8894802225A61E8E2 /* LimLinkIOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LimLinkIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96C0FE1BA903BBA38341249B /* TransferSendViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSendViews.swift; sourceTree = "<group>"; };
+		ABDB1C90C81D2B10D731B651 /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
+		AFF19978E52221D752860326 /* ReceivedPhotoSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedPhotoSettings.swift; sourceTree = "<group>"; };
+		B780EFEE308CB4D8A43C005C /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		C5CF0619E373E9FEE398E7A2 /* TransferCompletionBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCompletionBanner.swift; sourceTree = "<group>"; };
+		C62858B0CB61A9911E16DFF5 /* SharedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViews.swift; sourceTree = "<group>"; };
+		C91EF7894D302CE7C620D3CD /* LimLinkIOSUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LimLinkIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC261C21A1140BA1452A1567 /* TransferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferModel.swift; sourceTree = "<group>"; };
+		CC655378BFE60D17C45C79E8 /* run_behavior_regressions.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = run_behavior_regressions.py; sourceTree = "<group>"; };
+		D76FD8B4E23AAB0AE397C996 /* LimLinkTransferLab.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LimLinkTransferLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED87E9C34A7BC85B00A58CA2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F24DC401EE6DD74C58BF7289 /* TransferModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferModels.swift; sourceTree = "<group>"; };
+		F4977A39FAA6D9AF6F1E8634 /* ShareSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSender.swift; sourceTree = "<group>"; };
+		F8409E60294A7B327D2B21AD /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		F933DF85A2FAA79896B9060D /* DeviceBindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindingView.swift; sourceTree = "<group>"; };
+		FDDFC8DE4D93FC3F6F336A1C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63A2978E5989AFF1F19AC543 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C787F8C5E0DCC261134597 /* LimLinkKit in Frameworks */,
+				8BAB86E14073DBF83CEC2F74 /* LimLinkAppSupport in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6C97683AAA5B271B1E0031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1624EF223906B702428DDF22 /* LimLinkKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8871AA966BEA211BFC28EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE75FFD25419D7711E744D57 /* LimLinkAppSupport in Frameworks */,
+				58785137F4420DF5A8FE87D3 /* LimLinkKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040BCC2459CCA92E64BA994C /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC353C77297E6A95B7D66C /* Shared */,
+				6706EA98BCDED9F4B9A2EFEA /* SupportTips.storekit */,
+			);
+			name = apple;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		2F7D15E1F6482B01B186A890 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AE82EA8894802225A61E8E2 /* LimLinkIOS.app */,
+				C91EF7894D302CE7C620D3CD /* LimLinkIOSUITests.xctest */,
+				01472947331B58E910A09404 /* LimLinkShare.appex */,
+				D76FD8B4E23AAB0AE397C996 /* LimLinkTransferLab.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56FCAEA81EB92E1E24BCE016 = {
+			isa = PBXGroup;
+			children = (
+				BB5FAB89859A41197F4F5FCD /* App */,
+				040BCC2459CCA92E64BA994C /* apple */,
+				A72CFC1A8DB91ED8B9CB5F28 /* Packages */,
+				EAD73E74EAA7F1A7EBAD1B13 /* ShareExtension */,
+				BBDB96B2B284EAA8CAF9EB50 /* TransferLab */,
+				9C04CF16DB363468AA2C5928 /* UITests */,
+				2F7D15E1F6482B01B186A890 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6DAF38E14C47559A3FFBC70B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				7D392BE92B0F1690E78CD575 /* InfoPlist.xcstrings */,
+				FDDFC8DE4D93FC3F6F336A1C /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		9C04CF16DB363468AA2C5928 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				CC655378BFE60D17C45C79E8 /* run_behavior_regressions.py */,
+				41E9DC6B1977171F7E6052E6 /* SupportScreenshotsUITests.swift */,
+				31FF303BEEDE3F03B28378BE /* TransferFlowUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		A72CFC1A8DB91ED8B9CB5F28 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5B92D9ED33817F0FD07BFC77 /* LimLinkKit */,
+				3859D3B7C4A8DB4364C19B63 /* Support */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		BB5FAB89859A41197F4F5FCD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				715F33DF443C99007AE4BF1D /* Assets.xcassets */,
+				6E8B2ED2FEF0FDDDEB313409 /* DeviceIdentityView.swift */,
+				0C3AEC969E616C99F50094E2 /* FolderPicker.swift */,
+				1198FDBD62A829CA517A8CE8 /* LimLinkIOSApp.swift */,
+				B780EFEE308CB4D8A43C005C /* Notifications.swift */,
+				3FAE99B47BF73094F6EFF886 /* PhotoImport.swift */,
+				ED87E9C34A7BC85B00A58CA2 /* PrivacyInfo.xcprivacy */,
+				6AC04A22E40DC1B59993E8B4 /* TransferHomeView.swift */,
+				CC261C21A1140BA1452A1567 /* TransferModel.swift */,
+				F24DC401EE6DD74C58BF7289 /* TransferModels.swift */,
+				14FBFFC4C3E11250C3D916C4 /* TransferProgressViews.swift */,
+				96C0FE1BA903BBA38341249B /* TransferSendViews.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BBDB96B2B284EAA8CAF9EB50 /* TransferLab */ = {
+			isa = PBXGroup;
+			children = (
+				23397D4DE36F2A7A9D12B521 /* InfoPlist.xcstrings */,
+				4853C5E149B87E9A6E07E1BC /* LimLinkTransferLabApp.swift */,
+				38250DC056A502C82CC67919 /* Localizable.xcstrings */,
+				7912DD8B5AE7BBFBBC87E065 /* RootView.swift */,
+				06097808C3609EBE13FE4229 /* TransferLab.swift */,
+			);
+			path = TransferLab;
+			sourceTree = "<group>";
+		};
+		BDBC353C77297E6A95B7D66C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6DAF38E14C47559A3FFBC70B /* Localization */,
+				F933DF85A2FAA79896B9060D /* DeviceBindingView.swift */,
+				853034409037A3BCB074921F /* FilePreviewView.swift */,
+				ABDB1C90C81D2B10D731B651 /* LanguagePicker.swift */,
+				464803F18383BF20366288E8 /* LimLinkDesign.swift */,
+				7F5A8CA1217AD78B5EDAB8CA /* PrivacyPolicyView.swift */,
+				AFF19978E52221D752860326 /* ReceivedPhotoSettings.swift */,
+				C62858B0CB61A9911E16DFF5 /* SharedViews.swift */,
+				55A0D8F0BD65A453E943C10D /* SupportLimLinkView.swift */,
+				C5CF0619E373E9FEE398E7A2 /* TransferCompletionBanner.swift */,
+				7B1F58114E06ACA4D52254A4 /* TransferPresentation.swift */,
+				286DB44F068B0BDAB9109206 /* UsageTermsView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		EAD73E74EAA7F1A7EBAD1B13 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F8409E60294A7B327D2B21AD /* InfoPlist.xcstrings */,
+				47E9C7330194343BADAA7598 /* PrivacyInfo.xcprivacy */,
+				F4977A39FAA6D9AF6F1E8634 /* ShareSender.swift */,
+				6C944A09582247CCCDF32003 /* ShareViewController.swift */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EDDC6555DF56CD47BE55B97 /* LimLinkShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 254356BBA2B0470F9C4C6CE2 /* Build configuration list for PBXNativeTarget "LimLinkShare" */;
+			buildPhases = (
+				E0A6C8F764EFADA48ADA08BE /* Sources */,
+				F555E4323513889AC1CDF830 /* Resources */,
+				FB8871AA966BEA211BFC28EB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LimLinkShare;
+			packageProductDependencies = (
+				18CA7D0CF2014D5B74DE5CB3 /* LimLinkAppSupport */,
+				2F377BB4D0001EFDF016FBFF /* LimLinkKit */,
+			);
+			productName = LimLinkShare;
+			productReference = 01472947331B58E910A09404 /* LimLinkShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		7BF8ED286CD235AB52E38475 /* LimLinkIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 772EF7FA6375C2A854066846 /* Build configuration list for PBXNativeTarget "LimLinkIOS" */;
+			buildPhases = (
+				062E4A1D1F5F5F3F21FC8651 /* Sources */,
+				41AE48F8C5861BB7D953FC9E /* Resources */,
+				63A2978E5989AFF1F19AC543 /* Frameworks */,
+				CBF0882AAEAC1A161D126878 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D769C92F7619CCC7C35EC481 /* PBXTargetDependency */,
+			);
+			name = LimLinkIOS;
+			packageProductDependencies = (
+				043A6C68C19FB4F14915C0F5 /* LimLinkKit */,
+				FF085666DEBC5D97435F7E65 /* LimLinkAppSupport */,
+			);
+			productName = LimLinkIOS;
+			productReference = 8AE82EA8894802225A61E8E2 /* LimLinkIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A59BBDE268A0A49CA06FB50F /* LimLinkIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBE469F5996E359C63C487B6 /* Build configuration list for PBXNativeTarget "LimLinkIOSUITests" */;
+			buildPhases = (
+				ACAFE168D35FA36FCE299F58 /* Sources */,
+				6B518FF8BAA20C5E2E5B353C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43599CC931725694FC419DEC /* PBXTargetDependency */,
+			);
+			name = LimLinkIOSUITests;
+			packageProductDependencies = (
+			);
+			productName = LimLinkIOSUITests;
+			productReference = C91EF7894D302CE7C620D3CD /* LimLinkIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B36174A0DBEC19D63258DA10 /* LimLinkTransferLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1BE40CE014F1B4E2546737 /* Build configuration list for PBXNativeTarget "LimLinkTransferLab" */;
+			buildPhases = (
+				9BD8202ADD076A798C938F6A /* Sources */,
+				1A0835AEF1EE7311AFF56993 /* Resources */,
+				ED6C97683AAA5B271B1E0031 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LimLinkTransferLab;
+			packageProductDependencies = (
+				77F7A7B0F98C78619C5C8BB6 /* LimLinkKit */,
+			);
+			productName = LimLinkTransferLab;
+			productReference = D76FD8B4E23AAB0AE397C996 /* LimLinkTransferLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F6940D0D4279DE04FCF31C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4EDDC6555DF56CD47BE55B97 = {
+						DevelopmentTeam = J8PZU3W5VL;
+						ProvisioningStyle = Automatic;
+					};
+					7BF8ED286CD235AB52E38475 = {
+						DevelopmentTeam = J8PZU3W5VL;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = "[\"com.apple.InAppPurchase\": [\"enabled\": 1]]";
+					};
+					A59BBDE268A0A49CA06FB50F = {
+						DevelopmentTeam = J8PZU3W5VL;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7BF8ED286CD235AB52E38475;
+					};
+					B36174A0DBEC19D63258DA10 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = BF00E8C471893592CC188EF6 /* Build configuration list for PBXProject "LimLinkIOS" */;
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				de,
+				en,
+				es,
+				fr,
+				it,
+				ja,
+				ko,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = 56FCAEA81EB92E1E24BCE016;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E1B260B448B8CE015023DAD8 /* XCLocalSwiftPackageReference "Support" */,
+				30BE792C794D538D24555846 /* XCLocalSwiftPackageReference "../LimLinkKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2F7D15E1F6482B01B186A890 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BF8ED286CD235AB52E38475 /* LimLinkIOS */,
+				4EDDC6555DF56CD47BE55B97 /* LimLinkShare */,
+				A59BBDE268A0A49CA06FB50F /* LimLinkIOSUITests */,
+				B36174A0DBEC19D63258DA10 /* LimLinkTransferLab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A0835AEF1EE7311AFF56993 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B14E174018719C54F72DA0 /* InfoPlist.xcstrings in Resources */,
+				FB6D19EF158E309678C53AA7 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AE48F8C5861BB7D953FC9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7058BDF01D4AD949C8699B07 /* Assets.xcassets in Resources */,
+				94FCAB038B4E65DBBD9AF2F7 /* InfoPlist.xcstrings in Resources */,
+				2536F91E6D8160439E962736 /* Localizable.xcstrings in Resources */,
+				85B3BEF17C9ACA490CF3C52D /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B518FF8BAA20C5E2E5B353C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97FC7481F9853FF8698153E /* SupportTips.storekit in Resources */,
+				AE39079211F7266C19D4A55F /* run_behavior_regressions.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F555E4323513889AC1CDF830 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF60F2B6834D610823667DD /* InfoPlist.xcstrings in Resources */,
+				B67EC8BD147A50721D69FFE6 /* Localizable.xcstrings in Resources */,
+				78D9A3970F2DF4F8AA886B6A /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		062E4A1D1F5F5F3F21FC8651 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CD40453F1FAF9002137BF8 /* DeviceBindingView.swift in Sources */,
+				8CF8230F7531C490EC0B0C83 /* DeviceIdentityView.swift in Sources */,
+				50085EBEE8F92FBD38A35DFA /* FilePreviewView.swift in Sources */,
+				BE850A85E9D22D41B6D548CE /* FolderPicker.swift in Sources */,
+				F303432E7EDEAEF9F1788DF4 /* LanguagePicker.swift in Sources */,
+				1CF6EFFB2ED31D3FD0A73184 /* LimLinkDesign.swift in Sources */,
+				2BA1432BB5F9116F8D347CB6 /* LimLinkIOSApp.swift in Sources */,
+				625BEF2384E537D7F03F9D87 /* Notifications.swift in Sources */,
+				C1CD5502522FCCD618C943B4 /* PhotoImport.swift in Sources */,
+				CA6E75DE15E0080DBEBBED1C /* PrivacyPolicyView.swift in Sources */,
+				ABE98F39A96515B316489B3F /* ReceivedPhotoSettings.swift in Sources */,
+				03461B392FAADF417AC6308E /* SharedViews.swift in Sources */,
+				D455649A6B0AE94BD3BD0C9D /* SupportLimLinkView.swift in Sources */,
+				6750D22EBECAD7EFB941F54E /* TransferCompletionBanner.swift in Sources */,
+				F19AA88387E18105D248384B /* TransferHomeView.swift in Sources */,
+				397A40B6CC3ADDE9BB214EFE /* TransferModel.swift in Sources */,
+				39B5CFBAB3D38E5A09B5D6E5 /* TransferModels.swift in Sources */,
+				66312DE0F86E88680AF9AC31 /* TransferPresentation.swift in Sources */,
+				588587DD40E26430E6002335 /* TransferProgressViews.swift in Sources */,
+				EC4F47ECC09D5165A1FCFC56 /* TransferSendViews.swift in Sources */,
+				FA1CD88DB4B9445B6B21AD5D /* UsageTermsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD8202ADD076A798C938F6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536616050781CDC2E7ADA138 /* LimLinkTransferLabApp.swift in Sources */,
+				E47450937B832AD7C3DBA7BF /* RootView.swift in Sources */,
+				7618DCC819545052C7AFE1AC /* TransferLab.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACAFE168D35FA36FCE299F58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1A79A17ED808CE995506BC3 /* SupportScreenshotsUITests.swift in Sources */,
+				53C89398C5167B6368A318D7 /* TransferFlowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A6C8F764EFADA48ADA08BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0509D8F837D3804E2DCA47D3 /* ShareSender.swift in Sources */,
+				BA993B936E29132C8D209273 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43599CC931725694FC419DEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BF8ED286CD235AB52E38475 /* LimLinkIOS */;
+			targetProxy = 92C354AFD08F774D79533B42 /* PBXContainerItemProxy */;
+		};
+		D769C92F7619CCC7C35EC481 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EDDC6555DF56CD47BE55B97 /* LimLinkShare */;
+			targetProxy = 7CD5CE5CEBD94A2E74D81ABA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27BAB5C2ED2B62A21BD867C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TransferLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev.transferlab;
+				PRODUCT_MODULE_NAME = LimLinkTransferLab;
+				PRODUCT_NAME = LimLinkTransferLab;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		312783271A9C05773D51901F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J8PZU3W5VL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LimLinkIOS;
+			};
+			name = Debug;
+		};
+		3350B514C6CC7717EB7AB356 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/LimLinkIOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J8PZU3W5VL;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev;
+				PRODUCT_MODULE_NAME = LimLinkIOS;
+				PRODUCT_NAME = LimLink;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		489BDE44E36F5C6C86152829 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/LimLinkIOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J8PZU3W5VL;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev;
+				PRODUCT_MODULE_NAME = LimLinkIOS;
+				PRODUCT_NAME = LimLink;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		54768DD1A9DC1B4DC175A3FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/LimLinkShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J8PZU3W5VL;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev.share;
+				PRODUCT_MODULE_NAME = LimLinkShare;
+				PRODUCT_NAME = LimLinkShare;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6BA8A090EA9F83C8C8097FFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79D7092674D725BD76E1BE66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TransferLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev.transferlab;
+				PRODUCT_MODULE_NAME = LimLinkTransferLab;
+				PRODUCT_NAME = LimLinkTransferLab;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) LIMLINK_TEST_AUTOTRUST";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8980A27F6F8C2909B2663FE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8BA4F30E72A0B3C5A8537293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/LimLinkShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J8PZU3W5VL;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev.share;
+				PRODUCT_MODULE_NAME = LimLinkShare;
+				PRODUCT_NAME = LimLinkShare;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E24A3455D1A56FD0A15C53B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J8PZU3W5VL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.limlink.dev.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LimLinkIOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		254356BBA2B0470F9C4C6CE2 /* Build configuration list for PBXNativeTarget "LimLinkShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BA4F30E72A0B3C5A8537293 /* Debug */,
+				54768DD1A9DC1B4DC175A3FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		772EF7FA6375C2A854066846 /* Build configuration list for PBXNativeTarget "LimLinkIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				489BDE44E36F5C6C86152829 /* Debug */,
+				3350B514C6CC7717EB7AB356 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BF00E8C471893592CC188EF6 /* Build configuration list for PBXProject "LimLinkIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BA8A090EA9F83C8C8097FFD /* Debug */,
+				8980A27F6F8C2909B2663FE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CD1BE40CE014F1B4E2546737 /* Build configuration list for PBXNativeTarget "LimLinkTransferLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79D7092674D725BD76E1BE66 /* Debug */,
+				27BAB5C2ED2B62A21BD867C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FBE469F5996E359C63C487B6 /* Build configuration list for PBXNativeTarget "LimLinkIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				312783271A9C05773D51901F /* Debug */,
+				E24A3455D1A56FD0A15C53B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		30BE792C794D538D24555846 /* XCLocalSwiftPackageReference "../LimLinkKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../LimLinkKit;
+		};
+		E1B260B448B8CE015023DAD8 /* XCLocalSwiftPackageReference "Support" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Support;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		043A6C68C19FB4F14915C0F5 /* LimLinkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LimLinkKit;
+		};
+		18CA7D0CF2014D5B74DE5CB3 /* LimLinkAppSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LimLinkAppSupport;
+		};
+		2F377BB4D0001EFDF016FBFF /* LimLinkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LimLinkKit;
+		};
+		77F7A7B0F98C78619C5C8BB6 /* LimLinkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LimLinkKit;
+		};
+		FF085666DEBC5D97435F7E65 /* LimLinkAppSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LimLinkAppSupport;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5F6940D0D4279DE04FCF31C3 /* Project object */;
+}

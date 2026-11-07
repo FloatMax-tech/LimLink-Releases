@@ -1,0 +1,151 @@
+# Draft GitHub Release for the shared core.
+# Triggers: workflow_dispatch, or a tag named core-v*.
+# Not on pull_request and not on push to a branch.
+# The Apple job is the expensive one (macOS minutes). The `if` below keeps
+# it on these two events only, even if a later edit adds another trigger.
+name: core-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Draft release tag. Must match core-v* (example: core-v0.1.0)."
+        required: true
+        default: core-v0.1.0
+        type: string
+  push:
+    tags:
+      - "core-v*"
+
+concurrency:
+  group: core-release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tag matches core-v*
+        env:
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          if ! printf '%s\n' "$RELEASE_TAG" | grep -Eq '^core-v[A-Za-z0-9._+-]+$'; then
+            echo "refusing tag: $RELEASE_TAG"
+            exit 1
+          fi
+          echo "tag $RELEASE_TAG"
+
+  android:
+    needs: guard
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,x86_64-linux-android
+      - uses: nttld/setup-ndk@v1
+        id: ndk
+        with:
+          ndk-version: r28c
+      - name: binutils for readelf
+        run: sudo apt-get update && sudo apt-get install -y binutils
+      - name: Android arm64-v8a and x86_64, release and test
+        env:
+          ANDROID_NDK_HOME: ${{ steps.ndk.outputs.ndk-path }}
+        run: bash scripts/build_android.sh --zip "$RUNNER_TEMP/android"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-zips
+          path: ${{ runner.temp }}/android/*.zip
+
+  windows:
+    needs: guard
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc,aarch64-pc-windows-msvc
+      - name: clang-cl, lld-link, llvm-lib, llvm-readobj
+        run: sudo apt-get update && sudo apt-get install -y clang lld llvm
+      - name: cargo-xwin
+        run: cargo install cargo-xwin --locked --version 0.23.1
+      - name: Windows x86_64 and aarch64, release and test
+        run: bash scripts/build_windows.sh --zip "$RUNNER_TEMP/windows"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-zips
+          path: ${{ runner.temp }}/windows/*.zip
+
+  apple:
+    needs: guard
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/core-v')
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-ios,aarch64-apple-ios-sim,x86_64-apple-ios,aarch64-apple-darwin,x86_64-apple-darwin
+      - name: XCFramework, release static libs only
+        run: bash scripts/package_apple.sh --zip "$RUNNER_TEMP/apple"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apple-zips
+          path: |
+            ${{ runner.temp }}/apple/*.zip
+            ${{ runner.temp }}/apple/*.txt
+
+  publish:
+    needs: [android, windows, apple]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: SHA256SUMS
+        working-directory: dist
+        run: |
+          sha256sum -- * > SHA256SUMS
+          cat SHA256SUMS
+      - name: resolve tag
+        id: tag
+        env:
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          if ! printf '%s\n' "$RELEASE_TAG" | grep -Eq '^core-v[A-Za-z0-9._+-]+$'; then
+            echo "refusing tag: $RELEASE_TAG"
+            exit 1
+          fi
+          echo "name=$RELEASE_TAG" >> "$GITHUB_OUTPUT"
+      - name: draft GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          target_commitish: ${{ github.sha }}
+          name: ${{ steps.tag.outputs.name }}
+          draft: true
+          files: dist/*
+          fail_on_unmatched_files: true
+          body: |
+            Draft LimLink core packages. Verify SHA256SUMS before publishing.
+            Android and Windows test libraries export llc_* and llct_*.
+            The XCFramework is release-only and has no llct_* symbols.
+            LimLinkCoreFFI.xcframework.checksum.txt is the SwiftPM checksum.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="updates_check">检查更新</string>
+    <string name="updates_checking">正在检查…</string>
+    <string name="updates_latest">已是最新版本</string>
+    <string name="updates_none">暂未发布安装包</string>
+    <string name="updates_failed">检查失败，请稍后重试</string>
+    <string name="updates_download">下载安装包</string>
+    <string name="updates_available">发现新版本</string>
+    <string name="updates_disclosure">仅在点击时向官网查询版本信息，不上传文件、设备名称或绑定记录。</string>
+    <string name="updates_install_hint">将在浏览器下载。请结束传输后，确认安装以保留现有数据。</string>
+</resources>

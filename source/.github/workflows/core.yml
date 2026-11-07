@@ -1,0 +1,152 @@
+name: core
+
+on:
+  pull_request:
+    paths:
+      - "core/**"
+      - ".github/workflows/core.yml"
+  push:
+    branches: [main]
+    paths:
+      - "core/**"
+      - ".github/workflows/core.yml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - name: profiles keep panic = unwind
+        working-directory: .
+        run: python3 core/scripts/check_panic_unwind.py
+      - name: rustfmt
+        run: cargo fmt --all --check
+      - name: clippy (release features)
+        run: cargo clippy -p limlink-core --all-targets -- -D warnings
+      - name: clippy (test-rng, debug only)
+        run: cargo clippy -p limlink-core --all-targets --features test-rng -- -D warnings
+      - name: clippy (testvectors)
+        run: cargo clippy -p limlink-core-testvectors --all-targets -- -D warnings
+      - name: test release feature set
+        run: cargo test -p limlink-core
+      - name: test with the scripted RNG feature
+        run: cargo test -p limlink-core --features test-rng
+      - name: test testvectors crate
+        run: cargo test -p limlink-core-testvectors
+      - name: install libsodium, binutils, and shellcheck
+        run: sudo apt-get update && sudo apt-get install -y libsodium23 binutils shellcheck
+      - name: Python reference matches the committed vectors
+        run: python3 vectors/ref_impl.py --check
+      - name: release build
+        run: cargo build --release -p limlink-core
+      - name: release exports match limlink_core.h
+        run: python3 scripts/check_exports.py --release
+      - name: debug testvectors build
+        run: cargo build -p limlink-core-testvectors
+      - name: testvectors exports match limlink_core_testvectors.h
+        run: python3 scripts/check_exports.py --testvectors
+      - name: shellcheck packaging scripts
+        run: shellcheck scripts/build_android.sh scripts/build_windows.sh scripts/package_apple.sh
+      - name: host release .so exports only llc_
+        run: |
+          python3 scripts/check_shipped_exports.py elf \
+            --lib target/release/liblimlink_core.so \
+            --require llc=include/limlink_core.h \
+            --forbid-prefix llct_
+      - name: clippy (packaged test library)
+        run: cargo clippy -p limlink-core-testvectors --all-targets --features bundled-llc -- -D warnings
+      - name: packaged test .so exports llc_ and llct_
+        run: |
+          cargo build -p limlink-core-testvectors --features bundled-llc --target-dir target/bundled-llc
+          python3 scripts/check_shipped_exports.py elf \
+            --lib target/bundled-llc/debug/liblimlink_core_testvectors.so \
+            --require llc=include/limlink_core.h \
+            --require llct=include/limlink_core_testvectors.h
+      - name: test-rng is refused in release
+        run: |
+          set +e
+          cargo build --release -p limlink-core --features test-rng
+          core_rc=$?
+          cargo build --release -p limlink-core-testvectors
+          tv_rc=$?
+          set -e
+          if [ "$core_rc" -eq 0 ] || [ "$tv_rc" -eq 0 ]; then
+            echo "a release build accepted test-rng"
+            exit 1
+          fi
+
+  cross:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: core
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - aarch64-linux-android
+          - x86_64-pc-windows-gnu
+          - x86_64-pc-windows-msvc
+          - aarch64-pc-windows-msvc
+          - aarch64-apple-ios
+          - aarch64-apple-darwin
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - name: cargo check (no link)
+        run: |
+          cargo check -p limlink-core --target ${{ matrix.target }}
+          cargo check -p limlink-core-testvectors --target ${{ matrix.target }}
+
+  android:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,x86_64-linux-android
+      - uses: nttld/setup-ndk@v1
+        id: ndk
+        with:
+          ndk-version: r28c
+      - name: binutils for readelf
+        run: sudo apt-get update && sudo apt-get install -y binutils
+      - name: link both ABIs and check 16 KB pages plus exports
+        env:
+          ANDROID_NDK_HOME: ${{ steps.ndk.outputs.ndk-path }}
+        run: bash scripts/build_android.sh
+
+  windows-exports:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+      - name: clang-cl, lld-link, llvm-lib, llvm-readobj
+        run: sudo apt-get update && sudo apt-get install -y clang lld llvm
+      - name: cargo-xwin
+        run: cargo install cargo-xwin --locked --version 0.23.1
+      - name: x86_64 MSVC DLL exports only llc_
+        run: bash scripts/build_windows.sh --abi x86_64

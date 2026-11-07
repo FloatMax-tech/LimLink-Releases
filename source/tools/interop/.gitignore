@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+apple-peer/.build/
+apple-peer/.swiftpm/

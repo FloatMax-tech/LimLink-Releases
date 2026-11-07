@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">連携したデバイス</string>
+    <string name="binding_explanation">知っているデバイスを選んでください。名前は所有者が変更できます。アプリの起動中のみ受信できます。</string>
+    <string name="binding_add">デバイスを連携</string>
+    <string name="binding_unbind">連携を解除</string>
+    <string name="binding_empty">連携したデバイスはありません</string>
+    <string name="binding_waiting">%1$s の承認を待っています…</string>
+    <string name="binding_completed">%1$s と連携しました</string>
+    <string name="binding_failed">連携に失敗したか期限切れです。再試行すると新しく承認を求めます。</string>
+    <string name="binding_cancelled">連携をキャンセルしました</string>
+    <string name="binding_unbound">この端末の連携を解除しました。相手はオフラインの場合があります。</string>
+    <string name="binding_no_devices">近くにデバイスがありません</string>
+    <string name="binding_bind_device">%1$s と連携</string>
+    <string name="binding_grant">連携すると、双方が互いのファイルを自動受信します。知っているデバイスのみ連携してください。</string>
+    <string name="binding_request">%1$s からの連携リクエスト</string>
+    <string name="binding_accept">連携を承認</string>
+    <string name="binding_reject">拒否</string>
+    <string name="privacy_binding">ペアリング記録には両端末の鍵のフィンガープリント、ペアリング ID、名前、端末の種類、日時が含まれ、この端末の非公開領域にのみ保存されます。アップロードや Android のバックアップには含まれません。ペアリング完了後はアプリを開いている間、自動で受信できます。未登録端末からのファイルは毎回承認が必要です。設定から解除できます。</string>
+    <string name="privacy_contact">開発者：周甫俊。連絡先：limlink@floatmax-tech.com</string>
+</resources>

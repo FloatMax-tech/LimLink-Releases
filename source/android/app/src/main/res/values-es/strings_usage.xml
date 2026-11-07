@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usage_title">Acuerdo de usuario e instrucciones de uso</string>
+    <string name="usage_developer">Desarrollador: 周甫俊</string>
+    <string name="usage_overview_title">Instrucciones de uso</string>
+    <string name="usage_overview">LimLink transfiere archivos directamente en la misma red local, sin un servicio de retransmisión de archivos operado por el desarrollador ni cuentas de usuario. Esta página explica las funciones actuales y cómo utilizarlas.</string>
+    <string name="usage_sharing_title">Antes de compartir</string>
+    <string name="usage_sharing">Comparte solo archivos que tengas derecho a compartir y respeta la privacidad de los demás. Los dispositivos no vinculados siguen requiriendo aprobación para cada archivo. Quien inicia la vinculación elige un dispositivo y pulsa «Vincular»; una vez que la otra persona confirma explícitamente y se completa una vinculación válida, ambos dispositivos pueden recibir automáticamente los archivos posteriores. Los nombres de los dispositivos se pueden cambiar y no permiten identificar por sí solos a la otra persona. Puedes desvincular un dispositivo en Ajustes para detener la recepción automática futura en este dispositivo; los archivos ya guardados no se retirarán.</string>
+    <string name="usage_transfer_title">Transferencia y almacenamiento</string>
+    <string name="usage_transfer">Ambos dispositivos deben estar en la misma red local y mantener LimLink en ejecución durante la transferencia. Puedes seleccionar varios archivos a la vez, cada uno de un máximo de 5 GB (5.000.000.000 bytes). Asegúrate de que el dispositivo receptor tenga suficiente espacio, confirma que los archivos se hayan recibido por completo antes de borrar los originales y conserva las copias de seguridad que necesites.</string>
+    <string name="usage_help_title">Soporte y privacidad</string>
+    <string name="usage_help">Consulta la información de privacidad de este dispositivo para conocer cómo se tratan, guardan y eliminan los archivos, las identidades y las preferencias. Al contactar con soporte, no envíes contenido de archivos, claves ni registros privados.</string>
+    <string name="usage_contact">Contacto: limlink@floatmax-tech.com</string>
+</resources>

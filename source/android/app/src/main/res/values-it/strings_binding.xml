@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">Dispositivi associati</string>
+    <string name="binding_explanation">Scegli un dispositivo conosciuto. Il proprietario può cambiarne il nome. La ricezione richiede che questa app sia aperta.</string>
+    <string name="binding_add">Associa dispositivo</string>
+    <string name="binding_unbind">Dissocia</string>
+    <string name="binding_empty">Nessun dispositivo associato</string>
+    <string name="binding_waiting">In attesa che %1$s accetti…</string>
+    <string name="binding_completed">Associato a %1$s</string>
+    <string name="binding_failed">Associazione non riuscita o scaduta. Riprova per richiedere una nuova conferma.</string>
+    <string name="binding_cancelled">Associazione annullata</string>
+    <string name="binding_unbound">Dissociato localmente. L’altro dispositivo potrebbe essere offline.</string>
+    <string name="binding_no_devices">Nessun dispositivo nelle vicinanze</string>
+    <string name="binding_bind_device">Associa %1$s</string>
+    <string name="binding_grant">Entrambi i dispositivi riceveranno automaticamente i file reciproci. Associa solo un dispositivo conosciuto.</string>
+    <string name="binding_request">Richiesta di associazione da %1$s</string>
+    <string name="binding_accept">Accetta associazione</string>
+    <string name="binding_reject">Rifiuta</string>
+    <string name="privacy_binding">I dati di associazione restano nello spazio privato di questo dispositivo: impronte delle due chiavi, ID di associazione, nome, tipo e data. Non vengono caricati né inclusi nei backup Android. Dopo il completamento dell’associazione, la ricezione è automatica mentre l’app è aperta. I dispositivi non associati richiedono l’approvazione per ogni file. Puoi rimuovere le associazioni nelle Impostazioni.</string>
+    <string name="privacy_contact">Sviluppatore: 周甫俊. Contatto: limlink@floatmax-tech.com</string>
+</resources>

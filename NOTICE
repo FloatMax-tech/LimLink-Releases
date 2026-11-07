@@ -1,0 +1,18 @@
+LimLink
+Copyright © 2026 杭州浮点极限科技有限公司
+
+The source code in this repository is licensed under the PolyForm Noncommercial
+License 1.0.0. See LICENSE for the complete terms.
+
+Commercial use requires a separate written license. Contact:
+
+    limlink@floatmax-tech.com
+
+The PolyForm Noncommercial license applies to the software source code. It does
+not grant rights to the LimLink name, wordmark, logo, application icons,
+screenshots, store listings, or other brand assets. Those remain the property of
+their respective owners and may not be reused without permission.
+
+Third-party libraries, SDKs, fonts and other dependencies remain subject to
+their own licenses. See Cargo.lock, package manifests and platform dependency
+files for the applicable notices.

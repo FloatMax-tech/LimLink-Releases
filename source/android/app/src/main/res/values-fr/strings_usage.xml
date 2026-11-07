@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usage_title">Contrat d’utilisation et instructions</string>
+    <string name="usage_developer">Développeur : 周甫俊</string>
+    <string name="usage_overview_title">Instructions d’utilisation</string>
+    <string name="usage_overview">LimLink transfère les fichiers directement sur le même réseau local, sans service de relais de fichiers exploité par le développeur ni compte utilisateur. Cette page présente les fonctionnalités actuelles et leur utilisation.</string>
+    <string name="usage_sharing_title">À vérifier avant de partager</string>
+    <string name="usage_sharing">Ne partagez que les fichiers que vous avez le droit de partager et respectez la vie privée des autres. Les appareils non associés nécessitent toujours une autorisation pour chaque fichier. La personne à l’origine de l’association choisit un appareil et appuie sur « Associer » ; une fois que l’autre personne a explicitement confirmé et qu’une association valide est établie, les deux appareils peuvent recevoir automatiquement les fichiers suivants. Les noms des appareils sont modifiables et ne suffisent pas à identifier l’autre personne. Vous pouvez dissocier un appareil dans les réglages pour arrêter les futures réceptions automatiques sur cet appareil ; les fichiers déjà enregistrés ne seront pas rappelés.</string>
+    <string name="usage_transfer_title">Transfert et stockage</string>
+    <string name="usage_transfer">Les deux appareils doivent être sur le même réseau local et laisser LimLink en cours d’exécution pendant le transfert. Vous pouvez sélectionner plusieurs fichiers à la fois, chacun de 5 GB maximum (5 000 000 000 octets). Assurez-vous que l’appareil destinataire dispose de suffisamment d’espace, vérifiez que les fichiers ont été reçus dans leur intégralité avant de supprimer les originaux et conservez les sauvegardes nécessaires.</string>
+    <string name="usage_help_title">Assistance et confidentialité</string>
+    <string name="usage_help">Consultez les informations de confidentialité sur cet appareil pour savoir comment les fichiers, les identités et les préférences sont traités, enregistrés et supprimés. Lorsque vous contactez l’assistance, ne transmettez pas de contenu de fichiers, de clés ni de journaux privés.</string>
+    <string name="usage_contact">Contact : limlink@floatmax-tech.com</string>
+</resources>

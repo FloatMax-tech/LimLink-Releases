@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">已綁定裝置</string>
+    <string name="binding_explanation">請選擇認識的裝置。裝置名稱可由對方修改；綁定僅在應用程式開啟時生效。</string>
+    <string name="binding_add">綁定裝置</string>
+    <string name="binding_unbind">解除綁定</string>
+    <string name="binding_empty">尚無已綁定裝置</string>
+    <string name="binding_waiting">等待 %1$s 確認…</string>
+    <string name="binding_completed">已綁定 %1$s</string>
+    <string name="binding_failed">綁定失敗或已過期。重試會重新請求對方確認。</string>
+    <string name="binding_cancelled">已取消綁定</string>
+    <string name="binding_unbound">已在本機解除綁定，對方可能離線。</string>
+    <string name="binding_no_devices">找不到附近裝置</string>
+    <string name="binding_bind_device">綁定 %1$s</string>
+    <string name="binding_grant">綁定後，雙方將自動接收彼此傳送的檔案。請僅綁定您認識的裝置。</string>
+    <string name="binding_request">%1$s 請求綁定</string>
+    <string name="binding_accept">確認綁定</string>
+    <string name="binding_reject">拒絕</string>
+    <string name="privacy_binding">綁定記錄僅儲存在本機私人目錄中，包括雙方的裝置金鑰指紋、綁定識別碼、裝置名稱、裝置類型和綁定時間；不會上傳或加入 Android 備份。綁定完成後，應用程式開啟時可自動接收該裝置的檔案；未綁定裝置仍需逐次同意。您可在設定中解除綁定。</string>
+    <string name="privacy_contact">開發者：周甫俊。聯絡方式：limlink@floatmax-tech.com</string>
+</resources>

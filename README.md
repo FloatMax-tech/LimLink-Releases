@@ -7,7 +7,7 @@
 **设备之间，直接传递。**
 局域网文件传输 · iPhone · iPad · Mac · Android · Windows
 
-[官网](https://limlink.floatmax-tech.com) · [发布版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [联系支持](mailto:limlink@floatmax-tech.com) · [源码](https://github.com/floatmax-tech-001/LimLink-Source)
+[官网](https://limlink.floatmax-tech.com) · [发布版本](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [联系支持](mailto:limlink@floatmax-tech.com) · [源码](https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source)
 
 <p align="center"><strong>下载：</strong></p>
 <p align="center">
@@ -44,13 +44,13 @@
 
 ## 源代码
 
-LimLink 1.0.1 的源代码维护在独立仓库：
+LimLink 1.0.1 的源代码在本仓库的 `source/` 目录：
 
-<https://github.com/floatmax-tech-001/LimLink-Source>
+<https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source>
 
 源码采用 **PolyForm Noncommercial 1.0.0**，允许个人、研究、教育、慈善等非商业用途；商业使用需要另行取得书面授权。LimLink 名称、Logo、图标、截图和商店素材不随源码授权。
 
-本仓库（LimLink-Releases）只存放发布说明和安装包，不包含完整源码。
+根目录保留发布说明和安装包，完整源码在 `source/`。
 
 [隐私政策](https://limlink.floatmax-tech.com/privacy.html) · [用户协议](https://limlink.floatmax-tech.com/terms.html)
 

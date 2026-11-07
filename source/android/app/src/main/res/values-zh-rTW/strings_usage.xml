@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usage_title">使用者協議與使用說明</string>
+    <string name="usage_developer">開發者：周甫俊</string>
+    <string name="usage_overview_title">使用說明</string>
+    <string name="usage_overview">LimLink 在同一區域網路內直接傳輸檔案，不需要開發者營運的檔案中繼服務或使用者帳號。本頁介紹目前功能與使用方法。</string>
+    <string name="usage_sharing_title">分享前請確認</string>
+    <string name="usage_sharing">僅分享你有權分享的檔案，並尊重他人的隱私。未綁定裝置仍須逐檔確認。發起方選擇裝置並點選「綁定」，再由對方明確確認、完成有效綁定後，雙方可自動接收後續檔案。裝置名稱可自行修改，不能單憑名稱識別對方。你可在設定中解除綁定，停止本機後續自動接收；已經儲存的檔案不會因此撤回。</string>
+    <string name="usage_transfer_title">傳輸與儲存</string>
+    <string name="usage_transfer">兩台裝置須處於同一區域網路，並在傳輸期間保持 LimLink 執行。可以一次選取多個檔案，每個檔案不超過 5 GB（5,000,000,000 位元組）。請確保接收裝置有足夠空間，確認檔案已完整收到後再刪除原件，並保留所需備份。</string>
+    <string name="usage_help_title">支援與隱私</string>
+    <string name="usage_help">檔案、身分與偏好的處理、儲存和刪除方式見本機隱私說明。聯絡支援時，請勿提交檔案內容、金鑰或私人記錄。</string>
+    <string name="usage_contact">聯絡方式：limlink@floatmax-tech.com</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">已绑定设备</string>
+    <string name="binding_explanation">请选择认识的设备。设备名称可由对方修改；绑定仅在应用开启时生效。</string>
+    <string name="binding_add">绑定设备</string>
+    <string name="binding_unbind">解绑</string>
+    <string name="binding_empty">尚无已绑定设备</string>
+    <string name="binding_waiting">等待 %1$s 确认…</string>
+    <string name="binding_completed">已绑定 %1$s</string>
+    <string name="binding_failed">绑定失败或已过期。重试将重新请求对方确认。</string>
+    <string name="binding_cancelled">绑定已取消</string>
+    <string name="binding_unbound">已在本机解绑，对方可能处于离线状态。</string>
+    <string name="binding_no_devices">未发现附近设备</string>
+    <string name="binding_bind_device">绑定 %1$s</string>
+    <string name="binding_grant">绑定后，双方将自动接收彼此发送的文件。请仅绑定您认识的设备。</string>
+    <string name="binding_request">%1$s 请求绑定</string>
+    <string name="binding_accept">确认绑定</string>
+    <string name="binding_reject">拒绝</string>
+    <string name="privacy_binding">绑定记录仅保存在本机私有目录中，包括双方的设备密钥指纹、绑定标识、设备名、设备类型和绑定时间；不会上传或加入 Android 备份。绑定完成后，应用开启时可自动接收该设备的文件；未绑定设备仍需逐次同意。您可在设置中解绑。</string>
+    <string name="privacy_contact">开发者：周甫俊。联系方式：limlink@floatmax-tech.com</string>
+</resources>

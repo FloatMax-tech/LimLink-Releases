@@ -1,0 +1,101 @@
+name: LimLinkKit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [ready_for_review, synchronize]
+    paths:
+      - "apple/LimLinkKit/**"
+      - ".github/workflows/limlinkkit.yml"
+
+concurrency:
+  group: limlinkkit-${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    # workflow_dispatch has no pull_request payload, so the draft comparison alone would skip it.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "6.2"
+
+      - name: Test LimLinkCoreLogic
+        run: swift test --package-path apple/LimLinkKit
+
+  apple:
+    # Draft pull requests skip the runner. A manual dispatch still runs.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache SwiftPM
+        uses: actions/cache@v4
+        with:
+          path: |
+            apple/LimLinkKit/.build
+            apple/LimLinkKit/.derivedData
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/org.swift.swiftpm
+          key: limlinkkit-spm-${{ runner.os }}-${{ hashFiles('apple/LimLinkKit/Package.swift', 'apple/LimLinkKit/Package.resolved') }}
+          restore-keys: |
+            limlinkkit-spm-${{ runner.os }}-
+
+      - name: Test on macOS
+        working-directory: apple/LimLinkKit
+        run: |
+          set -euo pipefail
+          # LimLinkKit has no test action. LimLinkKit-Package is the generated scheme that does.
+          # Loopback listeners use acceptLocalOnly and NWListener(using:on:), with no requiredLocalEndpoint.
+          xcodebuild -list
+          xcodebuild \
+            -scheme LimLinkKit-Package \
+            -destination "platform=macOS" \
+            -derivedDataPath "$PWD/.derivedData/macos" \
+            -parallel-testing-enabled NO \
+            test
+
+      - name: Test on iOS Simulator
+        # A macOS test failure must not skip this step. This is the run that
+        # records both results. A cancelled job does not start a second destination.
+        if: ${{ !cancelled() }}
+        working-directory: apple/LimLinkKit
+        run: |
+          set -euo pipefail
+          UDID="$(python3 - <<'PY'
+          import json, subprocess, sys
+          raw = subprocess.check_output(["xcrun", "simctl", "list", "devices", "available", "-j"])
+          data = json.loads(raw)
+          for runtime, devices in data.get("devices", {}).items():
+              if "iOS" not in runtime:
+                  continue
+              for device in devices:
+                  if device.get("isAvailable") and "iPhone" in device.get("name", ""):
+                      print(device["udid"])
+                      sys.exit(0)
+          sys.exit("no available iPhone simulator")
+          PY
+          )"
+          echo "simulator=$UDID"
+          xcodebuild -list -json > /tmp/limlinkkit-schemes.json
+          python3 - <<'PY'
+          import json, sys
+          data = json.load(open("/tmp/limlinkkit-schemes.json"))
+          container = data.get("project") or data.get("workspace") or {}
+          schemes = container.get("schemes") or []
+          if "LimLinkKit-Package" not in schemes:
+              sys.exit(f"missing LimLinkKit-Package scheme in {schemes}")
+          PY
+          xcodebuild \
+            -scheme LimLinkKit-Package \
+            -destination "platform=iOS Simulator,id=${UDID}" \
+            -derivedDataPath "$PWD/.derivedData/ios" \
+            -parallel-testing-enabled NO \
+            test

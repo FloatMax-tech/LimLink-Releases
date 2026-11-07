@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usage_title">Contratto utente e istruzioni d’uso</string>
+    <string name="usage_developer">Sviluppatore: 周甫俊</string>
+    <string name="usage_overview_title">Istruzioni d’uso</string>
+    <string name="usage_overview">LimLink trasferisce i file direttamente sulla stessa rete locale, senza un servizio di inoltro dei file gestito dallo sviluppatore né account utente. Questa pagina descrive le funzionalità attuali e come utilizzarle.</string>
+    <string name="usage_sharing_title">Prima di condividere</string>
+    <string name="usage_sharing">Condividi solo file che hai il diritto di condividere e rispetta la privacy degli altri. I dispositivi non associati richiedono ancora l’approvazione per ogni file. Chi avvia l’associazione sceglie un dispositivo e tocca «Associa»; dopo la conferma esplicita dell’altra persona e il completamento di un’associazione valida, entrambi i dispositivi possono ricevere automaticamente i file successivi. I nomi dei dispositivi sono modificabili e da soli non identificano l’altra persona. Puoi rimuovere un’associazione nelle Impostazioni per interrompere le future ricezioni automatiche su questo dispositivo; i file già salvati non verranno ritirati.</string>
+    <string name="usage_transfer_title">Trasferimento e archiviazione</string>
+    <string name="usage_transfer">Entrambi i dispositivi devono essere sulla stessa rete locale e mantenere LimLink in esecuzione durante il trasferimento. Puoi selezionare più file alla volta, ciascuno di dimensioni non superiori a 5 GB (5.000.000.000 byte). Assicurati che il dispositivo ricevente abbia spazio sufficiente, verifica che i file siano stati ricevuti per intero prima di eliminare gli originali e conserva le copie di backup necessarie.</string>
+    <string name="usage_help_title">Assistenza e privacy</string>
+    <string name="usage_help">Consulta le informazioni sulla privacy presenti su questo dispositivo per sapere come vengono trattati, salvati ed eliminati file, identità e preferenze. Quando contatti l’assistenza, non inviare contenuti dei file, chiavi o registri privati.</string>
+    <string name="usage_contact">Contatti: limlink@floatmax-tech.com</string>
+</resources>

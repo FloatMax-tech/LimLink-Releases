@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_footer">同じ LAN の有線端末と Wi-Fi 端末を利用できます。見つからない場合はネットワークアクセス、ファイアウォール、ルーターの端末分離を確認してください。</string>
+    <string name="privacy_lan">LimLink は同じ LAN 内で直接ファイルを転送します。パソコンは有線、スマートフォンは Wi-Fi やホットスポットでも利用できます。ファイルはサーバーを経由しません。</string>
+    <string name="home_discovery_hint">同じ LAN の別の端末で LimLink を開いてください。パソコンは有線、スマートフォンは Wi-Fi でも利用できます。見つからない場合はアクセス設定、ファイアウォール、ルーターの端末分離を確認してください。</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="updates_check">업데이트 확인</string>
+    <string name="updates_checking">확인 중…</string>
+    <string name="updates_latest">최신 버전입니다</string>
+    <string name="updates_none">아직 배포된 버전이 없습니다</string>
+    <string name="updates_failed">확인하지 못했습니다. 다시 시도하세요</string>
+    <string name="updates_download">설치 파일 다운로드</string>
+    <string name="updates_available">업데이트 있음</string>
+    <string name="updates_disclosure">버튼을 누를 때만 공식 사이트에서 업데이트를 확인합니다. 파일, 기기 이름, 연결 기록은 전송하지 않습니다.</string>
+    <string name="updates_install_hint">브라우저에서 다운로드합니다. 전송을 마친 후 설치를 확인하여 기존 데이터를 유지하세요.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_footer">Wired and Wi-Fi devices on the same LAN are supported. If discovery fails, check network access, firewalls and router device isolation.</string>
+    <string name="privacy_lan">LimLink transfers files directly within the same LAN. A computer can use Ethernet while a phone uses Wi-Fi or a hotspot. Files do not pass through a server.</string>
+    <string name="home_discovery_hint">Open LimLink on the same LAN. A computer can use Ethernet and a phone Wi-Fi. If discovery fails, check network access, firewalls and router isolation.</string>
+</resources>

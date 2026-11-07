@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_footer">Se admiten dispositivos Ethernet y Wi-Fi en la misma LAN. Si no aparecen, revisa el acceso a la red, el cortafuegos y el aislamiento del router.</string>
+    <string name="privacy_lan">LimLink transfiere archivos directamente en la misma LAN. El ordenador puede usar Ethernet y el móvil Wi-Fi o un punto de acceso. Los archivos no pasan por servidores.</string>
+    <string name="home_discovery_hint">Abre LimLink en la misma LAN. El ordenador puede usar Ethernet y el móvil Wi-Fi. Si no aparece, revisa el acceso a la red, el cortafuegos y el aislamiento del router.</string>
+</resources>

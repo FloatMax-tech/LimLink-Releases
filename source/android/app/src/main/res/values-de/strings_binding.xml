@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">Verknüpfte Geräte</string>
+    <string name="binding_explanation">Wähle ein bekanntes Gerät. Besitzer können Namen ändern. Empfang ist nur bei geöffneter App möglich.</string>
+    <string name="binding_add">Gerät verknüpfen</string>
+    <string name="binding_unbind">Verknüpfung aufheben</string>
+    <string name="binding_empty">Keine verknüpften Geräte</string>
+    <string name="binding_waiting">Warte auf die Zustimmung von %1$s…</string>
+    <string name="binding_completed">Mit %1$s verknüpft</string>
+    <string name="binding_failed">Verknüpfung fehlgeschlagen oder abgelaufen. Ein neuer Versuch erfordert eine neue Zustimmung.</string>
+    <string name="binding_cancelled">Verknüpfung abgebrochen</string>
+    <string name="binding_unbound">Lokal aufgehoben. Das andere Gerät ist möglicherweise offline.</string>
+    <string name="binding_no_devices">Keine Geräte in der Nähe</string>
+    <string name="binding_bind_device">%1$s verknüpfen</string>
+    <string name="binding_grant">Nach der Verknüpfung empfangen beide Geräte gegenseitig Dateien automatisch. Verknüpfe nur bekannte Geräte.</string>
+    <string name="binding_request">Verknüpfungsanfrage von %1$s</string>
+    <string name="binding_accept">Verknüpfung annehmen</string>
+    <string name="binding_reject">Ablehnen</string>
+    <string name="privacy_binding">Bindungsdaten bleiben im privaten Speicher dieses Geräts: Fingerabdrücke beider Geräteschlüssel, Bindungs-ID, Name, Gerätetyp und Zeitpunkt. Sie werden weder hochgeladen noch in Android-Backups aufgenommen. Nach abgeschlossener Bindung ist bei geöffneter App automatischer Empfang möglich. Ungebundene Geräte benötigen für jede Datei eine Zustimmung. Die Bindung kann in den Einstellungen aufgehoben werden.</string>
+    <string name="privacy_contact">Entwickler: 周甫俊. Kontakt: limlink@floatmax-tech.com</string>
+</resources>

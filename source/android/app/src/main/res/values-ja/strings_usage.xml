@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usage_title">利用規約と使用上のご案内</string>
+    <string name="usage_developer">開発者：周甫俊</string>
+    <string name="usage_overview_title">使用上のご案内</string>
+    <string name="usage_overview">LimLink は同じローカルネットワーク内でファイルを直接転送します。開発者が運営するファイル中継サービスやユーザーアカウントは必要ありません。このページでは現在の機能と使い方を説明します。</string>
+    <string name="usage_sharing_title">共有前の確認事項</string>
+    <string name="usage_sharing">共有する権利のあるファイルだけを共有し、他の人のプライバシーを尊重してください。未連携のデバイスからのファイルは、引き続きファイルごとに承認が必要です。発信側がデバイスを選んで「連携」をタップし、相手が明示的に承認して有効な連携が完了すると、双方のデバイスで以降のファイルを自動受信できます。デバイス名は変更できるため、名前だけで相手を識別することはできません。設定で連携を解除すると、このデバイスでの以降の自動受信を停止できます。すでに保存したファイルは取り消されません。</string>
+    <string name="usage_transfer_title">転送と保存</string>
+    <string name="usage_transfer">両方のデバイスを同じローカルネットワークに接続し、転送中は LimLink を実行したままにしてください。一度に複数のファイルを選択でき、各ファイルの上限は 5 GB（5,000,000,000 バイト）です。受信するデバイスに十分な空き容量があることを確認し、ファイルを完全に受信できたことを確認してから元のファイルを削除してください。必要なバックアップも保管してください。</string>
+    <string name="usage_help_title">サポートとプライバシー</string>
+    <string name="usage_help">ファイル、識別情報、設定の取り扱い、保存、削除方法については、このデバイス内のプライバシー説明をご覧ください。サポートへのお問い合わせ時に、ファイルの内容、鍵、プライベートなログを送信しないでください。</string>
+    <string name="usage_contact">お問い合わせ先：limlink@floatmax-tech.com</string>
+</resources>

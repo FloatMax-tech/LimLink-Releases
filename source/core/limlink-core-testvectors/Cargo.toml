@@ -1,0 +1,24 @@
+[package]
+name = "limlink-core-testvectors"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+description = "LimLink core test build. Not for release apps."
+
+[lib]
+name = "limlink_core_testvectors"
+crate-type = ["rlib", "staticlib", "cdylib"]
+
+[features]
+# Packaged Android/Windows test builds export llc_* and llct_* from this
+# cdylib. The default build stays llct-only so the release-leak check holds.
+# Do not combine this with the release profile: test-rng is refused there.
+bundled-llc = []
+
+[dependencies]
+limlink-core = { path = "../limlink-core", default-features = false, features = ["test-rng"] }
+
+[dev-dependencies]
+limlink-core = { path = "../limlink-core", default-features = false, features = ["test-rng"] }
+serde_json = "1"

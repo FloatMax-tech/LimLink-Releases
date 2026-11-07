@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="legal_operator">營運主體：杭州浮点极限科技有限公司</string>
+    <string name="legal_online_privacy">在線上查看完整政策</string>
+    <string name="legal_online_terms">在線上查看完整協議</string>
+    <string name="legal_open_failed">無法開啟網頁，請檢查瀏覽器設定。</string>
+    <string name="legal_privacy_url">https://limlink.floatmax-tech.com/privacy.zh-Hant.html</string>
+    <string name="legal_terms_url">https://limlink.floatmax-tech.com/terms.zh-Hant.html</string>
+    <string name="usage_excerpt_notice">以下為官網使用者協議第八節及第十節的離線摘錄；完整協議請見官網。\n\n本譯文僅供參考；如與簡體中文版本不一致，以簡體中文版本為準。</string>
+    <string name="usage_liability_title">八、責任與權利保障</string>
+    <string name="usage_liability_body">我們依法對應用程式和服務承擔責任，不以「免費」「區域網路直傳」或概括免責條款免除法定義務。因產品品質、消費者保護、個人資料保護或其他適用法律產生的請求，將依法處理。\n\n雙方應採取合理措施避免和減少損失，例如核實接收裝置、妥善保管裝置、檢查傳輸結果及備份重要檔案。網路或系統故障等情形的責任，依具體事實和適用法律確定，不由本文件一概轉由使用者承擔。\n\n本文件不排除或限制故意、重大過失、人身傷害等依法不得排除或限制的責任，也不影響你依法享有的保證、救濟和申訴權利。</string>
+    <string name="usage_disclaimer_title">十、免責聲明</string>
+    <string name="usage_disclaimer_body">在適用法律允許的範圍內，並且不影響本文件第八節及你依法享有的權利：\n\nLimLink 依發布時的實際狀態和現有功能提供。我們會盡力確保應用程式正常運作，但不保證在所有裝置、系統版本和網路環境下都不中斷、無錯誤，或符合你的特定用途。\n\n下列情形造成的損失，我們不承擔責任，但因我們的過錯造成或依法應由我們承擔的除外：\n\n• 你或接收方選錯裝置、綁定不信任的裝置，或未妥善保管裝置；\n• 檔案內容本身的合法性、正確性或安全性，包括檔案侵害他人權利或含有惡意程式；\n• 接收方儲存、轉傳或使用檔案的行為；\n• 網路業者、路由器、作業系統、雲端硬碟、備份等第三方產品或服務的故障、限制或資料處理；\n• 不可抗力，以及斷電、裝置損壞等我們無法合理控制的事件。\n\n重要檔案請自行備份。未備份造成的資料遺失，我們不承擔責任，但因我們的過錯導致的除外。\n\n本節不排除或限制故意、重大過失、人身傷害等依法不得排除或限制的責任，也不影響適用的消費者保護法律賦予你的權利。</string>
+</resources>

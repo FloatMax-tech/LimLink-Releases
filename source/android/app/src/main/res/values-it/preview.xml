@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preview_title">Anteprima file</string>
+    <string name="preview_close">Chiudi</string>
+    <string name="preview_open_with">Apri con</string>
+    <string name="preview_share">Condividi</string>
+    <string name="preview_gallery">Apri nella Galleria</string>
+    <string name="preview_location">Apri posizione</string>
+    <string name="preview_location_hint">Android mostra la posizione del documento. Alcuni provider non possono aprire direttamente la cartella superiore.</string>
+    <string name="preview_action_failed">Impossibile aprire. Controlla il file e le autorizzazioni, poi riprova.</string>
+    <string name="preview_unsupported">Questo formato non ha anteprima integrata. Scegli Apri con per Office e altri documenti.</string>
+    <string name="preview_unavailable">Anteprima non disponibile: file spostato, danneggiato, accesso scaduto o formato non supportato. Prova Apri con.</string>
+    <string name="preview_text_truncated">Sono mostrati solo i primi 256 KB di testo.</string>
+    <string name="preview_previous">Precedente</string>
+    <string name="preview_next">Successiva</string>
+    <string name="preview_page">Pagina %1$d di %2$d</string>
+    <string name="preview_play">Riproduci</string>
+    <string name="preview_pause">Pausa</string>
+    <string name="preview_verified">Verificato e completato</string>
+    <string name="preview_tap">Tocca per l’anteprima</string>
+    <string name="photo_auto_save">Salva le immagini ricevute automaticamente nella Galleria</string>
+    <string name="photo_auto_save_hint">Solo nuove immagini ricevute e verificate. Gli originali sono conservati. È disponibile anche il salvataggio manuale.</string>
+    <string name="photo_saving">Salvataggio nella Galleria…</string>
+    <string name="photo_saved">Salvato nella Galleria</string>
+    <string name="photo_failed">Salvataggio nella Galleria non riuscito. Il file ricevuto è conservato. Riprova o controlla le impostazioni di sistema.</string>
+    <string name="photo_disabled">L’immagine resta nella posizione di ricezione e può essere salvata manualmente nella Galleria.</string>
+    <string name="photo_retry">Riprova il salvataggio</string>
+    <string name="privacy_preview_photos">Le anteprime vengono elaborate offline, senza caricare contenuti né recuperare automaticamente risorse Internet dei documenti. Se il salvataggio automatico è attivo, le nuove immagini ricevute e verificate vengono copiate anche in Pictures/LimLink nella libreria foto di sistema. Gli originali restano al loro posto. La funzione può essere disattivata nelle impostazioni; eliminare una voce ricevuta non elimina la copia nella Galleria. I contenuti vengono passati a un’altra app solo scegliendo Condividi o Apri con.</string>
+    <string name="usage_preview_photos">Immagini, PDF, video, audio e testo hanno un’anteprima integrata. Per Office e altri formati scegli Apri con; la compatibilità dipende dal dispositivo. Le immagini vengono verificate e salvate prima della copia nella Galleria. Errori di permessi o esportazione non cambiano la ricezione; puoi riprovare. Apri posizione può mostrare il selettore documenti. La spunta conferma il salvataggio verificato o la conferma del destinatario; il risultato della Galleria è separato.</string>
+</resources>

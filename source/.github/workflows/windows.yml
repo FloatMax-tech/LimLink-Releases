@@ -1,0 +1,76 @@
+name: windows
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "windows/**"
+      - "core/include/**"
+      - "core/vectors/**"
+      - ".github/workflows/windows.yml"
+
+concurrency:
+  group: windows-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: windows
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('windows/**/*.csproj', 'windows/global.json') }}
+          restore-keys: |
+            nuget-${{ runner.os }}-
+
+      - name: Install OpenSSL
+        run: choco install openssl.light -y --no-progress
+
+      - name: Build client and library
+        run: dotnet build LimLink.slnx -c Release
+
+      - name: Test
+        shell: pwsh
+        run: |
+          $openssl = "C:\Program Files\OpenSSL\bin\openssl.exe"
+          if (-not (Test-Path $openssl)) { throw "OpenSSL was not installed at $openssl." }
+          $env:LIMLINK_OPENSSL = $openssl
+          $env:Path = "$(Split-Path $openssl -Parent);$env:Path"
+          Write-Host "openssl: $openssl"
+          & $openssl version
+          dotnet test --solution LimLink.slnx -c Release
+
+      - name: Publish Windows desktop
+        run: dotnet publish src/LimLink.Desktop -c Release -r win-x64 --self-contained true -o release/win-x64
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LimLink-Windows-x64
+          path: windows/release/win-x64/
+
+      - name: Build unsigned setup installer
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) {
+            choco install innosetup -y --no-progress
+            if ($LASTEXITCODE -ne 0) { throw 'Inno Setup installation failed' }
+          }
+          ./installer/build.ps1 -Iscc $iscc
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LimLink-Setup-x64
+          path: windows/installer/Output/*.exe
+          if-no-files-found: error

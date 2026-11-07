@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_footer">支援同一區域網路的有線和 Wi-Fi 裝置。若找不到對方，請檢查網路存取、防火牆及路由器隔離設定。</string>
+    <string name="privacy_lan">LimLink 在同一區域網路內直接傳檔案，電腦可接網路線，手機可用 Wi-Fi 或熱點；檔案不經過伺服器。</string>
+    <string name="home_discovery_hint">在同一區域網路的另一台裝置開啟 LimLink。電腦可接網路線，手機可用 Wi-Fi。若仍不可見，請檢查網路權限、防火牆和路由器隔離。</string>
+</resources>

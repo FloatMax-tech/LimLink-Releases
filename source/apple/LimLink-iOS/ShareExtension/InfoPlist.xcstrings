@@ -1,0 +1,65 @@
+{
+  "sourceLanguage": "zh-Hans",
+  "strings": {
+    "NSLocalNetworkUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查找同一 Wi-Fi 上的附近设备，并直接发送分享的文件。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find nearby devices on the same Wi-Fi network and send shared files directly to them."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "尋找同一 Wi-Fi 網路上的附近裝置，並直接傳送分享的檔案。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同じWi-Fiネットワーク上の近くのデバイスを検索し、共有するファイルを直接送信します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "같은 Wi-Fi 네트워크에 있는 근처 기기를 찾고 공유할 파일을 직접 보냅니다."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher les appareils à proximité sur le même réseau Wi-Fi et leur envoyer directement les fichiers partagés."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geräte in der Nähe im selben WLAN finden und geteilte Dateien direkt an sie senden."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar dispositivos cercanos en la misma red Wi-Fi y enviarles directamente los archivos compartidos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trova i dispositivi vicini sulla stessa rete Wi-Fi e invia loro direttamente i file condivisi."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

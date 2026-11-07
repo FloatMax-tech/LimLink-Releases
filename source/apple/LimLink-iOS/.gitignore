@@ -1,0 +1,5 @@
+.derived/
+# Keep the shared project and schemes available to Xcode Cloud.
+xcuserdata/
+*.xcuserstate
+.DS_Store

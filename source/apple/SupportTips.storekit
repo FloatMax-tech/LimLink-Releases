@@ -1,0 +1,77 @@
+{
+  "identifier": "C5D2D3F0-7100-4D5D-B7E6-1C29A6D64111",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "0.99",
+      "familyShareable": false,
+      "internalID": "74000101",
+      "localizations": [
+        {
+          "description": "Optional, repeatable support. No features are unlocked.",
+          "displayName": "Small contribution",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.limlink.tip.small",
+      "referenceName": "LimLink small support",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "74000102",
+      "localizations": [
+        {
+          "description": "Optional, repeatable support. No features are unlocked.",
+          "displayName": "Kind support",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.limlink.tip.medium",
+      "referenceName": "LimLink medium support",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "4.99",
+      "familyShareable": false,
+      "internalID": "74000103",
+      "localizations": [
+        {
+          "description": "Optional, repeatable support. No features are unlocked.",
+          "displayName": "Generous support",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.limlink.tip.large",
+      "referenceName": "LimLink large support",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "0.01",
+      "familyShareable": false,
+      "internalID": "74000999",
+      "localizations": [
+        {
+          "description": "Local test catalogue isolation probe. Never purchase or register in App Store Connect.",
+          "displayName": "Local StoreKit test probe",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.limlink.testing.local-catalogue-probe",
+      "referenceName": "TEST ONLY - local catalogue isolation probe",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

@@ -7,7 +7,7 @@
 **Dateien direkt verbinden.**
 Dateiübertragung im lokalen Netzwerk · iPhone · iPad · Mac · Android · Windows
 
-[Website](https://limlink.floatmax-tech.com) · [Versionen](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Support](mailto:limlink@floatmax-tech.com) · [Quellcode](https://github.com/floatmax-tech-001/LimLink-Source)
+[Website](https://limlink.floatmax-tech.com) · [Versionen](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Support](mailto:limlink@floatmax-tech.com) · [Quellcode](https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source)
 
 <p align="center"><strong>Download:</strong></p>
 <p align="center">
@@ -37,13 +37,13 @@ Direkte Übertragung in einem erreichbaren lokalen Netzwerk, bis zu 5 GB pro Dat
 
 ## Quellcode
 
-Der LimLink 1.0.1-Quellcode wird in einem separaten Repository gepflegt:
+Der LimLink 1.0.1-Quellcode liegt in diesem Repository unter `source/`:
 
-<https://github.com/floatmax-tech-001/LimLink-Source>
+<https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source>
 
 Er ist unter **PolyForm Noncommercial 1.0.0** für private, Forschungs-, Bildungs-, gemeinnützige und andere nichtkommerzielle Zwecke veröffentlicht. Kommerzielle Nutzung erfordert eine separate schriftliche Lizenz. Name, Logo, Symbole, Screenshots und Store-Materialien von LimLink sind nicht Bestandteil der Quellcode-Lizenz.
 
-Dieses Repository (LimLink-Releases) enthält nur Versionshinweise und Installationsprogramme, nicht den vollständigen Quellcode.
+Im Repository-Stamm liegen Versionshinweise und Installationsprogramme; der vollständige Quellcode befindet sich unter `source/`.
 
 [Datenschutz](https://limlink.floatmax-tech.com/privacy.de.html) · [Nutzungsbedingungen](https://limlink.floatmax-tech.com/terms.de.html)
 

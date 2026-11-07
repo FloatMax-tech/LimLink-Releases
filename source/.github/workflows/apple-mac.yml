@@ -1,0 +1,107 @@
+name: LimLink Mac
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [ready_for_review, synchronize, reopened]
+    paths:
+      - "apple/LimLink-mac/**"
+      - "apple/LimLinkKit/**"
+      - "apple/LimLink-iOS/Support/**"
+      - ".github/workflows/apple-mac.yml"
+
+concurrency:
+  group: limlink-mac-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache XcodeGen
+        id: xcodegen-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/tools/xcodegen
+          key: xcodegen-2.46.0-with-presets
+
+      - name: Install XcodeGen
+        if: steps.xcodegen-cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          rm -rf "$HOME/tools/xcodegen"
+          mkdir -p "$HOME/tools"
+          curl -fsSL -o /tmp/xcodegen.zip "https://github.com/yonaskolb/XcodeGen/releases/download/2.46.0/xcodegen.zip"
+          unzip -q /tmp/xcodegen.zip -d "$HOME/tools"
+          test -x "$HOME/tools/xcodegen/bin/xcodegen"
+          test -f "$HOME/tools/xcodegen/share/xcodegen/SettingPresets/base.yml"
+          test -f "$HOME/tools/xcodegen/share/xcodegen/SettingPresets/Configs/debug.yml"
+          chmod +x "$HOME/tools/xcodegen/bin/xcodegen"
+
+      - name: Generate the Xcode project
+        run: |
+          set -euo pipefail
+          test -x "$HOME/tools/xcodegen/bin/xcodegen"
+          test -f "$HOME/tools/xcodegen/share/xcodegen/SettingPresets/Configs/debug.yml"
+          export PATH="$HOME/tools/xcodegen/bin:$PATH"
+          cd apple/LimLink-mac
+          xcodegen generate > /tmp/xcodegen-generate.txt 2>&1
+          cat /tmp/xcodegen-generate.txt
+          if grep -E 'No ".*" settings found' /tmp/xcodegen-generate.txt; then
+            echo "XcodeGen setting presets were not loaded" >&2
+            exit 1
+          fi
+
+      - name: Build and test
+        run: |
+          set -euo pipefail
+          cd apple/LimLink-mac
+          xcodebuild test \
+            -project LimLinkMac.xcodeproj \
+            -scheme LimLinkMac \
+            -destination 'platform=macOS,arch=arm64' \
+            -derivedDataPath .derived \
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_REQUIRED=NO \
+            ONLY_ACTIVE_ARCH=YES
+
+      - name: Check ad-hoc signature, sandbox, and Info.plist
+        run: |
+          set -euo pipefail
+          cd apple/LimLink-mac
+          app="$(find .derived -type d -name 'LimLink.app' | head -n 1)"
+          test -n "$app"
+          codesign -d --verbose=4 "$app" > /tmp/limlink-codesign.txt 2>&1 || true
+          if ! grep -q 'runtime' /tmp/limlink-codesign.txt; then
+            # Xcode drops the hardened-runtime flag when the identity is ad-hoc "-".
+            codesign --force --sign - --options runtime \
+              --entitlements App/LimLinkMac.entitlements "$app"
+            codesign -d --verbose=4 "$app" > /tmp/limlink-codesign.txt 2>&1
+          fi
+          codesign -d --entitlements - "$app" > /tmp/limlink-entitlements.txt 2>/tmp/limlink-entitlements-err.txt || true
+          cat /tmp/limlink-entitlements-err.txt >> /tmp/limlink-entitlements.txt
+          for key in \
+            com.apple.security.app-sandbox \
+            com.apple.security.network.server \
+            com.apple.security.network.client \
+            com.apple.security.files.downloads.read-write \
+            com.apple.security.files.user-selected.read-write \
+            com.apple.security.files.bookmarks.app-scope
+          do
+            grep -q "$key" /tmp/limlink-entitlements.txt
+          done
+          if grep -q 'com.apple.developer.networking.multicast' /tmp/limlink-entitlements.txt; then
+            echo "Mac app must not include the multicast entitlement" >&2
+            exit 1
+          fi
+          grep -q 'runtime' /tmp/limlink-codesign.txt
+          plutil -p "$app/Contents/Info.plist" | grep -q '_limlink._tcp'
+          plutil -p "$app/Contents/Info.plist" | grep -q 'NSLocalNetworkUsageDescription'
+          plutil -p "$app/Contents/Info.plist" | grep -q 'Wi-Fi'

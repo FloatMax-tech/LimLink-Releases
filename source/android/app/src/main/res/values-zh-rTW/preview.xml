@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preview_title">檔案預覽</string>
+    <string name="preview_close">關閉</string>
+    <string name="preview_open_with">使用其他 App 開啟</string>
+    <string name="preview_share">分享</string>
+    <string name="preview_gallery">在相簿中開啟</string>
+    <string name="preview_location">開啟所在位置</string>
+    <string name="preview_location_hint">Android 會顯示文件所在位置；部分提供者無法直接開啟上層資料夾。</string>
+    <string name="preview_action_failed">無法開啟。請確認檔案位置及存取權限，再重試。</string>
+    <string name="preview_unsupported">此格式不支援 App 內預覽。Office 等文件可使用其他 App 開啟。</string>
+    <string name="preview_unavailable">無法預覽。檔案可能已移動、損毀、權限已過期，或裝置不支援此格式。可使用其他 App 開啟。</string>
+    <string name="preview_text_truncated">僅顯示前 256 KB 文字。</string>
+    <string name="preview_previous">上一頁</string>
+    <string name="preview_next">下一頁</string>
+    <string name="preview_page">第 %1$d 頁，共 %2$d 頁</string>
+    <string name="preview_play">播放</string>
+    <string name="preview_pause">暫停</string>
+    <string name="preview_verified">已驗證並完成</string>
+    <string name="preview_tap">輕點預覽</string>
+    <string name="photo_auto_save">自動將接收的圖片儲存至相簿</string>
+    <string name="photo_auto_save_hint">僅處理新收到並驗證完成的圖片。原檔案保留在接收位置，也可手動儲存。</string>
+    <string name="photo_saving">正在儲存至相簿…</string>
+    <string name="photo_saved">已儲存至相簿</string>
+    <string name="photo_failed">相簿儲存失敗，接收檔案仍保留。請重試或檢查系統設定。</string>
+    <string name="photo_disabled">圖片保留在接收位置，可手動儲存至相簿。</string>
+    <string name="photo_retry">重試相簿儲存</string>
+    <string name="privacy_preview_photos">預覽在本機離線完成，不上傳內容，也不自動取得文件中的網路資源。開啟相簿自動儲存時，新接收並驗證儲存成功的圖片會額外複製到系統相簿 Pictures/LimLink。原檔案保留，可在設定中關閉自動儲存。刪除接收記錄不會刪除相簿副本。只有主動分享或選擇其他 App 開啟時，內容才會交給所選 App。</string>
+    <string name="usage_preview_photos">可預覽圖片、PDF、影片、音訊和文字；Office 等格式需使用其他 App 開啟，支援情況取決於裝置。圖片先驗證並儲存，再複製到相簿；權限或匯出失敗不影響接收成功，可重試。開啟所在位置可能顯示系統文件選擇器。完成勾選表示已驗證儲存或收到對方確認，相簿匯出狀態另行顯示。</string>
+</resources>

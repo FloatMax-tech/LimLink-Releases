@@ -7,7 +7,7 @@
 **Vos fichiers, directement.**
 Transfert de fichiers sur réseau local · iPhone · iPad · Mac · Android · Windows
 
-[Site officiel](https://limlink.floatmax-tech.com) · [Versions](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Assistance](mailto:limlink@floatmax-tech.com) · [Code source](https://github.com/floatmax-tech-001/LimLink-Source)
+[Site officiel](https://limlink.floatmax-tech.com) · [Versions](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [Assistance](mailto:limlink@floatmax-tech.com) · [Code source](https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source)
 
 <p align="center"><strong>Téléchargement :</strong></p>
 <p align="center">
@@ -37,13 +37,13 @@ Transfert direct sur un réseau local accessible, jusqu’à 5 GB par fichier. A
 
 ## Code source
 
-Le code source de LimLink 1.0.1 est maintenu dans un dépôt séparé :
+Le code source de LimLink 1.0.1 se trouve dans ce dépôt, sous `source/` :
 
-<https://github.com/floatmax-tech-001/LimLink-Source>
+<https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source>
 
 Il est publié sous **PolyForm Noncommercial 1.0.0** pour un usage personnel, de recherche, éducatif, caritatif et autre usage non commercial. Toute utilisation commerciale nécessite une licence écrite séparée. Le nom, le logo, les icônes, les captures d’écran et les ressources de boutique LimLink ne sont pas couverts par la licence du code.
 
-Ce dépôt (LimLink-Releases) contient uniquement les notes de version et les installateurs, pas le code source complet.
+La racine du dépôt contient les notes de version et les installateurs ; le code source complet se trouve sous `source/`.
 
 [Confidentialité](https://limlink.floatmax-tech.com/privacy.fr.html) · [Conditions](https://limlink.floatmax-tech.com/terms.fr.html)
 

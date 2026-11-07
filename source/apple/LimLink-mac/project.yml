@@ -1,0 +1,258 @@
+name: LimLinkMac
+options:
+  bundleIdPrefix: com.limlink
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  developmentLanguage: zh-Hans
+  groupSortPosition: top
+packages:
+  LimLinkKit:
+    path: ../LimLinkKit
+  LimLinkAppSupport:
+    path: ../LimLink-iOS/Support
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    MARKETING_VERSION: "1.0.1"
+    CURRENT_PROJECT_VERSION: "5"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SUPPORTS_MACCATALYST: NO
+    ALWAYS_SEARCH_USER_PATHS: NO
+  configs:
+    Debug:
+      ONLY_ACTIVE_ARCH: YES
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      GCC_OPTIMIZATION_LEVEL: "0"
+      ENABLE_TESTABILITY: YES
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      DEBUG_INFORMATION_FORMAT: dwarf
+configs:
+  Debug: debug
+  Release: release
+  AppStore: release
+  DeveloperID: release
+  # Legacy Cloud aliases both produce the unified Direct edition.
+  DeveloperIDCN: release
+  DeveloperIDWD: release
+targets:
+  LimLinkMac:
+    productName: LimLink
+    type: application
+    platform: macOS
+    attributes:
+      SystemCapabilities:
+        com.apple.InAppPurchase:
+          enabled: 1
+    sources:
+      - path: App
+        excludes:
+          - Info.plist
+          - LimLinkMac.entitlements
+      - path: Sources
+        excludes:
+          - FakeTransferEngine.swift
+      - path: ../Shared
+    dependencies:
+      - package: LimLinkKit
+        product: LimLinkKit
+      - package: LimLinkAppSupport
+        product: LimLinkAppSupport
+    settings:
+      base:
+        PRODUCT_NAME: LimLink
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev
+        PRODUCT_MODULE_NAME: LimLinkMac
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/LimLinkMac.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Manual
+        COMBINE_HIDPI_IMAGES: YES
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+        LIMLINK_DISTRIBUTION_CHANNEL: AppStore
+      configs:
+        Debug:
+          CODE_SIGN_STYLE: Automatic
+          CODE_SIGN_IDENTITY: "Apple Development"
+          CODE_SIGNING_REQUIRED: YES
+          DEVELOPMENT_TEAM: J8PZU3W5VL
+        Release:
+          CODE_SIGN_IDENTITY: "-"
+          CODE_SIGNING_REQUIRED: NO
+          DEVELOPMENT_TEAM: ""
+        AppStore:
+          CODE_SIGN_STYLE: Automatic
+          CODE_SIGN_IDENTITY: "Apple Distribution"
+          CODE_SIGNING_REQUIRED: YES
+          DEVELOPMENT_TEAM: J8PZU3W5VL
+        DeveloperID:
+          CODE_SIGN_STYLE: Automatic
+          CODE_SIGN_IDENTITY: "Developer ID Application"
+          CODE_SIGNING_REQUIRED: YES
+          DEVELOPMENT_TEAM: J8PZU3W5VL
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) LIMLINK_DIRECT_DISTRIBUTION"
+          LIMLINK_DISTRIBUTION_CHANNEL: Direct
+          ONLY_ACTIVE_ARCH: NO
+        DeveloperIDCN:
+          CODE_SIGN_STYLE: Automatic
+          CODE_SIGN_IDENTITY: "Developer ID Application"
+          CODE_SIGNING_REQUIRED: YES
+          DEVELOPMENT_TEAM: J8PZU3W5VL
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) LIMLINK_DIRECT_DISTRIBUTION"
+          LIMLINK_DISTRIBUTION_CHANNEL: Direct
+          ONLY_ACTIVE_ARCH: NO
+        DeveloperIDWD:
+          CODE_SIGN_STYLE: Automatic
+          CODE_SIGN_IDENTITY: "Developer ID Application"
+          CODE_SIGNING_REQUIRED: YES
+          DEVELOPMENT_TEAM: J8PZU3W5VL
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) LIMLINK_DIRECT_DISTRIBUTION"
+          LIMLINK_DISTRIBUTION_CHANNEL: Direct
+          ONLY_ACTIVE_ARCH: NO
+  LimLinkMacTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: ../SupportTips.storekit
+        buildPhase: resources
+      - path: Tests
+        excludes:
+          - SupportStoreKitTests.swift
+      - path: ../LimLink-iOS/Support/Tests/LimLinkAppSupportTests/SupportPurchaseTests.swift
+      - path: Sources
+      - path: App/ProgressSurfaces.swift
+      # Cloud test runners receive built products, not the source checkout.
+      - path: App
+        type: folder
+        buildPhase: resources
+      - path: Sources
+        type: folder
+        buildPhase: resources
+      - path: ExportOptions
+        type: folder
+        buildPhase: resources
+      - path: project.yml
+        buildPhase: resources
+    dependencies:
+      - package: LimLinkKit
+        product: LimLinkKit
+      - package: LimLinkAppSupport
+        product: LimLinkAppSupport
+    settings:
+      base:
+        # Explicit names: an empty TEST_HOST is still set, and Xcode then
+        # builds this bundle as Debug/.xctest with module name "".
+        PRODUCT_NAME: LimLinkMacTests
+        PRODUCT_MODULE_NAME: LimLinkMacTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev.tests
+        GENERATE_INFOPLIST_FILE: YES
+        # macOS 15 will not load a completely unsigned xctest.
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_ALLOWED: YES
+        CODE_SIGNING_REQUIRED: NO
+        ENABLE_HARDENED_RUNTIME: NO
+    # Logic tests compile Sources themselves. Leave TEST_HOST unset.
+  LimLinkMacStoreKitTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/SupportStoreKitTests.swift
+      - path: ../SupportTips.storekit
+        buildPhase: resources
+    dependencies:
+      - target: LimLinkMac
+      - package: LimLinkAppSupport
+        product: LimLinkAppSupport
+    settings:
+      base:
+        PRODUCT_NAME: LimLinkMacStoreKitTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev.storekittests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/LimLink.app/Contents/MacOS/LimLink"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "Apple Development"
+        DEVELOPMENT_TEAM: J8PZU3W5VL
+        ENABLE_HARDENED_RUNTIME: NO
+  LimLinkMacUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources:
+      - path: ../SupportTips.storekit
+        buildPhase: resources
+      - path: UITests
+    dependencies:
+      - target: LimLinkMac
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: LimLinkMac
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: J8PZU3W5VL
+schemes:
+  LimLinkMacDirect:
+    build:
+      targets:
+        LimLinkMac: all
+        LimLinkMacTests: [test]
+    test:
+      config: Debug
+      targets:
+        - name: LimLinkMacTests
+          parallelizable: false
+    archive:
+      config: DeveloperID
+  LimLinkMacCN:
+    build:
+      targets:
+        LimLinkMac: all
+        LimLinkMacTests: [test]
+    test:
+      config: Debug
+      targets:
+        - name: LimLinkMacTests
+          parallelizable: false
+    archive:
+      config: DeveloperIDCN
+  LimLinkMacWD:
+    build:
+      targets:
+        LimLinkMac: all
+        LimLinkMacTests: [test]
+    test:
+      config: Debug
+      targets:
+        - name: LimLinkMacTests
+          parallelizable: false
+    archive:
+      config: DeveloperIDWD
+  LimLinkMac:
+    build:
+      targets:
+        LimLinkMac: all
+        LimLinkMacTests: [test]
+        LimLinkMacStoreKitTests: [test]
+        LimLinkMacUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: ../SupportTips.storekit
+    test:
+      config: Debug
+      gatherCoverageData: false
+      testPlans:
+        - path: LimLinkMac.xctestplan
+          defaultPlan: true
+      targets:
+        - name: LimLinkMacTests
+          parallelizable: false
+        - name: LimLinkMacStoreKitTests
+          parallelizable: false
+        - name: LimLinkMacUITests
+          parallelizable: false
+    archive:
+      config: AppStore

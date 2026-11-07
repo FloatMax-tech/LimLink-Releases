@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LimLink.Core/LimLink.Core.csproj" />
+    <Project Path="src/LimLink.Harness/LimLink.Harness.csproj" />
+    <Project Path="src/LimLink.Desktop/LimLink.Desktop.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/LimLink.Core.Tests/LimLink.Core.Tests.csproj" />
+  </Folder>
+</Solution>

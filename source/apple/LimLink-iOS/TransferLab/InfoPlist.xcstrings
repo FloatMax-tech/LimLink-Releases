@@ -1,0 +1,16 @@
+{
+  "sourceLanguage" : "zh-Hans",
+  "strings" : {
+    "NSLocalNetworkUsageDescription" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查找同一 Wi-Fi 上的附近设备，并与它们直接传输文件。文件不经过互联网。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

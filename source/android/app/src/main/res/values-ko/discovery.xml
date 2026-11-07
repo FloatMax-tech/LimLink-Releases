@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_footer">같은 LAN의 유선 및 Wi-Fi 기기를 지원합니다. 검색되지 않으면 네트워크 접근, 방화벽 및 공유기 격리 설정을 확인하세요.</string>
+    <string name="privacy_lan">LimLink는 같은 LAN에서 파일을 직접 전송합니다. 컴퓨터는 유선, 휴대폰은 Wi-Fi나 핫스팟을 사용할 수 있습니다. 파일은 서버를 거치지 않습니다.</string>
+    <string name="home_discovery_hint">같은 LAN의 다른 기기에서 LimLink를 여세요. 컴퓨터는 유선, 휴대폰은 Wi-Fi를 사용할 수 있습니다. 검색되지 않으면 네트워크 접근, 방화벽 및 공유기 격리 설정을 확인하세요.</string>
+</resources>

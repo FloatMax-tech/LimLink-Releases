@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preview_title">File preview</string>
+    <string name="preview_close">Close</string>
+    <string name="preview_open_with">Open with</string>
+    <string name="preview_share">Share</string>
+    <string name="preview_gallery">Open in Gallery</string>
+    <string name="preview_location">Open containing location</string>
+    <string name="preview_location_hint">Android shows the document location; some providers cannot reveal its exact parent folder.</string>
+    <string name="preview_action_failed">Could not open. Check the file location and access, then retry.</string>
+    <string name="preview_unsupported">This format has no in-app preview. Choose Open with for Office documents and other formats.</string>
+    <string name="preview_unavailable">Cannot preview. The file may have moved, be damaged, have expired access, or use an unsupported format. Try Open with.</string>
+    <string name="preview_text_truncated">Showing only the first 256 KB of text.</string>
+    <string name="preview_previous">Previous</string>
+    <string name="preview_next">Next</string>
+    <string name="preview_page">Page %1$d of %2$d</string>
+    <string name="preview_play">Play</string>
+    <string name="preview_pause">Pause</string>
+    <string name="preview_verified">Verified and complete</string>
+    <string name="preview_tap">Tap to preview</string>
+    <string name="photo_auto_save">Save received images to Gallery automatically</string>
+    <string name="photo_auto_save_hint">Newly received, verified images only. Originals stay in the receive location. Manual saving is also available.</string>
+    <string name="photo_saving">Saving to Gallery…</string>
+    <string name="photo_saved">Saved to Gallery</string>
+    <string name="photo_failed">Gallery save failed. The received file is safe. Retry or check system settings.</string>
+    <string name="photo_disabled">The image stays in the receive location. You can save it to Gallery manually.</string>
+    <string name="photo_retry">Retry Gallery save</string>
+    <string name="privacy_preview_photos">Previews run offline on this device, without uploading content or automatically fetching document resources from the internet. With automatic saving on, newly received, verified images are also copied to Pictures/LimLink in the system photo library. Originals stay in place. You can turn this off in Settings; deleting a received entry does not delete its Gallery copy. Content goes to another app only when you choose Share or Open with.</string>
+    <string name="usage_preview_photos">Images, PDF, video, audio and text have in-app previews. Office and other formats require Open with; support depends on the device. Images are verified and saved before copying to Gallery. Permission or export failure does not change receipt success; retry is available. Open containing location may show the system document picker. A checkmark means verified saving or recipient acknowledgement; Gallery export status is shown separately.</string>
+</resources>

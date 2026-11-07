@@ -7,7 +7,7 @@
 **기기 사이로, 바로 전달하세요.**
 로컬 네트워크 파일 전송 · iPhone · iPad · Mac · Android · Windows
 
-[공식 웹사이트](https://limlink.floatmax-tech.com) · [릴리스](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [지원](mailto:limlink@floatmax-tech.com) · [소스](https://github.com/floatmax-tech-001/LimLink-Source)
+[공식 웹사이트](https://limlink.floatmax-tech.com) · [릴리스](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [지원](mailto:limlink@floatmax-tech.com) · [소스](https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source)
 
 <p align="center"><strong>다운로드:</strong></p>
 <p align="center">
@@ -37,13 +37,13 @@
 
 ## 소스 코드
 
-LimLink 1.0.1 소스 코드는 별도 저장소에서 관리합니다:
+LimLink 1.0.1 소스 코드는 이 저장소의 `source/` 디렉터리에 있습니다:
 
-<https://github.com/floatmax-tech-001/LimLink-Source>
+<https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source>
 
 소스 코드는 **PolyForm Noncommercial 1.0.0**으로 공개됩니다. 개인, 연구, 교육, 자선 등 비상업적 용도로 사용할 수 있으며, 상업적 사용에는 별도의 서면 허가가 필요합니다. LimLink 이름, 로고, 아이콘, 스크린샷, 스토어 자료는 소스 코드 라이선스에 포함되지 않습니다.
 
-이 저장소(LimLink-Releases)에는 릴리스 노트와 설치 파일만 있으며 전체 소스 코드는 포함되지 않습니다.
+저장소 루트에는 릴리스 노트와 설치 파일이 있으며, 전체 소스 코드는 `source/`에 있습니다.
 
 [개인정보 처리방침](https://limlink.floatmax-tech.com/privacy.ko.html) · [이용약관](https://limlink.floatmax-tech.com/terms.ko.html)
 

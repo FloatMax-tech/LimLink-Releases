@@ -7,7 +7,7 @@
 **デバイス間で、直接届ける。**
 ローカルネットワークのファイル転送 · iPhone · iPad · Mac · Android · Windows
 
-[公式サイト](https://limlink.floatmax-tech.com) · [リリース](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [サポート](mailto:limlink@floatmax-tech.com) · [ソース](https://github.com/floatmax-tech-001/LimLink-Source)
+[公式サイト](https://limlink.floatmax-tech.com) · [リリース](https://github.com/FloatMax-tech/LimLink-Releases/releases) · [サポート](mailto:limlink@floatmax-tech.com) · [ソース](https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source)
 
 <p align="center"><strong>ダウンロード：</strong></p>
 <p align="center">
@@ -37,13 +37,13 @@
 
 ## ソースコード
 
-LimLink 1.0.1 のソースコードは別リポジトリで公開しています：
+LimLink 1.0.1 のソースコードはこのリポジトリの `source/` ディレクトリにあります：
 
-<https://github.com/floatmax-tech-001/LimLink-Source>
+<https://github.com/FloatMax-tech/LimLink-Releases/tree/main/source>
 
 ソースコードは **PolyForm Noncommercial 1.0.0** で公開されています。個人、研究、教育、慈善などの非商業利用が可能で、商業利用には別途書面による許諾が必要です。LimLink の名称、ロゴ、アイコン、スクリーンショット、ストア素材はソースコードのライセンスに含まれません。
 
-このリポジトリ（LimLink-Releases）はリリースノートとインストーラーのみを置き、完全なソースコードは含みません。
+リポジトリのルートにはリリースノートとインストーラーがあり、完全なソースコードは `source/` にあります。
 
 [プライバシーポリシー](https://limlink.floatmax-tech.com/privacy.ja.html) · [利用規約](https://limlink.floatmax-tech.com/terms.ja.html)
 

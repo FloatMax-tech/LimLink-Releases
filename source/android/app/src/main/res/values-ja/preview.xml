@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preview_title">ファイルのプレビュー</string>
+    <string name="preview_close">閉じる</string>
+    <string name="preview_open_with">他のアプリで開く</string>
+    <string name="preview_share">共有</string>
+    <string name="preview_gallery">ギャラリーで開く</string>
+    <string name="preview_location">保存場所を開く</string>
+    <string name="preview_location_hint">Android のドキュメント画面を表示します。提供元によっては親フォルダを直接表示できません。</string>
+    <string name="preview_action_failed">開けませんでした。ファイルの保存場所とアクセス権を確認して再試行してください。</string>
+    <string name="preview_unsupported">この形式はアプリ内プレビューに未対応です。Office 文書などは他のアプリで開いてください。</string>
+    <string name="preview_unavailable">移動、破損、権限切れ、または端末で未対応の形式によりプレビューできません。他のアプリで開けます。</string>
+    <string name="preview_text_truncated">テキストの先頭 256 KB のみ表示します。</string>
+    <string name="preview_previous">前へ</string>
+    <string name="preview_next">次へ</string>
+    <string name="preview_page">%2$d ページ中 %1$d ページ</string>
+    <string name="preview_play">再生</string>
+    <string name="preview_pause">一時停止</string>
+    <string name="preview_verified">検証して完了</string>
+    <string name="preview_tap">タップしてプレビュー</string>
+    <string name="photo_auto_save">受信画像をギャラリーに自動保存</string>
+    <string name="photo_auto_save_hint">新しく受信し検証を終えた画像のみが対象です。元のファイルは受信先に残り、手動保存もできます。</string>
+    <string name="photo_saving">ギャラリーに保存中…</string>
+    <string name="photo_saved">ギャラリーに保存済み</string>
+    <string name="photo_failed">ギャラリーへの保存に失敗しました。受信ファイルは残っています。再試行するかシステム設定を確認してください。</string>
+    <string name="photo_disabled">画像は受信先にあります。ギャラリーへ手動で保存できます。</string>
+    <string name="photo_retry">ギャラリーへの保存を再試行</string>
+    <string name="privacy_preview_photos">プレビューは端末内でオフライン処理され、アップロードや文書内のネットワークリソースの自動取得は行いません。自動保存がオンの場合、新たに受信し検証・保存された画像をシステム写真ライブラリの Pictures/LimLink にもコピーします。元のファイルは残ります。設定で無効にでき、受信履歴を削除してもギャラリーのコピーは削除されません。共有や他のアプリで開く操作を選んだ場合のみ、そのアプリへ内容を渡します。</string>
+    <string name="usage_preview_photos">画像、PDF、動画、音声、テキストをプレビューできます。Office などは他のアプリで開く操作が必要で、対応形式は端末にも依存します。画像は検証して保存してからギャラリーにコピーします。権限や書き出しの失敗は受信成功に影響せず、再試行できます。保存場所を開くとシステムの文書選択画面が表示される場合があります。完了チェックは検証済みの保存または相手の確認を表し、ギャラリーへの保存結果は別に表示します。</string>
+</resources>

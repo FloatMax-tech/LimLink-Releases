@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="updates_check">Cerca aggiornamenti</string>
+    <string name="updates_checking">Verifica…</string>
+    <string name="updates_latest">La versione è aggiornata</string>
+    <string name="updates_none">Nessuna versione ancora disponibile</string>
+    <string name="updates_failed">Verifica non riuscita. Riprova.</string>
+    <string name="updates_download">Scarica programma di installazione</string>
+    <string name="updates_available">Aggiornamento disponibile</string>
+    <string name="updates_disclosure">Controlla il sito ufficiale solo su richiesta. File, nomi dei dispositivi e associazioni non vengono caricati.</string>
+    <string name="updates_install_hint">Download nel browser. Termina i trasferimenti prima di confermare l’installazione per conservare i dati.</string>
+</resources>

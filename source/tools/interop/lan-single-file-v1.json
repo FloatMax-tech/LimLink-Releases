@@ -1,0 +1,115 @@
+{
+  "maximumFileBytes": 5000000000,
+  "maximumChunkBytes": 1048576,
+  "serviceType": "_limlink._tcp",
+  "txt": {
+    "pv": "1.0",
+    "dt": "mac",
+    "app": "limlink",
+    "fp": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  "hello": {
+    "proto": [
+      "1.0"
+    ],
+    "app": "limlink",
+    "alias": "书房设备",
+    "devType": "mac",
+    "port": 52470
+  },
+  "create": {
+    "clientSessionKey": "fixture-client-key",
+    "transport": "lan",
+    "totalEntries": 1,
+    "totalBytes": 5000000000,
+    "entries": [
+      {
+        "id": "fixture-file",
+        "kind": "file",
+        "relativePath": "旅行视频.mov",
+        "size": 5000000000
+      }
+    ]
+  },
+  "pending": {
+    "sessionId": "fixture-session",
+    "state": "pending"
+  },
+  "accepted": {
+    "state": "accepted",
+    "files": {
+      "fixture-file": {
+        "accept": true,
+        "token": "fixture-token",
+        "offset": 0,
+        "finalName": "旅行视频.mov",
+        "state": "accepted"
+      }
+    }
+  },
+  "putHeaders": {
+    "Content-Type": "application/octet-stream",
+    "X-LimLink-App": "limlink",
+    "X-LimLink-Token": "fixture-token",
+    "X-LimLink-Offset": "4294967296"
+  },
+  "ack": {
+    "committedBytes": 4296015872
+  },
+  "complete": {
+    "verified": true,
+    "finalName": "旅行视频.mov"
+  },
+  "finish": {
+    "sessionId": "fixture-session",
+    "state": "finished",
+    "startedAt": 0,
+    "finishedAt": 1,
+    "durationMs": 1000,
+    "totals": {
+      "files": 1,
+      "completed": 1,
+      "failed": 0,
+      "verifyFailed": 0,
+      "rejected": 0,
+      "cancelled": 0,
+      "bytesPlanned": 5000000000,
+      "bytesReceived": 5000000000
+    },
+    "files": [
+      {
+        "id": "fixture-file",
+        "relativePath": "旅行视频.mov",
+        "finalName": "旅行视频.mov",
+        "renamed": false,
+        "state": "completed",
+        "size": 5000000000,
+        "bytesReceived": 5000000000,
+        "sha256Match": true,
+        "errorCode": null
+      }
+    ]
+  },
+  "invalidSizes": [
+    -1,
+    5000000001,
+    true,
+    1.5,
+    "5000000000",
+    null
+  ],
+  "invalidNames": [
+    "../escape",
+    "/absolute",
+    "dir/file",
+    "dir\\file",
+    "",
+    "..",
+    "bad\u0000name"
+  ],
+  "notes": [
+    "Require precise 64-bit JSON integer types, reject booleans/fractions/strings.",
+    "Do not treat TXT names/fingerprints as authenticated owner identities. Verify selected TLS certificate and keep per-file consent.",
+    "All requests in one session remain on one mutual-TLS connection."
+  ]
+}

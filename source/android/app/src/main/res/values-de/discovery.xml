@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nearby_footer">Kabel- und WLAN-Geräte im selben LAN werden unterstützt. Bei Problemen Netzwerkzugriff, Firewall und Router-Isolation prüfen.</string>
+    <string name="privacy_lan">LimLink überträgt Dateien direkt im selben LAN. Der Computer kann Ethernet und das Telefon WLAN oder einen Hotspot nutzen. Dateien laufen nicht über einen Server.</string>
+    <string name="home_discovery_hint">LimLink im selben LAN öffnen. Der Computer kann Ethernet und das Telefon WLAN nutzen. Bei Problemen Netzwerkzugriff, Firewall und Router-Isolation prüfen.</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="updates_check">更新を確認</string>
+    <string name="updates_checking">確認中…</string>
+    <string name="updates_latest">最新バージョンです</string>
+    <string name="updates_none">まだ配布されていません</string>
+    <string name="updates_failed">確認できませんでした。再試行してください</string>
+    <string name="updates_download">インストーラーをダウンロード</string>
+    <string name="updates_available">更新があります</string>
+    <string name="updates_disclosure">ボタンを押したときだけ公式サイトで更新を確認します。ファイル、端末名、ペアリング情報は送信しません。</string>
+    <string name="updates_install_hint">ブラウザーでダウンロードします。転送終了後にインストールを確認してください。既存データを保持します。</string>
+</resources>

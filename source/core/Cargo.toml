@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = ["limlink-core", "limlink-core-testvectors"]
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.85"
+publish = false
+
+# LLC_ERR_PANIC (102) is `catch_unwind`. `panic = "abort"` would turn that into a process abort.
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

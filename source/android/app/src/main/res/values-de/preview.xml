@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preview_title">Dateivorschau</string>
+    <string name="preview_close">Schließen</string>
+    <string name="preview_open_with">Öffnen mit</string>
+    <string name="preview_share">Teilen</string>
+    <string name="preview_gallery">In Galerie öffnen</string>
+    <string name="preview_location">Speicherort öffnen</string>
+    <string name="preview_location_hint">Android zeigt den Dokumentenspeicherort. Manche Anbieter können den übergeordneten Ordner nicht direkt öffnen.</string>
+    <string name="preview_action_failed">Öffnen fehlgeschlagen. Prüfe Speicherort und Zugriffsrechte und versuche es erneut.</string>
+    <string name="preview_unsupported">Keine integrierte Vorschau für dieses Format. Wähle Öffnen mit für Office und andere Dokumente.</string>
+    <string name="preview_unavailable">Keine Vorschau möglich: verschoben, beschädigt, Zugriff abgelaufen oder Format nicht unterstützt. Versuche Öffnen mit.</string>
+    <string name="preview_text_truncated">Nur die ersten 256 KB Text werden angezeigt.</string>
+    <string name="preview_previous">Zurück</string>
+    <string name="preview_next">Weiter</string>
+    <string name="preview_page">Seite %1$d von %2$d</string>
+    <string name="preview_play">Abspielen</string>
+    <string name="preview_pause">Pause</string>
+    <string name="preview_verified">Geprüft und abgeschlossen</string>
+    <string name="preview_tap">Für Vorschau antippen</string>
+    <string name="photo_auto_save">Empfangene Bilder automatisch in der Galerie speichern</string>
+    <string name="photo_auto_save_hint">Nur neue, geprüfte Bilder. Originale bleiben am Empfangsort. Manuelles Speichern ist ebenfalls möglich.</string>
+    <string name="photo_saving">Wird in der Galerie gespeichert…</string>
+    <string name="photo_saved">In der Galerie gespeichert</string>
+    <string name="photo_failed">Galeriespeicherung fehlgeschlagen. Die empfangene Datei bleibt erhalten. Erneut versuchen oder Systemeinstellungen prüfen.</string>
+    <string name="photo_disabled">Das Bild bleibt am Empfangsort und kann manuell in der Galerie gespeichert werden.</string>
+    <string name="photo_retry">Galeriespeicherung wiederholen</string>
+    <string name="privacy_preview_photos">Die Vorschau erfolgt offline, ohne Inhalte hochzuladen oder Internetressourcen aus Dokumenten automatisch abzurufen. Bei aktivierter automatischer Speicherung werden neu empfangene, geprüfte Bilder zusätzlich nach Pictures/LimLink in die Systemfotobibliothek kopiert. Originale bleiben erhalten. Die Funktion lässt sich in den Einstellungen deaktivieren. Das Löschen eines Empfangseintrags entfernt keine Galeriekopie. Inhalte werden nur nach Auswahl von Teilen oder Öffnen mit an andere Apps übergeben.</string>
+    <string name="usage_preview_photos">Bilder, PDF, Video, Audio und Text bieten eine integrierte Vorschau. Für Office und andere Formate ist Öffnen mit erforderlich; Unterstützung hängt vom Gerät ab. Bilder werden vor dem Galerieexport geprüft und gespeichert. Berechtigungs- oder Exportfehler ändern den Empfangserfolg nicht; ein erneuter Versuch ist möglich. Speicherort öffnen kann die Dokumentenauswahl anzeigen. Das Häkchen bestätigt geprüfte Speicherung oder Empfängerbestätigung; der Galerieexport wird separat angezeigt.</string>
+</resources>

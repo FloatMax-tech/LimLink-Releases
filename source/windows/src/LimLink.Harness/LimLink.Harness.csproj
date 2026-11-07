@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>LimLink.Harness</RootNamespace>
+    <AssemblyName>LimLink.Harness</AssemblyName>
+    <Description>Optional console host for LimLink.Core. Not the WinUI shell.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LimLink.Core\LimLink.Core.csproj" />
+  </ItemGroup>
+</Project>

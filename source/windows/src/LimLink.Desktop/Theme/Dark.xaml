@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <SolidColorBrush x:Key="Ink" Color="#FFFFFFFF" />
+  <SolidColorBrush x:Key="Sub" Color="#FFA1A1A8" />
+  <SolidColorBrush x:Key="Faint" Color="#FF6C6C72" />
+  <SolidColorBrush x:Key="Layer" Color="#0DFFFFFF" />
+  <SolidColorBrush x:Key="LayerSolid" Color="#FF2B2B2E" />
+  <SolidColorBrush x:Key="Stroke" Color="#17FFFFFF" />
+  <SolidColorBrush x:Key="Fill" Color="#0FFFFFFF" />
+  <SolidColorBrush x:Key="Fill2" Color="#1FFFFFFF" />
+  <SolidColorBrush x:Key="Signal" Color="#FF34E0B0" />
+  <SolidColorBrush x:Key="SignalSoft" Color="#2434E0B0" />
+  <SolidColorBrush x:Key="Danger" Color="#FFFF6B61" />
+  <SolidColorBrush x:Key="DangerSoft" Color="#24FF453A" />
+  <SolidColorBrush x:Key="BtnBg" Color="#FFFFFFFF" />
+  <SolidColorBrush x:Key="BtnFg" Color="#FF000000" />
+  <SolidColorBrush x:Key="Track" Color="#29FFFFFF" />
+  <SolidColorBrush x:Key="Scrim" Color="#8C000000" />
+  <SolidColorBrush x:Key="WindowFallback" Color="#FF202020" />
+  <SolidColorBrush x:Key="Dash" Color="#FF55555B" />
+  <SolidColorBrush x:Key="LogoStroke" Color="#40FFFFFF" />
+</ResourceDictionary>

@@ -1,0 +1,158 @@
+name: LimLinkIOS
+options:
+  bundleIdPrefix: com.limlink
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  developmentLanguage: zh-Hans
+  groupSortPosition: top
+packages:
+  LimLinkKit:
+    path: ../LimLinkKit
+  LimLinkAppSupport:
+    path: Support
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    MARKETING_VERSION: "1.0.1"
+    CURRENT_PROJECT_VERSION: "5"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SUPPORTS_MACCATALYST: NO
+configs:
+  Debug: debug
+  Release: release
+targets:
+  LimLinkIOS:
+    type: application
+    platform: iOS
+    attributes:
+      SystemCapabilities:
+        com.apple.InAppPurchase:
+          enabled: 1
+    sources:
+      - path: App
+        excludes:
+          - Info.plist
+          - LimLinkIOS.entitlements
+      - path: ../Shared
+    dependencies:
+      - package: LimLinkKit
+        product: LimLinkKit
+      - package: LimLinkAppSupport
+        product: LimLinkAppSupport
+      - target: LimLinkShare
+        embed: true
+    settings:
+      base:
+        PRODUCT_NAME: LimLink
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev
+        PRODUCT_MODULE_NAME: LimLinkIOS
+        SWIFT_VERSION: "6.0"
+        SWIFT_STRICT_CONCURRENCY: complete
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/LimLinkIOS.entitlements
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: J8PZU3W5VL
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks"
+  LimLinkShare:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ../Shared/Localization/Localizable.xcstrings
+      - path: ShareExtension
+        excludes:
+          - Info.plist
+          - LimLinkShare.entitlements
+    dependencies:
+      - package: LimLinkAppSupport
+        product: LimLinkAppSupport
+      - package: LimLinkKit
+        product: LimLinkKit
+    settings:
+      base:
+        PRODUCT_NAME: LimLinkShare
+        PRODUCT_MODULE_NAME: LimLinkShare
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev.share
+        INFOPLIST_FILE: ShareExtension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ShareExtension/LimLinkShare.entitlements
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: J8PZU3W5VL
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SWIFT_VERSION: "6.0"
+        SWIFT_STRICT_CONCURRENCY: complete
+  LimLinkIOSUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: ../SupportTips.storekit
+        buildPhase: resources
+      - path: UITests
+    dependencies:
+      - target: LimLinkIOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: LimLinkIOS
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: J8PZU3W5VL
+  LimLinkTransferLab:
+    type: application
+    platform: iOS
+    sources:
+      - path: TransferLab
+        excludes:
+          - Info.plist
+    dependencies:
+      - package: LimLinkKit
+        product: LimLinkKit
+    settings:
+      base:
+        PRODUCT_NAME: LimLinkTransferLab
+        PRODUCT_BUNDLE_IDENTIFIER: com.limlink.dev.transferlab
+        PRODUCT_MODULE_NAME: LimLinkTransferLab
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: TransferLab/Info.plist
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_REQUIRED: NO
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks"
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) LIMLINK_TEST_AUTOTRUST"
+        Release: {}
+schemes:
+  LimLinkIOS:
+    build:
+      targets:
+        LimLinkIOS: all
+        LimLinkIOSUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: ../SupportTips.storekit
+    test:
+      config: Debug
+      targets:
+        - name: LimLinkIOSUITests
+          parallelizable: false
+    archive:
+      config: Release
+  LimLinkTransferLab:
+    build:
+      targets:
+        LimLinkTransferLab: all
+    run:
+      config: Debug
+    archive:
+      config: Release

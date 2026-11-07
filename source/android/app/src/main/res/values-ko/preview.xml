@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preview_title">파일 미리보기</string>
+    <string name="preview_close">닫기</string>
+    <string name="preview_open_with">다른 앱으로 열기</string>
+    <string name="preview_share">공유</string>
+    <string name="preview_gallery">갤러리에서 열기</string>
+    <string name="preview_location">저장 위치 열기</string>
+    <string name="preview_location_hint">Android 문서 위치가 표시됩니다. 일부 제공업체는 상위 폴더를 직접 열 수 없습니다.</string>
+    <string name="preview_action_failed">열 수 없습니다. 파일 위치와 접근 권한을 확인한 후 다시 시도하세요.</string>
+    <string name="preview_unsupported">이 형식은 앱 내 미리보기를 지원하지 않습니다. Office 문서 등은 다른 앱으로 열어 주세요.</string>
+    <string name="preview_unavailable">미리 볼 수 없습니다. 이동, 손상, 권한 만료 또는 미지원 형식일 수 있습니다. 다른 앱으로 열어 보세요.</string>
+    <string name="preview_text_truncated">텍스트의 처음 256 KB만 표시합니다.</string>
+    <string name="preview_previous">이전</string>
+    <string name="preview_next">다음</string>
+    <string name="preview_page">%1$d / %2$d 페이지</string>
+    <string name="preview_play">재생</string>
+    <string name="preview_pause">일시 정지</string>
+    <string name="preview_verified">검증 및 완료</string>
+    <string name="preview_tap">눌러서 미리보기</string>
+    <string name="photo_auto_save">받은 이미지를 갤러리에 자동 저장</string>
+    <string name="photo_auto_save_hint">새로 수신하고 검증한 이미지만 해당됩니다. 원본은 수신 위치에 남으며 수동 저장도 가능합니다.</string>
+    <string name="photo_saving">갤러리에 저장 중…</string>
+    <string name="photo_saved">갤러리에 저장됨</string>
+    <string name="photo_failed">갤러리 저장에 실패했습니다. 받은 파일은 유지됩니다. 다시 시도하거나 시스템 설정을 확인하세요.</string>
+    <string name="photo_disabled">이미지는 수신 위치에 있습니다. 갤러리에 수동으로 저장할 수 있습니다.</string>
+    <string name="photo_retry">갤러리 저장 다시 시도</string>
+    <string name="privacy_preview_photos">미리보기는 기기에서 오프라인으로 처리되며 업로드나 문서의 인터넷 리소스 자동 요청은 하지 않습니다. 자동 저장을 켜면 새로 수신하고 검증하여 저장한 이미지를 시스템 사진 라이브러리의 Pictures/LimLink에도 복사합니다. 원본은 수신 위치에 남습니다. 설정에서 끌 수 있으며 수신 기록을 삭제해도 갤러리 사본은 삭제되지 않습니다. 공유나 다른 앱으로 열기를 선택한 경우에만 해당 앱에 콘텐츠를 전달합니다.</string>
+    <string name="usage_preview_photos">이미지, PDF, 동영상, 오디오 및 텍스트를 미리 볼 수 있습니다. Office 등은 다른 앱으로 열기를 선택해야 하며 지원은 기기에 따라 다릅니다. 이미지는 검증하고 저장한 뒤 갤러리에 복사합니다. 권한이나 내보내기 실패는 수신 성공에 영향을 주지 않으며 재시도할 수 있습니다. 위치 열기는 시스템 문서 선택기를 표시할 수 있습니다. 완료 체크는 검증된 저장 또는 상대방 확인을 뜻하며 갤러리 결과는 별도로 표시합니다.</string>
+</resources>

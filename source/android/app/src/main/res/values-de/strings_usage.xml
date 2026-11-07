@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usage_title">Nutzungsvereinbarung und Nutzungshinweise</string>
+    <string name="usage_developer">Entwickler: 周甫俊</string>
+    <string name="usage_overview_title">Nutzungshinweise</string>
+    <string name="usage_overview">LimLink überträgt Dateien direkt im selben lokalen Netzwerk, ohne einen vom Entwickler betriebenen Datei-Relay-Dienst oder Benutzerkonten. Diese Seite beschreibt die aktuellen Funktionen und ihre Nutzung.</string>
+    <string name="usage_sharing_title">Vor dem Teilen prüfen</string>
+    <string name="usage_sharing">Teile nur Dateien, die du teilen darfst, und respektiere die Privatsphäre anderer. Bei nicht verknüpften Geräten ist weiterhin eine Zustimmung für jede Datei erforderlich. Die initiierende Person wählt ein Gerät aus und tippt auf „Verknüpfen“. Nachdem die andere Person ausdrücklich zugestimmt hat und eine gültige Verknüpfung hergestellt wurde, können beide Geräte nachfolgende Dateien automatisch empfangen. Gerätenamen lassen sich ändern und belegen nicht die Identität der anderen Person. Du kannst die Verknüpfung in den Einstellungen aufheben, um den künftigen automatischen Empfang auf diesem Gerät zu stoppen; bereits gespeicherte Dateien werden dadurch nicht zurückgerufen.</string>
+    <string name="usage_transfer_title">Übertragung und Speicherung</string>
+    <string name="usage_transfer">Beide Geräte müssen sich im selben lokalen Netzwerk befinden und LimLink während der Übertragung ausführen. Du kannst mehrere Dateien auf einmal auswählen; jede Datei darf höchstens 5 GB (5.000.000.000 Byte) groß sein. Stelle sicher, dass auf dem Empfangsgerät genügend Speicherplatz verfügbar ist, prüfe vor dem Löschen der Originale den vollständigen Empfang und bewahre benötigte Sicherungskopien auf.</string>
+    <string name="usage_help_title">Support und Datenschutz</string>
+    <string name="usage_help">Wie Dateien, Identitäten und Einstellungen verarbeitet, gespeichert und gelöscht werden, erfährst du in den Datenschutzhinweisen auf diesem Gerät. Übermittle bei Supportanfragen keine Dateiinhalte, Schlüssel oder privaten Protokolle.</string>
+    <string name="usage_contact">Kontakt: limlink@floatmax-tech.com</string>
+</resources>

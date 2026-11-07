@@ -1,0 +1,166 @@
+{
+  "sourceLanguage" : "zh-Hans",
+  "strings" : {
+    "LimLink" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "LimLink" } }
+      }
+    },
+    "附近设备" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "附近设备" } }
+      }
+    },
+    "还没有发现设备" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "还没有发现设备" } }
+      }
+    },
+    "手动地址" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "手动地址" } }
+      }
+    },
+    "地址" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "地址" } }
+      }
+    },
+    "端口" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "端口" } }
+      }
+    },
+    "连接" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "连接" } }
+      }
+    },
+    "诊断" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "诊断" } }
+      }
+    },
+    "没有其他 App" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有其他 App" } }
+      }
+    },
+    "其他 App，暂不支持互传" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "其他 App，暂不支持互传" } }
+      }
+    },
+    "清除诊断记录" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清除诊断记录" } }
+      }
+    },
+    "传输" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "传输" } }
+      }
+    },
+    "选择文件" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择文件" } }
+      }
+    },
+    "发送" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "发送" } }
+      }
+    },
+    "接收" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "接收" } }
+      }
+    },
+    "信任此指纹" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "信任此指纹" } }
+      }
+    },
+    "知道了" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "知道了" } }
+      }
+    },
+    "对方是另一个 App，暂不支持互传" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "对方是另一个 App，暂不支持互传" } }
+      }
+    },
+    "这是本机上的另一个 App，不能互传" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "这是本机上的另一个 App，不能互传" } }
+      }
+    },
+    "邀请已失效，请重新生成邀请码，让对方再输入一次" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "邀请已失效，请重新生成邀请码，让对方再输入一次" } }
+      }
+    },
+    "这个文件可能是可执行文件或安装包，仍然可以发送。" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "这个文件可能是可执行文件或安装包，仍然可以发送。" } }
+      }
+    },
+    "没有指纹，不能连接" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有指纹，不能连接" } }
+      }
+    },
+    "先选择文件" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "先选择文件" } }
+      }
+    },
+    "先选择一台设备" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "先选择一台设备" } }
+      }
+    },
+    "先信任此指纹" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "先信任此指纹" } }
+      }
+    },
+    "先填写地址和端口" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "先填写地址和端口" } }
+      }
+    },
+    "读不到这个文件" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "读不到这个文件" } }
+      }
+    },
+    "保存失败" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存失败" } }
+      }
+    },
+    "等待接收" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "等待接收" } }
+      }
+    },
+    "正在准备" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在准备" } }
+      }
+    },
+    "启动失败" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "启动失败" } }
+      }
+    },
+    "CaseCheck" : {
+      "localizations" : {
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "CaseCheck" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usage_title">User Agreement and Usage Notes</string>
+    <string name="usage_developer">Developer: 周甫俊</string>
+    <string name="usage_overview_title">Usage Notes</string>
+    <string name="usage_overview">LimLink transfers files directly over the same local network, without a developer-operated file relay service or user accounts. This page explains the current features and how to use them.</string>
+    <string name="usage_sharing_title">Before Sharing</string>
+    <string name="usage_sharing">Share only files you have the right to share, and respect other people’s privacy. Unbound devices still require approval for each file. The initiator chooses a device and taps “Bind”; after the other person explicitly confirms and a valid binding is completed, both devices can automatically receive subsequent files. Device names can be changed and do not prove the other person’s identity. You can unbind in Settings to stop future automatic reception on this device; files already saved will not be recalled.</string>
+    <string name="usage_transfer_title">Transfer and Storage</string>
+    <string name="usage_transfer">Both devices must be on the same local network and keep LimLink running during the transfer. You can select multiple files at once, each no larger than 5 GB (5,000,000,000 bytes). Make sure the receiving device has enough space, confirm each file has been received in full before deleting the original, and keep any backups you need.</string>
+    <string name="usage_help_title">Support and Privacy</string>
+    <string name="usage_help">See the privacy information on this device for how files, identities, and preferences are handled, stored, and deleted. When contacting support, do not submit file contents, keys, or private logs.</string>
+    <string name="usage_contact">Contact: limlink@floatmax-tech.com</string>
+</resources>

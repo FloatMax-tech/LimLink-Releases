@@ -1,0 +1,3 @@
+Pillow>=11,<13
+ds_store==1.3.3
+mac_alias==2.2.3

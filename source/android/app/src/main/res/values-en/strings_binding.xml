@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binding_title">Bound devices</string>
+    <string name="binding_explanation">Choose a device you recognize. Names can be changed by their owners. Binding uses this app while it is open.</string>
+    <string name="binding_add">Bind a device</string>
+    <string name="binding_unbind">Unbind</string>
+    <string name="binding_empty">No bound devices</string>
+    <string name="binding_waiting">Waiting for %1$s to accept…</string>
+    <string name="binding_completed">Bound to %1$s</string>
+    <string name="binding_failed">Binding failed or expired. Try again to request a new confirmation.</string>
+    <string name="binding_cancelled">Binding cancelled</string>
+    <string name="binding_unbound">Unbound locally. The other device may be offline.</string>
+    <string name="binding_no_devices">No nearby devices found</string>
+    <string name="binding_bind_device">Bind %1$s</string>
+    <string name="binding_grant">Binding allows both devices to automatically receive files from each other. Only bind a device you recognize.</string>
+    <string name="binding_request">Binding request from %1$s</string>
+    <string name="binding_accept">Accept binding</string>
+    <string name="binding_reject">Reject</string>
+    <string name="privacy_binding">Binding records stay in private storage on this device: both device-key fingerprints, the binding ID, name, device type, and binding time. They are not uploaded or included in Android backups. A completed binding allows automatic reception while the app is open. Unbound devices still need approval for each file. You can unbind in Settings.</string>
+    <string name="privacy_contact">Developer: 周甫俊. Contact: limlink@floatmax-tech.com</string>
+</resources>

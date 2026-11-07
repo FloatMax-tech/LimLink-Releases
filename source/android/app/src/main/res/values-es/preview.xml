@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preview_title">Vista previa del archivo</string>
+    <string name="preview_close">Cerrar</string>
+    <string name="preview_open_with">Abrir con</string>
+    <string name="preview_share">Compartir</string>
+    <string name="preview_gallery">Abrir en Galería</string>
+    <string name="preview_location">Abrir ubicación</string>
+    <string name="preview_location_hint">Android muestra la ubicación del documento. Algunos proveedores no pueden abrir directamente la carpeta superior.</string>
+    <string name="preview_action_failed">No se pudo abrir. Comprueba el archivo y los permisos e inténtalo de nuevo.</string>
+    <string name="preview_unsupported">Este formato no tiene vista previa integrada. Usa Abrir con para Office y otros documentos.</string>
+    <string name="preview_unavailable">No se puede previsualizar: archivo movido, dañado, acceso caducado o formato incompatible. Prueba Abrir con.</string>
+    <string name="preview_text_truncated">Solo se muestran los primeros 256 KB de texto.</string>
+    <string name="preview_previous">Anterior</string>
+    <string name="preview_next">Siguiente</string>
+    <string name="preview_page">Página %1$d de %2$d</string>
+    <string name="preview_play">Reproducir</string>
+    <string name="preview_pause">Pausa</string>
+    <string name="preview_verified">Verificado y completado</string>
+    <string name="preview_tap">Toca para previsualizar</string>
+    <string name="photo_auto_save">Guardar las imágenes recibidas automáticamente en Galería</string>
+    <string name="photo_auto_save_hint">Solo imágenes nuevas recibidas y verificadas. Los originales se conservan. También puedes guardar manualmente.</string>
+    <string name="photo_saving">Guardando en Galería…</string>
+    <string name="photo_saved">Guardado en Galería</string>
+    <string name="photo_failed">Error al guardar en Galería. El archivo recibido se conserva. Reintenta o revisa los ajustes del sistema.</string>
+    <string name="photo_disabled">La imagen sigue en su ubicación y puedes guardarla manualmente en Galería.</string>
+    <string name="photo_retry">Reintentar guardado</string>
+    <string name="privacy_preview_photos">Las vistas previas se procesan sin conexión, sin subir contenido ni obtener recursos de Internet de los documentos automáticamente. Si el guardado automático está activado, las imágenes nuevas recibidas y verificadas también se copian a Pictures/LimLink de la fototeca del sistema. Los originales se conservan. Puedes desactivarlo en Ajustes; eliminar una entrada recibida no elimina su copia de Galería. El contenido solo se entrega a otra aplicación cuando eliges Compartir o Abrir con.</string>
+    <string name="usage_preview_photos">Hay vista previa de imágenes, PDF, vídeo, audio y texto. Para Office y otros formatos elige Abrir con; la compatibilidad depende del dispositivo. Las imágenes se verifican y guardan antes de copiarlas a Galería. Los fallos de permiso o exportación no alteran la recepción; puedes reintentar. Abrir ubicación puede mostrar el selector de documentos. La marca de finalización confirma un guardado verificado o la confirmación del destinatario; el estado de Galería se indica aparte.</string>
+</resources>

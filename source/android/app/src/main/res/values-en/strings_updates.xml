@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="updates_check">Check for updates</string>
+    <string name="updates_checking">Checking…</string>
+    <string name="updates_latest">You are up to date</string>
+    <string name="updates_none">No release available yet</string>
+    <string name="updates_failed">Could not check. Please try again.</string>
+    <string name="updates_download">Download installer</string>
+    <string name="updates_available">Update available</string>
+    <string name="updates_disclosure">Checks the official website only when you tap. Files, device names and bindings are not uploaded.</string>
+    <string name="updates_install_hint">Downloads in your browser. Finish transfers before confirming installation to preserve existing data.</string>
+</resources>
