@@ -49,3 +49,5 @@ La racine du dépôt contient les notes de version et les installateurs ; le cod
 
 **limlink@floatmax-tech.com**
 **杭州浮点极限科技有限公司**
+
+© 2026 杭州浮点极限科技有限公司 · Tous droits réservés.

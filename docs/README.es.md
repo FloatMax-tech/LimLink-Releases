@@ -49,3 +49,5 @@ La raíz del repositorio contiene las notas de versión y los instaladores; el c
 
 **limlink@floatmax-tech.com**
 **杭州浮点极限科技有限公司**
+
+© 2026 杭州浮点极限科技有限公司 · Todos los derechos reservados.

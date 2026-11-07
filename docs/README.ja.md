@@ -49,3 +49,5 @@ LimLink 1.0.1 のソースコードはこのリポジトリの `source/` ディ�
 
 **limlink@floatmax-tech.com**
 **杭州浮点极限科技有限公司**
+
+© 2026 杭州浮点极限科技有限公司 · All rights reserved.

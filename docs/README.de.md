@@ -49,3 +49,5 @@ Im Repository-Stamm liegen Versionshinweise und Installationsprogramme; der voll
 
 **limlink@floatmax-tech.com**
 **杭州浮点极限科技有限公司**
+
+© 2026 杭州浮点极限科技有限公司 · Alle Rechte vorbehalten.
